@@ -7,19 +7,23 @@ function App() {
 
   useEffect(() => {
     const getMessage = () => {
-      try {
-        let { data } = axios.get("http://localhost:4000/helloWorld/");
-        setDisplayMessage(data);
-      } catch (error) {
-        console.log(error.message);
-      }
+        axios.get(
+          "http://localhost:4000/helloWorld/"
+        ).then((response) => {
+          response.data ? setDisplayMessage(response.data) : setDisplayMessage("empty");
+        }).catch((error) => {
+          console.log("error: ");
+          console.log(error);
+        });
     };
-    getMessage;
+    getMessage();
+    console.log("displayMessage: ");
     console.log(displayMessage);
   }, []);
 
-  return <div>Hello World!</div>
-  //<div>{displayMessage}</div>
+  if (!displayMessage) return <div>Loading...</div>;
+
+  return <div>{displayMessage ? displayMessage : "null"}</div>
 
 }
 
