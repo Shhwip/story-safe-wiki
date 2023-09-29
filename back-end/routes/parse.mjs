@@ -5,7 +5,7 @@ import Parsoid from "parsoid-jsapi";
 
 const router = express.Router();
 
-router.get("/parse", async (req, res) => {
+router.get("/", async (req, res) => {
     // get the wikitext
     // we will replace this with a call to the database
     var lung = fs.readFileSync('lung.xml', 'utf8');

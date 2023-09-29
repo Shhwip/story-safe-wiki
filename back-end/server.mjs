@@ -6,6 +6,7 @@ import express from "express";
 import cors from "cors"; 
 import http from "http";
 import helloWorld from "./routes/helloWorld.mjs"
+import parse from "./routes/parse.mjs"
 
 
 const PORT = process.env.PORT || 5050;
@@ -26,6 +27,7 @@ app.use(
 );
 
 app.use("/helloWorld", helloWorld);
+app.use("/parse", parse);
 
 const server = http.createServer(app);
 

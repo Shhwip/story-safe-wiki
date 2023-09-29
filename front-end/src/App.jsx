@@ -2,6 +2,7 @@ import { useState, createContext } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import HomePage from './Components/HomePage.jsx';
+import Parser from './Components/Parser.jsx';
 
 
 export const AppContext = createContext();
@@ -15,6 +16,7 @@ function App() {
           <BrowserRouter>
               <Routes>
                   <Route path="/" element={ <HomePage /> } />
+                  <Route path="/parse" element={ <Parser /> } />
               </Routes>
           </BrowserRouter>
       </AppContext.Provider>
