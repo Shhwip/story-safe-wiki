@@ -1,30 +1,24 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useState, createContext } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
+import HomePage from './Components/HomePage.jsx';
+
+
+export const AppContext = createContext();
+
 
 function App() {
-  const [displayMessage, setDisplayMessage] = useState(null);
+  let [loggedInUser, setLoggedInUser] = useState([]);
 
-  useEffect(() => {
-    const getMessage = () => {
-        axios.get(
-          "http://localhost:4000/helloWorld/"
-        ).then((response) => {
-          response.data ? setDisplayMessage(response.data) : setDisplayMessage("empty");
-        }).catch((error) => {
-          console.log("error: ");
-          console.log(error);
-        });
-    };
-    getMessage();
-    console.log("displayMessage: ");
-    console.log(displayMessage);
-  }, []);
-
-  if (!displayMessage) return <div>Loading...</div>;
-
-  return <div>{displayMessage ? displayMessage : "null"}</div>
-
+  return (
+      <AppContext.Provider value={{ loggedInUser }}>
+          <BrowserRouter>
+              <Routes>
+                  <Route path="/" element={ <HomePage /> } />
+              </Routes>
+          </BrowserRouter>
+      </AppContext.Provider>
+  );
 }
 
 export default App;
