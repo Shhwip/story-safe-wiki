@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import './HomePage.css';
 import axios from "axios";
 
 // Copying Josh's hello world
@@ -27,7 +28,7 @@ function HomePage() {
     if (!displayMessage) return <div>Loading...</div>;
 
     return (
-        <div>{displayMessage ? displayMessage : "null"}</div>
+        <div className="helloWorld">{displayMessage ? displayMessage : "null"}</div>
     );
 }
 
