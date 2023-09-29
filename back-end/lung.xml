@@ -1,0 +1,328 @@
+
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.11/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.11/ http://www.mediawiki.org/xml/export-0.11.xsd" version="0.11" xml:lang="en">
+  <siteinfo>
+    <sitename>Worm Wiki</sitename>
+    <dbname>parahumans</dbname>
+    <base>https://worm.fandom.com/wiki/Worm_Wiki</base>
+    <generator>MediaWiki 1.39.4</generator>
+    <case>first-letter</case>
+    <namespaces>
+      <namespace key="-2" case="first-letter">Media</namespace>
+      <namespace key="-1" case="first-letter">Special</namespace>
+      <namespace key="0" case="first-letter" />
+      <namespace key="1" case="first-letter">Talk</namespace>
+      <namespace key="2" case="first-letter">User</namespace>
+      <namespace key="3" case="first-letter">User talk</namespace>
+      <namespace key="4" case="first-letter">Worm Wiki</namespace>
+      <namespace key="5" case="first-letter">Worm Wiki talk</namespace>
+      <namespace key="6" case="first-letter">File</namespace>
+      <namespace key="7" case="first-letter">File talk</namespace>
+      <namespace key="8" case="first-letter">MediaWiki</namespace>
+      <namespace key="9" case="first-letter">MediaWiki talk</namespace>
+      <namespace key="10" case="first-letter">Template</namespace>
+      <namespace key="11" case="first-letter">Template talk</namespace>
+      <namespace key="12" case="first-letter">Help</namespace>
+      <namespace key="13" case="first-letter">Help talk</namespace>
+      <namespace key="14" case="first-letter">Category</namespace>
+      <namespace key="15" case="first-letter">Category talk</namespace>
+      <namespace key="110" case="first-letter">Forum</namespace>
+      <namespace key="111" case="first-letter">Forum talk</namespace>
+      <namespace key="420" case="first-letter">GeoJson</namespace>
+      <namespace key="421" case="first-letter">GeoJson talk</namespace>
+      <namespace key="500" case="first-letter">User blog</namespace>
+      <namespace key="501" case="first-letter">User blog comment</namespace>
+      <namespace key="502" case="first-letter">Blog</namespace>
+      <namespace key="503" case="first-letter">Blog talk</namespace>
+      <namespace key="828" case="first-letter">Module</namespace>
+      <namespace key="829" case="first-letter">Module talk</namespace>
+      <namespace key="1200" case="first-letter">Message Wall</namespace>
+      <namespace key="1201" case="first-letter">Thread</namespace>
+      <namespace key="1202" case="first-letter">Message Wall Greeting</namespace>
+      <namespace key="2000" case="first-letter">Board</namespace>
+      <namespace key="2001" case="first-letter">Board Thread</namespace>
+      <namespace key="2002" case="first-letter">Topic</namespace>
+      <namespace key="2900" case="first-letter">Map</namespace>
+      <namespace key="2901" case="first-letter">Map talk</namespace>
+    </namespaces>
+  </siteinfo>
+  <page>
+    <title>Lung</title>
+    <ns>0</ns>
+    <id>2057</id>
+    <revision>
+      <id>69698</id>
+      <parentid>69481</parentid>
+      <timestamp>2023-06-27T01:52:04Z</timestamp>
+      <contributor>
+        <username>Yareyareda</username>
+        <id>44536558</id>
+      </contributor>
+      <origin>69698</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="58798" sha1="0mdz7g53m7p6fbeekqrduuh5xlhed07" xml:space="preserve">{{Sequel}}
+&lt;tabber&gt;
+|-|Worm=
+{{quote|I dislike the idea of being a follower, little Skitter.  I maintain a territory, always.  I bring my enemies low, and I am feared and respected, always.  I enjoy the things I enjoy, drinking, food, fucking women.  Never being fully out of control.  You understand?|Lung to [[Taylor]]|[[Venom 29.8]]}}
+|-|Ward=
+{{quote|He’s a warlord by temperament, but he was always missing something that let him take his gangs to the next level.|[[Victoria]]|[[Gleaming 9.10]]}}
+&lt;/tabber&gt;
+{{infobox character
+|name = Lung
+|image = Lung.jpg
+|imagecaption = [https://redd.it/6s4rn6 Illustration] by [https://www.reddit.com/user/wchen0959 wchen0959] on Reddit
+|civname = Kenta 
+|alias = Lung
+|gender = Male
+|age = 30ish
+|family = Mother (Unnamed)
+|power = Escalating Dracoform
+|civ occupation = Ganglord
+|classification =  [[Brute]] 4-9*, [[Blaster]] 2-6*,&lt;ref name="I6"/&gt;(Official)&lt;br/&gt; [[Changer]],&lt;ref name="II9.10e1/&gt; [[Mover]] (Speculative)
+|alignment = [[Villain]]
+|status = Alive
+|team = Independent?
+|previous team = [[Azn Bad Boys]] (Disbanded)&lt;br/&gt;[[The Yàngbǎn]] (Prisoner)
+|general location = [[Japan]]&lt;br/&gt;[[Brockton Bay]]&lt;br/&gt;[[Baumann Parahuman Containment Center]]
+|web serial = [[Gestation 1.3]]&lt;br&gt;[[Interlude 6]] (PoV)&lt;br&gt;[[Interlude 22.y]] (Flashback)
+|ward = [[Gleaming 9.9]] (Image)&lt;br&gt;[[Gleaming 9.10]]
+}}'''Kenta''', known publicly as '''Lung''', is a [[parahuman]] and the former leader of the [[Azn Bad Boys]].
+
+==Personality==
+[[Dragon]] described Lung as having a "veneer of civility over a feral core self".&lt;ref name="10.5"/&gt; [[Marquis]] described him similarly, and noted that he had broken the "[[Unwritten Rules|unspoken code]]" of parahumans, further he thought that Lung had excellent instincts, although he was better in a fight than over the course of a war.&lt;ref name="I16"&gt;[[Interlude 16.z]]&lt;/ref&gt; [[Taylor Hebert]] considered it plausible that he would take a group of gangsters to go shoot some kids based solely on his reputation.&lt;ref name="1.3"/&gt;
+
+His mind may have been affected by the circumstances of his trigger event.&lt;ref&gt;Peter was still talking, responding to something Kayden had said.  “Drugs tend to create conditional powers.  It’s not hard and fast, but you get situations where the power is directly linked to one’s physical, mental or emotional state.  We think it’s because the power works off a template it builds as the powers first manifest.  If someone is riding an emotional high as they trigger, their powers will always be looking for a similarly excited state to operate at peak efficiency, often an emotion or drugs.  When people were caught trying to fabricate trigger events, sometimes they were intending to use this so the subject would be more easily controlled.” - [https://parahumans.wordpress.com/2013/01/31 Excerpt] from [[Interlude 18.y]].&lt;/ref&gt;
+
+Lung tends to react to attempts at crude emotional manipulation, such as [[Victoria Dallon]]'s fear aura, with aggression.&lt;ref name=9.11IIeE/&gt;
+
+Unconventionally, Lung tries to absorb all Asian gangs in his territory, regardless of nationality.&lt;ref name="2.2 e2"/&gt; This was at least partly motivated by the discrimination he faced as a half-Chinese man in prison, which affected him deeply.&lt;ref name="I6"/&gt;&lt;ref name="I22.y"/&gt;&lt;ref name="WoG1"&gt;[http://worm.wikia.com/index.php?title=Lung&amp;diff=4121&amp;oldid=4009 Edit by Wildbow]&lt;br/&gt;Note that this edit was [https://forums.spacebattles.com/posts/37804044/ partially retracted].&lt;/ref&gt;
+
+He believed that there was no point in fighting the [[Endbringers]], as they could not be killed. He felt they were better regarded as forces of nature.&lt;ref name="I22.y"/&gt; he preferred to just rule his section of Brockton Bay uncontested.&lt;ref name"22.4 c1"&gt;Lung has a high classification but a relatively low level of ambition. He had one powered minion (until early 2011 when he recruited Bakuda) and sought primarily to hold the docks as his territory. He ruled like a lesser king, had prostitutes and sex slaves, a protection racket and drug dealing, but he wasn’t fighting for a footing downtown.&lt;br/&gt;&lt;br/&gt;For all his (potential) power, he’d settled into a role as a street thug and gang leader.&lt;br/&gt;&lt;br/&gt;In terms of actual fighting, he also has to hold his own long enough to transform, and that’s sometimes tricky. - [https://parahumans.wordpress.com/2013/05/11/cell-22-4/#comment-22333 Comment] by Wildbow on [[Cell 22.4]]&lt;/ref&gt;
+
+Lung claimed that he had grown too used to power to bow and scrape for any length of time, although he was exceptionally polite at first while in prison. He preferred to be seen as a madman.&lt;ref name="1.6"/&gt; He had a strong belief in the power of fear; he was content to remain a seemingly minor villain in [[Brockton Bay]] because everyone there knew and feared him, allowing him to slowly grow his reputation without fear.&lt;ref name="I22.y"/&gt;&lt;!--tie in the strong valid in fear to the madmen stuff--&gt;
+
+During his Interlude, he thought to himself that his power's greatest drawback was the risk that he might die before he grew strong enough. He made a vow to himself that he would never die, never lose a fight. He resolved to always defeat those who insulted him.&lt;ref name="I22.y"/&gt; [[Taylor]] suspected that he would resent her succeeding where he failed more than his defeats at her hands.&lt;ref name="28.3"/&gt;
+&lt;!---petty king happy to lounge around and do nothing
+--&gt;
+===Relationships===
+[[Oni Lee]] was Lung's "flunky" in the [[ABB]], and his only [[parahuman]] subordinate for a time.&lt;ref name="1.3"/&gt;
+
+His subordinates in the ABB didn't protest when he grabbed them, even when it was painful.&lt;ref name="1.3"/&gt; He occasionally lapsed into another language when speaking to them.&lt;ref name="1.3"/&gt;
+
+[[Bakuda]] joined the ABB just before the story began.&lt;ref name="1.6"/&gt; His relationship with the half-White [[parahuman]] was influenced by his mixed-race background.&lt;ref name="I6"/&gt;&lt;ref name="I22.y"/&gt;&lt;ref name="WoG1"/&gt;
+===Reputation===
+While his ability to solo an endbringer, which few parahumans can, is known to certain authorities it hasn't seemingly traveled outside parahuman circles, Lung also hasn't seemd to trumpet the fact considering such fights futile.&lt;ref name="I22.y EB"&gt;“''The American heroes approached you.  What deals did you strike?''“&lt;br&gt;&lt;br&gt;Again, he didn’t answer.  He’d tried to tell them the truth, that he’d told the heroes to go away.  The Endbringers couldn’t die.  There was no point to fighting them.  Twice they had approached him with better deals, promising him the world, but he’d turned them down twice in turn.  He’d considered the idea of taking the third offer, but then he’d followed his mother to the C.U.I. states and lost touch with the Americans.&lt;br&gt;[...]&lt;br&gt;“I have enemies,” Lung thought.  “Those who have slighted me, those who have won.”&lt;br&gt;&lt;br&gt;“Like Leviathan?”&lt;br&gt;&lt;br&gt;Lung shook his head.  “Leviathan, I beat, if you can even call it an enemy.  It is a force of nature.  No, I speak of other enemies, insults old and new.  I will defeat each of them in turn, and then I will rule.” - [https://parahumans.wordpress.com/2013/05/21 Excerpt] from [[Interlude 22.y]]&lt;/ref&gt;
+
+Of note Lung's page on [[Parahumans Online]] redirected to the page on the [[ABB]] which covered everyone on the team,&lt;ref name="2.2 e1"&gt;I looked up Lung on the wiki, which I had done often enough before, as part of my research and preparation for being a superhero.  I’d wanted to be sure I knew who prominent local villains were and what they could do.  The search for ‘Lung’ redirected to a catch-all page on his gang, the ABB, with quite a bit of detailed information.  The information on Lung’s powers was pretty in line with my own experience, though there was no mention of the super-hearing or him being fireproof. - [https://parahumans.wordpress.com/2011/07/09 Excerpt] from [[Insinuation 2.2]]&lt;/ref&gt; and makes no mention of his fight with Leviathan.
+
+==Appearance==
+Lung was a little over six feet tall,&lt;ref name="1.3"/&gt; a half-Chinese, half-Japanese man.&lt;ref name="I6"&gt;[[Interlude 6]]&lt;/ref&gt; He was muscular, but not superhumanly so.
+
+He does not wear much of a costume, besides an ornate steel mask that resembled a dragon,&lt;ref name="1.3"&gt;[[Gestation 1.3]]&lt;/ref&gt;&lt;ref name="29.3"&gt;[[Venom 29.3]]&lt;/ref&gt; and left his eyes visible behind it.&lt;ref&gt;It was an image of Lung in his human shape, his eye sockets dark, raw and empty behind his steel dragon mask, his hand on one of his gang members’ shoulder. - [https://parahumans.wordpress.com/2011/12/17/tangle-6-2/ Excerpt] from [[Tangle 6.2]]&lt;/ref&gt; Instead he is the 'costume'; sprawling tattoos covered his body from the neck down, all depicting dragons from Eastern mythology. He wore a pair of jeans, and often went without a shirt exposing his tattoos.&lt;ref name="1.3"&gt;[[Gestation 1.3]]&lt;/ref&gt;&lt;ref name="29.3"&gt;[[Venom 29.3]]&lt;/ref&gt; The light brown of his eyes was permanently surrounded by an expanse of bloodshot red instead of whites.&lt;ref name="I16" /&gt;
+
+In the [[Birdcage]], he wore the standard grey cotton clothing, but tore the sleeves off his shirt to expose his arms.&lt;ref name="I16" /&gt; He had more dragon tattoos done while in the [[Birdcage]], and grew his hair longer.&lt;ref name="28.3"/&gt;
+
+Lung spoke in a deep, gravelly, commanding voice&lt;ref name="1.3"/&gt; as a result of the changes his power made to his body.&lt;ref name="I22.y"/&gt; He had a strong accent.&lt;ref name="1.3"/&gt; Taylor noted that "for someone as brutal and vicious as he was in the heat of battle, Lung had cold eyes."&lt;ref name="28.3"/&gt;
+
+When his power was in effect, Lung slowly transformed into a dragon-like creature with metal scales. Lung's transformation made his eyes glow orange, like molten metal.&lt;ref name="29.4"&gt;[[Venom 29.4]]&lt;/ref&gt;&lt;ref name="30.1"&gt;[[Speck 30.1]]&lt;/ref&gt;&lt;ref name="1.4"/&gt;&lt;ref name="1.5"/&gt; He would sometimes lose his mask in serious fights, revealing a catlike face with four mouthparts in an X shape, which made it difficult for him to speak when heavily transformed.&lt;ref name="5.8"/&gt;
+
+==Abilities and Powers==
+Lung has an enhanced physique, being stronger and more resilent than typical, with pyrokinetic abilites and excellent recovery abilities.&lt;ref name="I22.y e131"&gt;His power had granted him additional strength, durability, regeneration and control over fire even in his ordinary form, but the changes to his body had altered his voice. - [https://parahumans.wordpress.com/2013/05/21 Excerpt] on [[Interlude 22.y]]&lt;/ref&gt; What truly sets him apart is that his power caused him to gradually transform, making his powers more potent the longer he was in a fight. He healed at a superhuman rate, got stronger, got tougher, got bigger, and he grew armor plating complete with blades at each fingertip.&lt;ref name="1.3"/&gt;&lt;ref name="II19.1a"&gt;I wasn’t sure what his upper limit was, but I knew that when he’d had a good ten or fifteen minutes of growing time, he had been able to take on the entire Brockton Bay Protectorate, plus visitors and guests.  He didn’t get tired, and his regeneration sped up as he escalated.&lt;br&gt;[...]&lt;br&gt;The problem was that that took time. - [https://www.parahumans.net/2019/12/24 Excerpt] from [[Infrared 19.1]]&lt;/ref&gt;&lt;ref name="II9.10e1&gt;Lung is a changer, with powers hooked into the change [...] Lung changes to the same thing every time, slow progression, but a steady ramp-up the longer he’s in a fight.  Metal armor, pyrokinesis, enhanced senses, physiology, quickness, added parts. - [https://www.parahumans.net/2018/09/25/gleaming-9-10/ excerpt] from [[Gleaming 9.10]]&lt;/ref&gt; His scales resembled knives or spades,&lt;ref name="1.5"&gt;[[Gestation 1.5]]&lt;/ref&gt; and were bulletproof.&lt;ref name=":0"&gt;Lung was already partially changed as we sighted him.  He had enough scales that the officers who shot at him weren’t getting through, and he was big enough that the bullets that did make contact seemed to lack stopping power. Each couple of gunshots was answered by Lung throwing out a rolling wave of flames. - [https://www.parahumans.net/2018/09/25/gleaming-9-10/ excerpt] from [[Gleaming 9.10]]&lt;/ref&gt;
+
+As a product of his personality and durability he has some resistance to [[Master]] powers, such as emotional manipulation&lt;ref name=9.11IIeE&gt;But Lung was part of the handful I’d fought where I could input fear and get ''anger''.  Dean had run into the same thing, with emotions other than fear returning the same output.&lt;br/&gt;&lt;br/&gt;Some people, especially those of a more feral stripe, just processed things in a different way.  The upside was the tactical advantage in it, if I could adjust my expectations fast enough.&lt;br/&gt;&lt;br/&gt;The downside was that I had to make that adjustment.  ''Most'' of my costumed fighting experience was that my enemies would hesitate, get sloppy, or back off, but Lung, like Bitch, like the cooler but still dangerous Krieg or the seemingly unflappable Victor who would still act ''differently'' when under the influence of my power, attacking faster and more recklessly.  They were the people who were angry at the world, or those with the natural predisposition to fight rather than fly. - [https://www.parahumans.net/2018/09/29 Excerpt] from [[Gleaming 9.11]]&lt;/ref&gt; and pain or pleasure induction,&lt;ref name="RPPS"&gt;
+He'd recover from the pain faster. He's tough enough that he could probably endure through a few instances of it, and he'd get tougher over time. Chances are good that if she used her power on him, it might work at first, but if she kept trying to use it on him he'd turn around and surprise her, maybe with burns. If he saw she was aggressively trying to close in, he'd probably start fires between herself and him to make getting close harder.&lt;br&gt;&lt;br&gt;He'd recover from pleasure faster, for the record. It's an extension of the same process that makes him recover from poisons, blindness, and such much faster than is ordinary.&lt;br&gt;&lt;br&gt;His transformation isn't tied to harm taken or anything like that. It would just be a steady thing so long as he's in a fight, with a leap forward in transformation if he's in a critical situation (see him being stabbed through the chest the fight vs. Kaiser), and corresponding acceleration of recovery. - [https://redd.it/cmg2g6 Wildbow on Reddit]&lt;/ref&gt;  tending to respond with anger.&lt;ref name="9.11IIeE" /&gt; However some Master effects, like [[Goddess|Goddess']], overpower this trait.&lt;ref name=9.11IIe1/&gt;
+===Transformation===
+[[File:Worm -- Lung By DerTodesbote.png|left|thumb|320x320px|[http://fav.me/dcwglf9 Image] by [https://www.deviantart.com/dertodesbote dertodesbote] on DeviantArt.]]
+Lung's physical transformation began with scales growing over part of his body, providing armor. His fingertips sprouted claws. After a short while, his back would abruptly grow, sprouting scales and making him grow a foot taller.&lt;ref name="1.4"/&gt; A similar tear and subsequent sprouting of scales might come at his shoulder.&lt;ref&gt;Lung marched through knee-high fire, grabbing one of his wrists, hauling on it.  His shoulder came apart almost as if he’d torn it partially off, a gap visible in the flesh over where ball met socket.  Spikes and scales spilled out, stabbing through flesh and filling the gap, layering the surrounding area. - [https://www.parahumans.net/2018/09/29/gleaming-9-11/ excerpt] from [[Gleaming 9.11]]&lt;/ref&gt;
+
+At some point before his body was entirely covered in scales, he was sufficiently large and durable that any bullets striking his exposed skin didn't do much to slow him down,&lt;ref name=":0" /&gt; nor did slivers of metal.&lt;ref&gt;Goddess hurled a metal beam at him, and he leaped to the side, where he was struck by a volley of something else.  Slivers or spikes.  Some impaled him, but they didn’t slow him down. [...]  Lung was bright and easy to see.  Where he was covered in metal scales, the metal reflected the flames.  The rest of him was more of a silhouette against the bright flames.  - [https://www.parahumans.net/2018/09/29/gleaming-9-11/ excerpt] from [[Gleaming 9.11]]&lt;/ref&gt;
+
+By the time he was seven or eight feet tall, his shoulders were easily three feet across, and he was completely covered in scales. He was still able to speak normally, and he was still vulnerable to pepper spray, although it wore off unusually quickly. He was strong enough to make [[Bitch|Bitch's]] dogs rear back from the impact.&lt;ref name="1.5"&gt;[[Gestation 1.5]]&lt;/ref&gt; The dogs were able to subdue him, although he was weakened somewhat by the venom from [[Skitter]]'s bugs.&lt;ref name="1.6"&gt;[[Gestation 1.6]]&lt;/ref&gt;
+
+He grew wings if he fought long enough&lt;ref name="I22.y" /&gt;, although this was only a rumor to the public.&lt;ref name="1.3" /&gt; By the time he was nearly fifteen feet tall, spear-like wing-nubs stuck out of his shoulders. His voice was distorted; the shape of his skull and face were more catlike than human, and his nose and mouth were a single X-shaped opening, bristling with pointed teeth that stuck in every direction.&lt;ref name="5.8"&gt;[[Hive 5.8]]&lt;/ref&gt; His neck alone was nearly as long as [[Taylor]]'s torso and thicker at the base, tapering down to a more or less normal sized head. He could bend his neck in a ‘u’ shape to look behind himself. He was strong enough to leap to the rafters of a warehouse, and to throw one of [[Bitch]]'s dogs across the room. He employed martial-arts-like throws, which Taylor speculated might be a result of enhanced reflexes and flexibility rather than skill. His fingers were tipped with foot-long blades. His armour could be penetrated by [[Kaiser|Kaiser's]] blades, but he was tough enough to survive even serious wounds.&lt;ref name="5.9" /&gt; He was strong enough to overpower [[Victoria Dallon]]'s superhuman strength.&lt;ref&gt;I flew to the beam, grabbing it and trusting the Wretch to grab it on pure reflex.  It was a narrow shield and a deflection that kept the worst of the flames from knocking the Wretch back out of existence.  It was my weapon, to keep Lung at bay, to try and knock him down.  This time we swung.&lt;br&gt;
+He caught the beam with both arms, feet skidding in dirt.&lt;br&gt;
+Then it was only one foot in dirt.  The other came up, forward, and stomped down on the length of metal.    The Wretch broke, and the end of the metal beam struck the earth with enough force to send dirt pluming over my head, above me and behind me.&lt;br&gt;
+His weapon now.  He drew it back, adjusting his grip as he did to account for the lack of traction, ready to swing. - [https://www.parahumans.net/2018/09/29/gleaming-9-11/ excerpt] from [[Gleaming 9.11]]&lt;/ref&gt;
+
+Lung's wings then unfurled, batlike with silvery scales where the bat had fur, and dark red flesh that stretched between the ‘fingers’ of the wings. His entire midsection rearranged so he stood another foot or two taller. He was faster, stronger, more maneuverable.&lt;ref name="5.9"&gt;[[Hive 5.9]]&lt;/ref&gt; His increasingly alien "face" extended down the sides of his neck. He was strong enough to tear or bite through his own limbs. Although Goddess's telekinesis was able to stab numerous metal spears through him, he wasn't stopped by the injuries, nor by tearing off his own arm and hand.&lt;ref&gt;The face with the multiple sections that could pull away or draw in had expanded, and the growth included his neck now, with sections that could pull back, revealing teeth within.  There were spots that looked like they were scales that caught the light really well, but I was suspicious that they were eyes glowing molten.&lt;br&gt;
+[...]&lt;br&gt;
+As a steel beam slammed into his arm, crushing part of it, driving through flesh and scale, he didn’t look surprised or bothered.   He lunged out of the way of the remainder of the volley, and then he seized his damaged flesh.&lt;br&gt;
+Where scales had been parted, he dug in claws, and he tore away the flesh that burned.  Damage that would have killed another man served for Lung to have a handhold in his own altered flesh.  He tore into chest and arm, the chunks burning like crimson rags soaked in gasoline.&lt;br&gt;
+I took flight before he could finish.  I saw him tear away fifteen pounds of mass with blade-like scales embedded in skin, in muscle, and in one fragment of bone.  I saw the blood spill to the ground by modest buckets worth, and he barely seemed to care.  His focus was on the hand that he’d used to tear, that now burned.&lt;br&gt;
+Goddess was using the weapons she’d already used for her earlier volley.  They were pulled free all as one, then sent out in another volley.  As Lung brought his wrist to his mouth, the volley struck home.  Spikes that were ten feet long impaled his legs and fixed them to the ground.  Others caught him in the chest.  One struck his face and knocked a mouth-part free, and sent the burning hand flying.&lt;br&gt;
+At his back, wings unfolded.  He opened the various mouth parts to drool out the last chunks of his hand. - [https://www.parahumans.net/2018/09/29/gleaming-9-11/ excerpt] from [[Gleaming 9.11]]&lt;/ref&gt; He was able to recover from having his torso split open in moments without slowing down.&lt;ref&gt;The hit connected, and I saw the spray of blood as one side of his chest cavity opened.  Sternum to lower rib.  Sliced through the lung.&lt;br&gt;
+There was no humor in the irony, only a chill, as I saw blood fountain out.&lt;br&gt;
+In the midst of smoke, I saw him stagger.  I saw him draw in a deep breath, his chest coming apart in sections, like twenty fragments breaking apart, then coming back together in another configuration.  His back popped, scale scraping against scale as it extended. [...] It hadn’t even slowed him down. - excerpt from [[Gleaming 9.11]]&lt;/ref&gt; &lt;ref name=":1"&gt;“Goddess!” I shouted.  We needed to coordinate on this.&lt;br&gt;
+“She’s gone.  Getting more help,” a woman’s voice cut through the smoke.&lt;br&gt;
+Too little, too late.&lt;br&gt;
+The Wretch wasn’t enough.&lt;br&gt;
+Even if I’d been one hundred percent coordinated, it wouldn’t have been enough.&lt;br&gt;
+The purple flames surged, diffuse in the gray-black haze of smoke.  Lung’s eyes were molten white, larger than before.&lt;br&gt;
+I heard him chuckle.  He knew.  That we were past the point where we could do it. - [https://www.parahumans.net/2018/09/29/gleaming-9-11/ excerpt] from [[Gleaming 9.11]]&lt;/ref&gt;
+
+By the time he was as large as [[Leviathan]] - that is, thirty feet tall - he had four wings, four hands, and two digitigrade feet. He was bristling with layers upon layers of silver scales.&lt;ref&gt;I could see Lung finding his feet.  As large as Leviathan, four wings, four hands, two digitigrade feet.  King of Cup's power had faded, but regeneration had made up for it.  Lung was intact, naked, massive, monstrous and bristling with layers upon layers of silver scales. - [[Venom 29.2]]&lt;/ref&gt;
+
+At the most extreme end of his transformation he was larger than Leviathan and capable of trading blows with an Endbringer; four wings extended from his back.&lt;ref name="I22.y" /&gt; There wasn’t a hard upper limit to how strong he could get.&lt;ref name="1.3" /&gt;&lt;ref&gt;[https://parahumans.wordpress.com/2013/05/21/interlude-22-donation-bonus-1/#comment-23797 Comment by Wildbow] on [[Interlude 22.y]]&lt;/ref&gt;
+
+Although Taylor believed that Lung "only started returning to normal when there was nobody left to fight",&lt;ref name="1.3" /&gt; his power actually began to leave him during his fight with Leviathan.&lt;ref name="I22.y e78"&gt;For that indeterminate period of time, Lung was king of the world.&lt;br /&gt;&lt;br /&gt;But he began to weaken.  The lesser heroes were gone, washed away or helping others to evacuate, the greater heroes a distance away.&lt;br /&gt;&lt;br /&gt;And Lung had nothing to fuel his power.  He was engaged in a fight of ten times the scale he’d been in before, and his power was leaving him. - [https://parahumans.wordpress.com/2013/05/21 Excerpt] on [[Interlude 22.y]]&lt;/ref&gt; His [[passenger]] decided when he could  transform and by how much, enough potential conflict could warrant further transformation and use of its vast, but still limited, power reserve.&lt;ref&gt;Lung doesn't actually run on adrenaline thoug it's very easily confused. Lung has a strong (if conditional) connection to his passenger, which decides when a situation has enough conflict to warrant transformation (and expenditure of the passenger's energy reserve - [https://www.reddit.com/r/Parahumans/comments/2f5ath/_/ck6mceu Comment by Wildbow on Reddit]&lt;/ref&gt; He transformed faster against more formidable or numerous opponents.&lt;ref name="29.4" /&gt;&lt;ref name="I22.y e78" /&gt;&lt;ref&gt;Bulletbrainsurgery: Can't find the exact quote at the moment, but I think it's implied in his interlude that he ramps up faster when there are capes around.&lt;br /&gt;&lt;br /&gt;Wildbow:&lt;br /&gt; Yep - [https://www.reddit.com/r/Parahumans/comments/6jfn5k/spoilers_lungs_power/djeasqd/?context=3 conversation] with Wildbow on Reddit&lt;/ref&gt; Enemies hidden by [[Mantellum]]'s powers didn't provoke Lung's ability, even if he could see them.&lt;ref name="29.4" /&gt;
+
+Anticipating a fight, Lung could build up a charge to accelerate the rate of his transformation.&lt;ref name="29.4" /&gt; He could feel the scales and heat building up inside him.&lt;ref name="I22.y" /&gt; When he was on the brink of transforming, his eyes glowed orange and scales stood out under his skin like hives.&lt;ref name="29.4" /&gt;&lt;ref name="29.5"&gt;[[Venom 29.5]]&lt;/ref&gt;
+===Pyrokinesis===
+Lung could create flame out of thin air, shape it, intensify it, and so on. This ability became stronger as he transformed.&lt;ref name="1.3" /&gt; His flames didn't require fuel, and may not have consumed oxygen.&lt;ref&gt;Surely he was burning up all of the oxygen in his vicinity.  Didn’t he need to breathe?  What the hell was the fuel source for his fire? - [https://parahumans.wordpress.com/2011/06/21/gestation-1-4/ excerpt] from [[Gestation 1.4]]&lt;/ref&gt;&lt;ref&gt;Fires, purple and otherwise, spread out across ground that should have been exhausted of all fuel sources. - [https://www.parahumans.net/2018/09/25/gleaming-9-10/ excerpt] from [[Gleaming 9.10]]&lt;/ref&gt; He could create a small flame in his hand and hold it,&lt;ref name="29.4" /&gt; or hurl fireballs through the air.&lt;ref name="29.5" /&gt;
+
+[[File:Lung by lonsheep-darj8gl.png|thumb|320px|[http://fav.me/darj8gl Image] [https://forums.spacebattles.com/threads/tabloid-worm-artfic.455278/ babylonsheep] on SpaceBattles.]]
+His power was partially inhibited by tranquilizers, damp, and cold. Even under their effects, without transforming, he was still able to heat a metal strip white-hot.&lt;ref name="I6" /&gt; He could light a flame in his hands without transforming.&lt;ref name="29.4" /&gt; 
+
+Early in a fight, with only a portion of his body covered in armor, he was able to fire jets of fire into the sky and create localized explosions that burned everyone around him.&lt;ref name="1.4"&gt;[[Gestation 1.4]]&lt;/ref&gt; By the time he was a foot taller, he was capable of keeping himself constantly on fire.&lt;ref name="1.4" /&gt; He could throw out rolling waves of flame.&lt;ref name=":0" /&gt; He could curve and shape the pillars of flame he sent out towards targets,&lt;ref&gt;A column of flame stabbed skyward like an giant’s spear, forged of explosions.  I flew out of the way, and the spear curved, following me.  I tried to fly  back toward the base of the column so that the ‘head’ with the momentum behind it would have a harder time chasing me, saw a light pulse within it, and I put some distance between myself and the column.  The column expanded- regular orange fire, and not purple.  He was holding back on the purple. - [https://www.parahumans.net/2018/09/29/gleaming-9-11/ excerpt] from [[Gleaming 9.11]]&lt;/ref&gt; or shape existing flames into curving pillars and spears&lt;ref name=":2"&gt;Columns and tapered spikes of fire speared up without much warning or reasoning as to where they came from.  Lung wasn’t near all or even most of them, but he fired, and the orange light illuminated me.  As Teacher’s thralls had done with their anti-air guns, Lung was trying to box me in, caging me.  Five spikes in a couple of seconds, all curving in the air as I changed my direction. [...]  As I fell down, fire spiked up, aimed right for me. [...] As I made my aerial maneuvers around flares that worked like explosions constrained within invisible cylinders, the heat in the air sucked all moisture from my mouth and eyes.  Had I been running, the heat would have knocked the wind out of me, saw me crumpling to my knees. - [https://www.parahumans.net/2018/09/29/gleaming-9-11/ excerpt] from [[Gleaming 9.11]]&lt;/ref&gt;&lt;ref name=":3"&gt;Double fuck, I thought, as fire came down from above, far too close to me.  He’d manipulated the fire of a spear of flame that extended high above me.  The prickle of heat and the wave of it that seemed to soak into my core and take the breath from my lungs and the oxygen from my blood hit me harder than the last time.  It was that staggering, fall-to-my-knees kind of heat, and it hadn’t been a direct hit. - [https://www.parahumans.net/2018/09/29/gleaming-9-11/ excerpt] from [[Gleaming 9.11]]&lt;/ref&gt; which resisted attempts to extinguish them with telekinesis.&lt;ref&gt;I saw Lung fire out the long gouts of flame that pierced through the sky, illuminating the scant clouds above and turning them orange.  He placed them all in Goddess’ vicinity, and she used her telekinesis to scatter the flame.  The fires didn’t go out, instead licking through the heavy smoke in the air like slow motion explosions.&lt;br&gt;
+Lung was keeping the air aflame using his pyrokinesis.&lt;br&gt;
+[...]&lt;br&gt;
+While airborne, he slashed with one hand, flames at his fingertips, and fire moved in a similar pattern a dozen feet below and behind him.  The movement of the fire connected one of the columns of fire he’d made near Goddess to a nearby patch of purple flame. - [https://www.parahumans.net/2018/09/29/gleaming-9-11/ excerpt] from [[Gleaming 9.11]]&lt;/ref&gt; He could extinguish patches of his flames if he wished.&lt;ref&gt;I used my aura, with an eye on where the purple flames were still burning below.  The purple fire on the ground expanded, touched other flames and spread through them.  It was a domino effect, and one that Lung seemed aware of.  He used his power to extinguish fires around him, a sharp intake of breath’s span before the purple fire spread to that area.  - [https://www.parahumans.net/2018/09/29/gleaming-9-11/ excerpt] from [[Gleaming 9.11]]&lt;/ref&gt; 
+
+Past a certain point, his fires were hot enough to weaken anyone near them who wasn't resistant to fire.&lt;ref name=":3" /&gt;&lt;ref name=":2" /&gt; With his body fully inhuman, he could cause all fire across a wide area to swell dramatically. [[Victoria Dallon]] speculated that he would reach the point where he could take on [[Goddess]] and her army singlehanded shortly after.&lt;ref name=":4"&gt;He was big now, but he was nimble.  A corner of the building hit the ground and rolled through the fires without breaking up.  Lung leaped on top of it, then leaped to another point, the beam that Rain had sliced.  It was just the tip, cut at a diagonal, and left leaning against the fence.  Lung had one foot on the tip, another on the top of the chickenwire fence, barbed wire crumpled underfoot.  No skin showed, his arms, legs, spine and neck were all extended now, and the mass along the length of his body was swelling steadily.  He reached up with claws of steel, seized his mask, and tore it free, casting it off.&lt;br&gt;
+The face beneath was even less human.&lt;br&gt;
+Lung lifted one claw, moving it through the air.  Fire swelled dramatically.  I could see that the point where he didn’t even need the purple fire anymore wasn’t that far away. - [https://www.parahumans.net/2018/09/29/gleaming-9-11/ excerpt] from [[Gleaming 9.11]]&lt;/ref&gt;
+
+When he was fifteen feet tall, his fire was blue-yellow and hot enough to soften steel. At sixteen or seventeen feet tall, his "explosion" was ten times as large and hot as before. He was able to disrupt [[Sundancer]]'s attempts to form her miniature sun, and create a huge torrent of flame large enough to hide his form and engulf her. &lt;ref name="5.9" /&gt; Shortly past this point, [[Victoria Dallon]] and Lung himself estimated that he was singlehandedly the equal of Goddess and her combined army.&lt;ref name=":4" /&gt;&lt;ref name=":1" /&gt;
+
+When he was thirty feet tall, his power resembled Sundancer's, being more like plasma than fire, and melted sand on contact. At the most extreme end of his transformation, when he was larger than [[Leviathan]], he burned so hot that the steel-like flesh just beneath Leviathan’s skin was blackening and charring to ash by proximity alone.&lt;ref name="I22.y" /&gt;
+
+Lung was [[Manton Effect|immune to his own fire]], and possibly resistant to fire generally, but this wasn't widely known.&lt;ref name="2.2 e1" /&gt;&lt;ref name="1.4" /&gt; However, even combined with his superhuman stamina, this didn't fully protect him from the intense heat produced by [[Sundancer]]'s power.&lt;ref name="5.9" /&gt;
+
+===Healing===
+Lung could heal almost any injury, given time, provided it didn't kill him outright. It would take him about a month to regrow a limb. By the time he was sixteen feet tall, he could shrug off a spear through his heart.&lt;ref name="5.9" /&gt; His eyes had partly grown back by the time he was tried, taking over a week to heal.&lt;ref name="I6" /&gt; His flesh would decompose without a connection to his brain.&lt;ref&gt;(The eyes would decompose without a connection point to Lung’s brain.) - [http://parahumans.wordpress.com/2012/06/26/plague-12-1/#comment-2731 Comment by Wildbow] on [[Plague 12.1]]&lt;/ref&gt;&lt;ref name="r1"&gt;Brutes (esp. regenerators) and changers often relocate their cores/coronas to the hardest to access part of their body, or adapt to do without. - [https://redd.it/6d99gw Reddit comment] by Wildbow&lt;/ref&gt;
+
+When fighting [[Leviathan]], he rapidly recovered from a blow from the [[Endbringer]] that shattered bones and organs, even though he wasn't yet strong enough to hurt the Endbringer. By the time he was half the size of the monster - that is, fifteen feet tall - he was able to trade blows with it, not hitting as hard as Leviathan but recovering faster than the endbringer did.&lt;ref name="I22.y" /&gt;
+
+Lung's healing made him resistant, but not totally immune, to toxins.&lt;ref name="1.4" /&gt;&lt;ref name="5.9" /&gt; This makes medical care, including dosage, difficult as medicine needs to be calibrated to account for his healing abilities. &lt;ref name="9.11IIe1"&gt;“It’s a power nullifying chemical,” the same woman said.  She stepped forward.  Words were tattooed beneath her eyes, so they traced straight lines down to her jaw.  ‘Crock’ and ‘Shit’.  Colorful, for words in black ink.  More ink put scales at her arms and neck.  “Nullifying your influence, Goddess.”&lt;br /&gt;[...]&lt;br /&gt;Goddess turned her attention to Lung.  “Did you take the drug?”&lt;br /&gt;&lt;br /&gt;He shook his head.&lt;br /&gt;&lt;br /&gt;“Truth,” Crock o Shit said.&lt;br /&gt;&lt;br /&gt;“He regenerates,” I said.  “Drugs have reduced effect.”&lt;br /&gt;&lt;br /&gt;Lung nodded. - [https://www.parahumans.net/2018/09/29 Excerpt] from [[Gleaming 9.11]]&lt;/ref&gt; His system can still be "overloaded" if he overdosed with drugs, overwhelming his healing abilities by forcing them to focus entirely on fighting off the poison. This allowed [[Skitter]]'s poisons to do more damage than they usually would while he was fighting off tinker tranquilizers administered by [[Armsmaster]].&lt;ref&gt;[https://parahumans.wordpress.com/2012/07/26/interlude-12%C2%BD/#comment-3253 Comment by Wildbow] on [[Interlude 12.5]]&lt;/ref&gt;
+===Senses ===
+By the time he had grown a foot taller, Lung had significantly enhanced hearing,&lt;ref name="29.5" /&gt; &lt;ref name="29.6&amp;quot;"&gt;[[Venom 29.6]]&lt;/ref&gt; and like his other attributes it scaled as he transformed.&lt;ref name="I22.y" /&gt; This aspect of his powers was not widely known to the public,&lt;ref name="2.2 e1" /&gt;&lt;ref name="1.4" /&gt; but was known to [[New Wave]].&lt;ref&gt;His senses were improving, going by his ability to track me in the gloom. - [https://www.parahumans.net/2018/09/29/gleaming-9-11/ excerpt] from [[Gleaming 9.11]]&lt;/ref&gt;
+
+==History ==
+===Background===
+Kenta joined [[Daiichi's Gang]] while he was in school. Daiichi found out about a drug deal and planned to interrupt it and take the money that was being used to pay for the drugs. Lung realized shortly after they attacked that they could not take on [[Contessa]], but was not able to get Daiichi to listen to him. He was taken down by Contessa who then attempted to suffocate him by keeping his face pressed down in the drugs. He ingested some of the drug and then triggered after realizing that he might be having a heart attack. He pretended to be dead until Contessa left. He got up and found the other members of his gang dead or dying before holding Arata's hand until he died.&lt;ref name="I22.y" /&gt;
+
+[[File:ELL vs. EEL.jpg|thumb|320x320px|[http://fav.me/daddi0h Lung battling Leviathan in Kyushu] by [https://www.deviantart.com/dertodesbote dertodesbote].]]When [[Leviathan]] attacked Kyushu, Lung watched and waited for his power to make him strong enough to fight the Endbringer. A [[Sentai Elite]] asked him about whether he was a hero or villain before he told her that he was neither and that she should be fighting. She told him about her power and he told himself that he was going to fight. When he noticed Leviathan was occupied, he charged into battle. He eventually became capable of battling Leviathan by himself and fought the Endbringer for an indeterminate period of time. Eventually, he began to weaken because of the lack of something to fuel his power with. Leviathan broke away and retreated into the ocean and Lung, being unable to swim, was retrieved by [[Alexandria]].&lt;ref name="I22.y" /&gt;
+
+After the battle, the [[Protectorate]] repeatedly tried to recruit Kenta, but he turned down all offers, believing that Endbringers cannot die.&lt;ref name="I22.y EB" /&gt;
+
+One year later, Lung and his mother moved to [[Wikipedia:Chaohu|Chaohu]], in the [[Chinese Union-Imperial|CUI]]. After four months there he was arrested by the [[Yangban]]. He learned the rules of prison and bowed his head to a leader of the prison who used him in a war against another. He was placed in higher security where he attacked a man bringing him food, nearly escaping the prison until [[Tōng Líng Tǎ]] captured him and then trapped him in the base of a pit he could not escape. Every two weeks he was asked to join The Yangban and reveal his connections with Americans. After enduring it for a year and four months, Kenta realized that this would not stop and the Yangban would eventually erode his will and steal his powers, so he decided to risk joining for a chance to break out.&lt;ref name="I22.y" /&gt;
+
+Lung eventually escaped the Yangban and travelled to the [[United States of America]] where he joined the original [[Azn Bad Boys]], He defeated the local heroes and a number of other gangs, one of which he recruited [[Oni Lee]] from.&lt;ref name="I22.y" /&gt; He typically suborned gangs, cannibalized them for assets and manpower, then discarded anyone he didn't want.&lt;ref name="2.2 e2"&gt;The section beneath the description of Lung and his powers covered his subordinates.  He was estimated to have forty or fifty thugs working for him across Brockton Bay, largely drawn from the ranks of Asian youth.  It was pretty unconventional for a gang to include members of the variety of nationalities that the ABB did, but Lung had made it a mission to conquer and absorb every gang with Asian members and many without.  Once he had the manpower he needed, the non-Asian gangs were cannibalized for assets, their members discarded.  Even though there were no more major gangs in the east end of town to absorb, he was still recruiting zealously.  His method, now, was to go after anyone older than twelve and younger than sixty.  It didn’t matter if you were a gang member or not.  If you were Asian and you lived in Brockton Bay, Lung and his people expected you to either join or to pay tribute one way or another.  There had been local news reports on it, newspaper articles, and I could remember seeing signs in the guidance counselor’s office detailing where people who were targeted in this way could go for help. - [https://parahumans.wordpress.com/2011/07/09 Excerpt] from [[Insinuation 2.2]]&lt;/ref&gt;
+
+He eventually came to Brockton Bay, soon after arriving Lung fought and defeated a [[Protectorate]] team consisting of [[Armsmaster]], [[Dauntless]], [[Miss Militia]], [[Velocity]], [[Challenger]], [[Assault]] and [[Battery]]. He suffered a number of minor defeats at the hands of various teams, including the [[Guild]], the local [[Protectorate]] and [[Wards]], and [[New Wave]], but consistently managed to evade capture, fighting whole teams of heroes at once.&lt;ref name="2.2"&gt;[[Insinuation 2.2]]&lt;/ref&gt;&lt;ref name="1.3" /&gt;&lt;ref name="II19.1a" /&gt;
+
+At one point [[Victor]] sent Lung video of ABB members he abducted and tortured.&lt;ref&gt;According to the gathered info that had been released about the Empire Eighty-Eight villains, [Victor]’d once tortured ABB gang members, taking away all pain tolerance and willpower, because those were skills we all learned over the course of our lives.  He’d broken them, then taunted Lung with videos of him lording over the once-proud gang members that now acted like animals. - [https://www.parahumans.net/2019/11/19 Excerpt] from [[Radiation 18.2]]&lt;/ref&gt;
+
+===Story Start===
+Lung exited a building alongside his underlings who then gathered around as he told them how they should deal with the [[Undersiders]]. He then attacked the sudden swarm of insects that descended on them before detonating in a blast of rolling heat to kill the insects that came at him. He detonated again before lashing out when he saw the insects again. He detonated again after a wasp stung his eyelid and roared. A honeybee stung his eye before he covered himself from head-to-toe in flame and began to look for his assailant. His enhanced hearing picked up on the sound of crunching gravel and he whirled around to see a figure standing atop a nearby building before roaring victoriously.&lt;ref name="1.4" /&gt;
+
+Lung jumped across the street and onto the building his assailant was hiding on and started to climb up. When he got to the top, his shoulder was grazed by pepper spray which then erupted into a short-lived fireball. He was then struck in the face with the spray and he screamed. He stumbled but managed to stay on the roof so that, when the pain passed, he hauled himself over the edge of the roof. He lashed out with a broad wave of flame before demanding that his assailant make some noise so he could find them.
+
+Then, he wiped his eyes and spotted the Undersiders atop a nearby roof from firing at them. He was forced to his knees when one of [[Bitch|Bitch's]] enhanced dogs landed on him before he smacked its snout, forcing it back. It then rhino-charged him which sent them both tumbling off the roof where they then crashed onto the street. He fought the dog for a while before Bitch sent her other two dogs down to assist it. Together, they managed to defeat him before leaving him on the street.&lt;ref name="1.5" /&gt;
+
+Lung was later found by [[Armsmaster]] who had arrived on his bike. He tranquillized Lung before welding a steel cage around him as a temporary restraint. He was then taken by Armsmaster and put into PRT custody where he received medical treatment.&lt;ref name="1.6" /&gt;
+
+Lung got in contact with one of [[Bakuda|Bakuda's]] spies in the PRT and had them relay the story of his defeat to her.&lt;ref name="4.10"&gt;[[Shell 4.10]]&lt;/ref&gt; [[Oni Lee]] helped him escape during the subsequent bombings around the city before he was reinstated as the leader of the Azn Bad Boys.&lt;ref name="4.11"&gt;[[Shell 4.11]]&lt;/ref&gt; When he overheard someone talking about the name the PRT gave Skitter, he spread it through the city and said that he was looking for her.&lt;ref&gt;[[Hive 5.2]]&lt;/ref&gt;
+
+Lung was inside one of the Azn Bad Boys' warehouse when the coalition of Brockton Bay's other gangs attacked. He ripped a hole in the warehouse wall and followed his thugs inside before [[Max Anders|Kaiser]] entered. He lunged at Kaiser, but stopped himself to avoid being impaled on the blade Kaiser created. He then surveyed the room before spotting Skitter.&lt;ref name="5.8" /&gt;
+
+Lung laughed before lunging at Skitter only to be intercepted by Judas. He tossed the dog across the room and then hurled Angelica at it. He was then blocked by a barrier of blades before he tried to jump up to the rafters. He was slammed back to the ground by a steel pillar before Kaiser trapped him inside a pyramid of blades. Lung softened the metal and tore his way free before another pillar carried him to the opposite side of the room. He went after Kaiser, sidestepping an outcropping of blades, and was beaten back by [[Fenja]] and [[Menja]]. He directed flame at them only for one of the twins to block it before Skitter directed her insects at him. He raised a hand against [[Sundancer|Sundancer's]] sun only for his legs to buckle as she moved it closer. Kaiser pushed him towards the sun and he fell into the molten asphalt underneath it before Kaiser impaled him through the heart.
+
+Lung removed the spear and snapped it with his claws before standing up. He lunged at Kaiser and flew over his blades before slamming Kaiser against the wall a few times. He detonated and drove Fenja and Menja back before driving his hand into Menja's gut. He stopped Sundancer from using her power and sent a torrent of flames at her, backhanding her once the flames died and she was revealed to be unhurt. He then turned to Skitter, laughed, and killed her insects with a rush of flames. He grabbed Bitch from Brutus' back and grabbed the dog by the neck, throwing the dog aside. When Angelica and Judas rushed forward, he stopped them by threatening to harm Bitch. He then picked up Skitter and dropped Bitch to deal with a fly near his eye only to then step on her to prevent her from escaping. Skitter managed to escape before he fell forward due to the hallucinogenic blood that Skitter had coated her insect with. She then finished it by carving his eyes out.&lt;ref name="5.9" /&gt;
+
+Lung was later seen in a photograph showing a subordinate leading him through the Docks. &lt;ref name="6.2"&gt;[[Tangle 6.2]]&lt;/ref&gt; He was later brought into PRT custody and sentenced to the [[Birdcage]].&lt;ref name="6.4"&gt;[[Tangle 6.4]]&lt;/ref&gt;
+
+Lung was restrained and put into a van alongside [[Paige Mcabee]] and Bakuda. Bakuda goaded him into using his power to heat a few pieces of metal. He made a plan to use Paige's power to control the people who would transfer them into the Birdcage and free them only to be dragged out of the van by metallic arms. He was then told by [[Dragon]] what the Birdcage was and his chances of escaping before he was transported into the prison.
+
+Lung later traveled to the hole between the male and female sections of the prison and bribed the guard with some cigarettes. He then gave some cigarettes to a group of guards as a gift for [[Glaistig Uaine]]. After reaching Bakuda's cell, he informed her of the four ways a person could survive in prison. She threatened to kill the both of them if he came any closer to her before he told her that she wouldn't be fast enough to stop him.&lt;ref name="I6" /&gt; He killed her and then went on to murder three other prisoners, one of whom was the second person ever incarcerated in the Birdcage.&lt;ref name="10.5" /&gt;
+
+Lung later had dinner with [[Marquis]]. He was annoyed with how Marquis had run his own organization and then argued that Marquis controlled people through fear. He then accused Marquis of wanting something before he told Marquis about his daughter and what had been going on in Brockton Bay.&lt;ref name="10.5"&gt;[[Interlude 10.5]]&lt;/ref&gt;
+
+After [[Amy Dallon]] was sentenced to the Birdcage, he began to lose respect for Marquis and wondered if he would be able to see things through. &lt;ref name="I16"&gt;[[Interlude 16.z]]&lt;/ref&gt;
+
+Lung was present during a meeting to discuss what Amy had discovered. He listened as [[Teacher]] questioned her about it and how that correlated to the Endbringers. Marquis suggested that they attempt a breakout before [[Spruce]] entered and told them that there was big news. He learned that Skitter had killed [[Alexandria]] before Cinderhands asked him about her. He told him that she had beat him twice though he was captured by others. He watched as Skitter stepped onto the screen and revealed her new identity before Teacher asked him if he felt reassured. He told Teacher that he had lost to her because of an underhanded trick. Listening to Skitter's speech, he noted that she was stronger before and agreed with Marquis that the line between something noble or foolish was a thin one.
+
+Teacher asked him for a word and Lung followed him out of Marquis' cell block. Teacher said that he could be useful to Lung and Lung told him that he had nothing to give him. He listened as Teacher told him about his power before saying that it came at the cost of a person's independence and that wasn't something he wanted. Teacher then told him that the reason they had been captured was because they lacked something that the others lacked before saying that his power required a certain mental state. Lung agreed, but said that he wouldn't let Amy use her power on him before Teacher offered to give him the ability to control when he changed.&lt;ref name="I22.y" /&gt;
+
+Upon arriving in Teacher's cellblock, he looked at the prisoners there before Teacher told him how they could "unlock" his power. Teacher asked if he and Marquis were friends and Lung agreed that he was a peer. He listened as Teacher explained how Dragon watched them and how he was able to get into contact with [[Saint]] before asking if they would use that to escape. Teacher told him that they would wait until they were let out of the Birdcage for the assistance they could give and told Teacher he had no attachment to the current state of things. He then agreed with Teacher to have Saint manipulate things so that they could go free before saying that his power would be left alone. He told Teacher he would kill him for trying to mess with him before saying that he didn't care what Teacher did. He then went on to say that he would work with Teacher for a time if he went free before he left.&lt;ref name="I22.y" /&gt;
+
+Lung returned to Marquis' cell block and found himself surprised when Marquis offered him a seat and some tea. He thought about telling Marquis what Teacher had planned before deciding not to, instead commenting about the tea before going silent.&lt;ref name="I22.y"&gt;[[Interlude 22.y]]&lt;/ref&gt;
+
+===[[Gold Morning]]===
+Lung was later released alongside several other prisoners to combat [[Scion]]. Upon stepping through the portal, he looked around at those that had gathered and stared at Skitter, Bitch, and Grue before Panacea stepped out of another portal and talked with her for a moment.&lt;ref name="27.3"&gt;[[Extinction 27.3]]&lt;/ref&gt;
+
+Later, Lung and Spruce led [[Bonesaw]] to where Amy and Marquis were treating people. He pushed her and then told her not to be cutesy, telling her that they had warned her about that before. She reluctantly agreed before asking where he wanted her to go and he pointed before taking her there. Once Bonesaw was beside Amy, he placed his hand on her head and arrested her forward momentum. He asked if those gathered were going to fight before Skitter told him that they would fight anything in their way. Tattletale said that they would be fighting Scion, the Endbringers, and the Yangban and Lung told her she didn't need to manipulate him as he would fight if she asked him to. When Skitter nodded, he told them that he was going to collect his mask before he left.
+
+Lung then entered the Door Skitter had created and spotted [[Shadow Stalker]]. He said that he remembered her and that her arrows hadn't hurt him before wondering why they would waste time with a weakling like her. After Skitter convinced Shadow Stalker to come with them and opened another Door, he shouldered his way past Bitch to be the first one inside. After Shadow Stalker learned what they were doing and threatened to kill them if they didn't turn the ship around, he shoved her against the side of the ship. Shadow Stalker used her power to escape before Imp pinned her down with a length of wire. She then asked Lung if he was okay with what they were doing and he said that he did.&lt;ref name="28.3"&gt;[[Cockroaches 28.3]]&lt;/ref&gt;
+
+When Skitter told them that they had arrived, Lung fell silent. He listened as Tattletale tried communicating with the [[Simurgh]] before thinking to use their powers to communicate. He agreed with Shadow Stalker about the situation being ridiculous and Tattletale agreed with him before going on to say that the Endbringer might give them credit for trying. He told her that Endbringers didn't give credit, repeated his earlier statement of it being ridiculous, and told her that she had stopped in the middle of a conversation. He then gave Skitter a funny look when she said the thought of provoking the Simurgh was frightening. Later, when Bitch said that they might be able to fight Scion with the Simurgh, he agreed with her. He then told them he had seen them when they tried something big and failed.&lt;ref name="28.4"&gt;[[Cockroaches 28.4]]&lt;/ref&gt;
+
+Later, Lung watched the Simurgh attack Leviathan before asking what happened. Tattletale told him that the Simurgh had upgraded Leviathan. He then listened as Skitter and Tattletale talked with Doctor Mother and explained their actions. He learned that Khonsu had imprinted on Teacher's group.&lt;ref name="28.5"&gt;[[Cockroaches 28.5]]&lt;/ref&gt;
+
+Lung stayed in Brockton Bay with Miss Militia while the others in his group had said goodbye and made arrangements. He later joined the fight and was seen by Skitter amongst those that had been given artificial limb replacements by King of Cups. Sometime afterward, he limped forward and shouted for someone to removal the artificial leg as he couldn't affect it with his power. After King of Cups' death, Lung's regeneration made up for his lost limb. He joined the fray, supporting Glaistig Uaine as she flew over the battlefield to access the injured and dead.
+
+Lung later attacked Scion when his back was turned and plunged him into the molten sand. His regeneration made up for the damage that Scion's golden light caused him and his flames swelled in reaction to how the light intensified. Scion pulled him down and rose up only for the others to attack him. He then attacked Scion again when he hit the ground. Scion fought his way free and then struck Lung aside. When Bastard crashed into Lung, Lung grabbed him and threw the wolf at Scion.&lt;ref name="29.2"&gt;[[Venom 29.2]]&lt;/ref&gt;
+
+Lung was present for [[Khepri]]'s [[Rise of Khepri|transformation]], but did little. He was briefly caught in her power, helping the others to understand what she could do.&lt;ref name="30.2"&gt;[[Speck 30.2]]&lt;/ref&gt;
+
+He was deployed against Scion during the ensuing conflict and was present at the final conflict in New York.
+
+===Post-[[Gold Morning]]===
+Destroyed some suspicious looking clone.
+
+===Post-[[Mathers Compound Assault|Fallen Fall]]===
+Lung was hired by [[Teacher]] again, arrived into besieged parahuman prison as a leader of mercenary cavalry hired by [[Teacher]].&lt;ref&gt;[[Gleaming 9.9]]&lt;/ref&gt; With the assistance of the Pharmacist he provided distraction for [[Goddess]] and her forces, while his team-mates [[Blindside]] and [[Kingdom Come]] headed into underground tunnels to get control over tracking and ankle-bombs control system.
+
+He engaged in a [[Antares vs Lung|fight]] with [[Antares]].
+
+Once the Pharmacist was found and captured by [[Antares]], Lung was aligned by Goddess' power.
+
+When Goddess was killed he left with the Red Queen.
+
+===Post-[[Goddess' Takeover]]===
+Presumably was on [[Earth Shin]] for a while.
+
+===[[The Ice Breaks]]===
+Lung re-appeared alongside [[Little Midas]]' people, assisting [[The Wardens]] against the [[Titans]]. However, [[Skadi]] denied him consistent power-ups.&lt;ref name="II19.1"&gt;Maybe because she’d seen me looking at Lung again, Kenzie passed on a message: ''LUNG IS POSSIBLE GAMEPLAN.  THEY THINK HE MIGHT GET STRONG ENOUGH TO LOCK SKADI.''&lt;br&gt;&lt;br&gt;It made some sense.  ''If'' Lung could get strong enough that he remained the largest threat to Titan Skadi, he would be her target every time she teleported. [...]&lt;br&gt;&lt;br&gt;''Maybe'' there was a special case where he could get locked in an endless fight against the one Titan.&lt;br&gt;[...]&lt;br&gt;Crystal pointed my attention to Titan Skadi, who had engaged with another group of villains, including Little Midas’ cronies.  Lung wasn’t as big as he had been, which suggested he hadn’t been able to build up steam consistently enough before his opponent had disengaged from the fight.  Couldn’t keep that fire burning. - [https://www.parahumans.net/2019/12/24 Excerpt] from [[Infrared 19.1]]&lt;/ref&gt;
+
+==Chapter Appearances==
+{{Appearance/Lung Worm}}
+
+==Trivia==
+
+*Lung's codename is a reference to the dragons of Eastern mythology, which are known as the ''L'óng ''or the ''Lung'', usually with a prefix or suffix, such as ''T'ien-lung'' or ''Lung-wang''.The reason for taking this codename is likely his resemblance to dragons after he's transformed, with scales, wings (eventually) and the ability to produce flame (though it bears noting that dragons from Eastern mythology don't necessarily breathe fire).&lt;ref name="WoG1" /&gt;
+
+==Fanart Gallery==
+&lt;gallery navigation="true" hideaddbutton="true"&gt;
+Azn Bad Boys by aerryi.png|Image by [http://neoworm.deviantart.com/ aerryi] on DeviantArt.|link=http://fav.me/d8oy4uc
+Taylor Hebert vs. Lung by wolfofragnarok.jpg|Image by [http://wolfofragnarok.deviantart.com/ wolfofragnarok] on DeviantArt|link=http://fav.me/d7p9r8x
+Lung by wolfofragnarok.jpg|Image by [http://wolfofragnarok.deviantart.com/ wolfofragnarok] on DeviantArt|link=http://fav.me/d8rgptz
+lung_by_kesha9-d9eqk4x.png|Image by [http://kesha9.deviantart.com/ kesha9] on DeviantArt.|link=http://fav.me/d9eqk4x
+Lung vs brockton bay unfinished by wolfofragnarok-d84zlga.jpg|Image by [http://wolfofragnarok.deviantart.com/ wolfofragnarok] on DeviantArt|link=http://fav.me/d84zlga
+Lung_by_Danstrachan.png|Image by [https://www.artstation.com/danstrachan Danstrachan] on ArtStation
+&lt;/gallery&gt;
+&lt;!----http://imgur.com/klHrDi6
+https://old.reddit.com/r/Parahumans/comments/adgwqa/fanart_soon_everything_will_be_asia/
+------&gt;
+
+{{Reflist}}
+
+==Site Navigation==
+{{Azn Bad Boys Navibox}}
+{{Birdcage Navibox}}
+[[Category:Characters]]
+[[Category:Males]]
+[[Category:Blasters]]
+[[Category:Brutes]]
+[[Category:Changers]]
+[[Category:Movers]]
+[[Category:Villains]]
+[[Category:Azn Bad Boys]]
+[[Category:Birdcage]]
+[[Category:Point of View Characters]]
+[[Category:Worm Characters]]
+[[Category:Ward Characters]]</text>
+      <sha1>0mdz7g53m7p6fbeekqrduuh5xlhed07</sha1>
+    </revision>
+  </page>
+</mediawiki>
