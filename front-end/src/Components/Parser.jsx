@@ -4,13 +4,15 @@ import axios from "axios";
 
 function Parser() {
     const [displayMessage, setDisplayMessage] = useState(null);
-
+    const DomParser = new DOMParser();
+    const [doc, setDoc] = useState(null);
     useEffect(() => {
         const getMessage = () => {
             axios.get(
                 "http://localhost:4000/parse/"
             ).then((response) => {
-                response.data ? setDisplayMessage(response.data) : setDisplayMessage("empty");
+                setDoc(DomParser.parseFromString(response.data, "text/xml"));
+                //response.data ? setDisplayMessage(response.data) : setDisplayMessage("empty");
                 console.log("success")
             }).catch((error) => {
                 console.log("error: ");
@@ -22,10 +24,10 @@ function Parser() {
         console.log(displayMessage);
     }, []);
 
-    if (!displayMessage) return <div>Loading...</div>;
+    if (!doc) return <div>Loading...</div>;
 
     return (
-        <div className="helloWorld">{displayMessage ? displayMessage : "null"}</div>
+        <div className="helloWorld">{doc}</div>
     );
 }
 

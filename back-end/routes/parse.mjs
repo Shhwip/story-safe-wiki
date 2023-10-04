@@ -17,7 +17,7 @@ router.get("/", async (req, res) => {
     // console.log(pdoc);
 
     // serialize the document so we can send it to the client
-    var record = await pdoc.document.serialize();
+    var record = await pdoc.document.outerHTML;
     // console.log("record")
 	// console.log(record);
     
