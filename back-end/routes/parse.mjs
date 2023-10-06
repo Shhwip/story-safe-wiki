@@ -8,7 +8,7 @@ const router = express.Router();
 router.get("/", async (req, res) => {
     // get the wikitext
     // we will replace this with a call to the database
-    var lung = fs.readFileSync('lung.xml', 'utf8');
+    var lung = fs.readFileSync('test.xml', 'utf8');
     // console.log(lung.length)
 
     // parse the wikitext into a parsoid document
@@ -18,6 +18,7 @@ router.get("/", async (req, res) => {
 
     // serialize the document so we can send it to the client
     var record = await pdoc.document.outerHTML;
+
     // console.log("record")
 	// console.log(record);
     
