@@ -1,9 +1,9 @@
-import React, {useRef, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import './Header.css';
 import logoHeader from '../assets/Horizontal Combination Mark.svg';
 import user from '../Icons/person-circle-outline.svg'
 import {useNavigate} from "react-router-dom";
-import Search from './Search.jsx';
+import Search from './Search.jsx'
 
 function Header() {
 const navigate = useNavigate();
@@ -28,6 +28,15 @@ function handleClickOutside(event) {
         setIsPopupActive(false);
     }
 }
+
+useEffect(() => {
+    window.addEventListener('click', handleClickOutside);
+
+    return () => {
+        window.removeEventListener('click', handleClickOutside);
+    };
+}, []);
+
     return (
         <header className="app-header">
             <img className="logo-header" src={logoHeader} alt="Combined Horizontal Logo for Story Safe"/>
@@ -45,6 +54,7 @@ function handleClickOutside(event) {
                     Register
                 </button>
             </nav>
+            {isPopupActive && <Search />}
         </header>
     );
 }
