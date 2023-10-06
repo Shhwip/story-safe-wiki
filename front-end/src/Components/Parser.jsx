@@ -1,12 +1,11 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from "axios";
+import './Parser.css';
 import parse from 'html-react-parser';
 
 function Parser() {
     const [displayMessage, setDisplayMessage] = useState(null);
-    const DomParser = new DOMParser();
-    var docString = "";
     const [doc, setDoc] = useState(null);
     useEffect(() => {
         const getMessage = () => {
@@ -28,17 +27,10 @@ function Parser() {
         console.log(displayMessage);
     }, []);
 
-    function displayDoc() {
-        console.log(doc)
-        return Object.keys(doc).map(function(key) {
-          return <div key={key}>Key: {key}, Value: {doc[key]}</div>;
-        });
-      }
-
     if (!doc) return <div>Loading...</div>;
 
     return (
-        <div>{parse(doc)}</div>
+        <div className='ArticleParent'>{parse(doc)}</div>
     );
 }
 
