@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import './HomePage.css';
 import axios from "axios";
-import Header from "./Header";
+import Header from "../components/Header.jsx";
 import {useNavigate} from "react-router-dom";
 
 // Copying Josh's hello world
