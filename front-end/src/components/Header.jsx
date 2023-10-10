@@ -10,6 +10,9 @@ const navigate = useNavigate();
 const [isPopupActive, setIsPopupActive] = useState(false);
 const selectRef = useRef(null);
 
+function handleHeaderHomeClick() {
+    navigate("/");
+}
 function handleHeaderLoginClick() {
     navigate("/login");
 }
@@ -30,7 +33,11 @@ function handleCloseSearch() {
     return (
         <div>
             <header className="app-header">
-                <img className="logo-header" src={logoHeader} alt="Combined Horizontal Logo for Story Safe"/>
+                <img className="logo-header"
+                     src={logoHeader}
+                     alt="Combined Horizontal Logo for Story Safe"
+                     onClick={handleHeaderHomeClick}
+                />
                 <nav className="navigation">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#fff"
                          className={`search-nav ${isPopupActive ? 'active' : ''}`}
