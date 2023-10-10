@@ -16,6 +16,7 @@
 }
 
 .search-nav {
+    display: flex;
     height: 3em;
     margin-right: 10px;
     cursor: pointer;
