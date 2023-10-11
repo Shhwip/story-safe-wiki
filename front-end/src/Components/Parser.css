@@ -1,16 +1,21 @@
 .ArticleParent {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 20px;
 }
 
 pre {
   display: none;
+}
+
+figure {
+  margin: 0.5em 0 1.3em 1.4em;
+  clear: right;
+  float: right;
+}
+
+a {
+  color: #8288fa !important;
+  text-decoration: inherit;
 }
