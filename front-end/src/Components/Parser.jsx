@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import axios from "axios";
 import './Parser.css';
 import parse from 'html-react-parser';
+import Header from './Header.jsx';
 
 function Parser() {
     const [displayMessage, setDisplayMessage] = useState(null);
@@ -30,7 +31,11 @@ function Parser() {
     if (!doc) return <div>Loading...</div>;
 
     return (
-        <div className='ArticleParent'>{parse(doc)}</div>
+        <div>
+            {/* <Header /> */}
+            <div className='ArticleParent'>{parse(doc)}</div>
+
+        </div>
     );
 }
 
