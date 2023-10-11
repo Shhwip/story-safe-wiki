@@ -1,9 +1,9 @@
 .ArticleParent {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 20px;
 }
 
 body {
@@ -13,4 +13,10 @@ body {
 
 pre {
   display: none;
+}
+
+figure[typeof~='mw:File/Thumb'].mw-halign-right, figure[typeof~='mw:File/Frame'].mw-halign-right {
+  margin: 0.5em 0 1.3em 1.4em;
+  clear: right;
+  float: right;
 }
