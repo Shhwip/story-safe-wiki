@@ -1,6 +1,6 @@
 import React from 'react';
 import './Login.css';
-import Header from "../Components/Header.jsx";
+import Header from "../components/Header.jsx";
 
 function Login() {
 

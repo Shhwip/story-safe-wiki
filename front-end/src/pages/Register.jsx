@@ -1,6 +1,6 @@
 import React from 'react';
 import './Register.css';
-import Header from "../Components/Header.jsx";
+import Header from "../components/Header.jsx";
 
 function Register() {
 

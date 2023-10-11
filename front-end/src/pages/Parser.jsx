@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "./Parser.css";
 import parse from "html-react-parser";
-import Header from "../Components/Header.jsx";
+import Header from "../components/Header.jsx";
 
 function Parser() {
   const [displayMessage, setDisplayMessage] = useState(null);
