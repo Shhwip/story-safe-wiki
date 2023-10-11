@@ -6,16 +6,22 @@
 }
 
 pre {
-  display: none;
+  /* display: none; */
 }
 
 figure {
   margin: 0.5em 0 1.3em 1.4em;
   clear: right;
   float: right;
+  font-size: smaller;
+  width: 220px;
 }
 
 a {
   color: #8288fa !important;
   text-decoration: inherit;
+}
+
+h2 {
+  color: #FFF !important;
 }
