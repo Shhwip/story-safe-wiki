@@ -33,6 +33,7 @@ function Parser() {
 
   return (
     <div>
+          <base href="localhost"></base>
       {/* <Header /> */}
       <div className="ArticleParent">{parse(doc)}</div>
     </div>
