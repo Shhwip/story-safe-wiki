@@ -50,3 +50,14 @@
 .search-bar-icon:hover {
     fill: var(--hover-color);
 }
+
+.search-results {
+    position: fixed;
+    width: 100%;
+    top: 240px;
+    text-align: center;
+}
+
+.search-results p {
+    text-align: center;
+}
