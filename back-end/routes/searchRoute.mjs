@@ -6,7 +6,7 @@ router.get("/", async (req, res) => {
     // Get the search query from the request
     const searchQuery = req.query.q;
     console.log("Search Start")
-
+    console.log(searchQuery);
     // SEARCH WITH A MODEL
     // Perform a search in database based on the searchQuery
     // Replace with actual database query logic
@@ -14,12 +14,13 @@ router.get("/", async (req, res) => {
     // const results = await DatabaseModel.find({ $text: { $search: searchQuery } });
 
     // TEXT-BASED SEARCHES
+    // TODO: Collection needs to have a text index set up, for text search to work.
 
     try {
         // Perform a text-based search in your database
         // Replace 'yourCollection' with the name of your collection
         const results = await mongoose.connection
-            .collection("Story-Safe")
+            .collection("companies")
             .find({ $text: { $search: searchQuery } })
             .toArray();
 

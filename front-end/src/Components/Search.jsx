@@ -6,6 +6,7 @@ function Search({ onCloseSearch }) {
     const [searchQuery, setSearchQuery] = useState('');
     const [searchResults, setSearchResults] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+    const inputRef = useRef(null);
 
     function handleCloseSearchClick() {
         // setIsPopupActive to false in Header.jsx
@@ -21,7 +22,7 @@ function Search({ onCloseSearch }) {
         setIsLoading(true);
 
         try {
-            const response = await axios.get(`/search?q=${searchQuery}`);
+            const response = await axios.get(`http://localhost:4000/search?q=${searchQuery}`);
 
             if (response.data && response.data.length > 0) {
                 setSearchResults(response.data);
@@ -35,6 +36,12 @@ function Search({ onCloseSearch }) {
         }
     };
 
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+            handleSearchSubmit(event);
+        }
+    }
+
 
     return (
         <div className="search-background">
@@ -45,6 +52,8 @@ function Search({ onCloseSearch }) {
                         placeholder="Search..."
                         value={searchQuery}
                         onChange={handleSearchInputChange}
+                        onKeyDown={handleKeyDown}
+                        ref={inputRef}
                     />
                 </div>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#fff"
