@@ -9,6 +9,15 @@ pre {
   /* display: none; */
 }
 
+.title {
+  color: white;
+  font-size: 2em;
+  margin-bottom: 0.25em;
+  padding: 0;
+  border-bottom: 1px solid #a2a9b1;
+  overflow: hidden;
+  line-height: 1.375;
+}
 figure {
   margin: 0.5em 0 1.3em 1.4em;
   clear: right;
