@@ -3,12 +3,11 @@ import "./db/conn.mjs";
 import MongoDBStore from "./db/sessions.mjs";
 import session from "express-session";
 import express from "express";
-import cors from "cors"; 
+import cors from "cors";
 import http from "http";
-import helloWorld from "./routes/helloWorld.mjs"
-import parse from "./routes/parse.mjs"
-import edit from "./routes/edit.mjs"
-
+import parse from "./routes/parse.mjs";
+import edit from "./routes/edit.mjs";
+import user from "./routes/user.mjs";
 
 const PORT = process.env.PORT || 5050;
 const app = express();
@@ -27,9 +26,9 @@ app.use(
   })
 );
 
-app.use("/helloWorld", helloWorld);
 app.use("/edit", edit);
 app.use("/parse", parse);
+app.use("/user", user);
 
 const server = http.createServer(app);
 
