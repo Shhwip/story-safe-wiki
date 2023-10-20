@@ -38,8 +38,9 @@ function HomePage() {
     return (
         <div>
             <Header />
-            <div className="helloWorld">{displayMessage ? displayMessage : "null"}</div>
-            <button className="parser-button" onClick={handleToParserClick}>To Parser</button>
+            <div className="other">
+                <button className="parser-button" onClick={handleToParserClick}>To Parser</button>
+            </div>
         </div>
     );
 }

@@ -9,7 +9,7 @@ const router = express.Router();
 router.get("/", async (req, res) => {
     // get the wikitext
     // we will replace this with a call to the database
-    var lung = fs.readFileSync('test.xml', 'utf8');
+    var lung = fs.readFileSync('lung.xml', 'utf8');
     // console.log(lung.length)
 
     // parse the wikitext into a parsoid document
@@ -58,7 +58,7 @@ router.get("/", async (req, res) => {
 	// console.log(record);
     
     // send the serialized document to the client
-  res.status(200).send(modifiedHTML);
+  res.status(200).send(record);
 });
 
 
