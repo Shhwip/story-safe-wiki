@@ -17,20 +17,41 @@ const fs = require('fs');
 const readline = require('readline');
 // read in file line by line
 const rl = readline.createInterface({
-    input: fs.createReadStream('data/from.xml'),
+    input: fs.createReadStream('data/everything.xml'),
     crlfDelay: Infinity
     });
 
 // write out file line by line
 const writeStream = fs.createWriteStream('data/out.xml');
 
+const notTitleRegex = /^\s*<(?!title).*>/g
+const pageOpenRegex = /^\s*<page>/g
+const pageCloseRegex = /^\s*<\/page>/g
+const titleRegex = /^\s*<title>(.*)</
+var pageCount = 0;
+
 rl.on('line', (line) => {
     //console.log(`Line from file: ${line}`);
     // tagsRegex is any line that starts with whitespace and then a tag that isn't title
-    const tagsRegex = /^\s*<(?!title).*>/g
-    if (!line.match(tagsRegex))
+
+    var title = line.match(titleRegex);
+    if (line.match(pageOpenRegex))
     {
-        writeStream.write(fixRefTags(addTags(line)) + '\n');
+        pageCount++;
+        console.log('Page ' + pageCount);
+    }
+    if (title)
+    {
+        console.log([title[1]]);
+    }
+    else if (line.match(pageCloseRegex))
+    {
+        console.log('End of page ' + pageCount);
+    }
+
+    if (!line.match(notTitleRegex))
+    {
+        //writeStream.write(fixRefTags(addTags(line)) + '\n');
     }
 
 });
