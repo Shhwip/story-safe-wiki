@@ -20,7 +20,6 @@ function Register() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(form)
 
         let salt;
         try {
@@ -35,14 +34,14 @@ function Register() {
 
         try {
             const hashedPassword = sha256(form.password + salt);
-            const user = await axios.post("http://localhost:4000/user/register", {
+            const { data } = await axios.post("http://localhost:4000/user/register", {
                 username: form.username,
                 email: form.email,
                 password: hashedPassword,
                 salt: salt,
             });
+            localStorage.setItem("userSession", data.username);
             navigate("/");
-            localStorage.setItem("userSession", user.username);
         } catch (error) {
             console.log(error);
         }
@@ -55,7 +54,7 @@ function Register() {
         <div className="modal-header">Join StorySafeWiki</div>
         <div className="no-account">
           already have an account,
-          <a href="/register"> Log In</a>
+          <a href="/login"> Log In</a>
         </div>
         <div className="register-form">
           <div className="form-group">

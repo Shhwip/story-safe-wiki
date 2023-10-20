@@ -26,10 +26,7 @@ router.get(
 router.post(
   "/get-salt",
   asyncHandler(async (req, res) => {
-    console.log("in get salt");
-    console.log(req.body)
     const user = await User.findOne({ username: req.body.username });
-    console.log(user);
     if (!user)
       res.status(401).send({ message: "Username or password invalid." });
     else res.status(200).send(user.salt);
@@ -39,8 +36,6 @@ router.post(
 router.post(
   "/register",
   asyncHandler(async (req, res) => {
-    console.log("in register");
-    console.log(req.body);
     const userCheck = await User.findOne({ username: req.body.username });
     if (userCheck)
       res.status(401).send({ message: "Username is already taken." });
@@ -62,7 +57,6 @@ router.post(
 router.post(
   "/login",
   asyncHandler(async (req, res) => {
-    console.log(req.body)
     const user = await User.findOne({ username: req.body.username });
     if (!user)
       res.status(401).send({ message: "Username or password invalid." });

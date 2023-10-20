@@ -33,12 +33,12 @@ function Login() {
     try {
       console.log(salt);
       const hashedPassword = sha256(form.password + salt);
-      const user = await axios.post("http://localhost:4000/user/login", {
+      const { data } = await axios.post("http://localhost:4000/user/login", {
         username: form.username,
         password: hashedPassword,
       });
       navigate("/");
-      localStorage.setItem("userSession", user.username);
+      localStorage.setItem("userSession", data.username);
     } catch (error) {
       console.log(error);
     }
