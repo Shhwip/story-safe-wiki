@@ -1,21 +1,105 @@
 .main-container {
   display: flex;
   flex-direction: column;
-  margin-top: 114px;
+  margin-top: 94px;
   min-width: 702px;
+  min-height: 100vh;
+  width: 100%;
+  background-image: url("../assets/background.jpeg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.resizable-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto 48px;
+  max-width: 1236px;
+  position: relative;
+  transition: width .3s,max-width .3s;
+  width: 85%;
+}
+
+.community-header-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  justify-content: flex-end;
+}
+
+.fandom-community-header {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: 1fr min-content;
   width: 100%;
 }
 
-.ArticleParent {
-  justify-content: center;
-  width: 80%;
-  margin: auto;
-  margin-bottom: 20px;
+.fandom-community-header__image {
+  grid-row: 1/3;
+  margin-right: 18px;
 }
 
-pre {
-  /* display: none; */
+.fandom-community-header__top-container {
+  align-items: flex-end;
+  display: flex;
 }
+
+.fandom-community-header__community-name-wrapper {
+  align-items: center;
+  display: flex;
+}
+
+.fandom-community-header__community-name {
+  font-size: 24px;
+  font-weight: 500;
+  margin-right: 9px;
+  text-decoration: none;
+}
+
+.fandom-community-header a {
+  color: #fbdb39;
+}
+
+.fandom-community-header__local-navigation {
+  padding: 0;
+}
+
+.fandom-community-header__local-navigation
+.wds-tabs {
+  grid-column-gap: 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(2ch,max-content));
+  width: 100%;
+}
+
+.wds-tabs {
+  align-items: flex-end;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.page {
+  margin-top: 12px;
+  position: relative;
+}
+
+.page .page__main {
+  height: 100%;
+}
+
+.page__main {
+  background-color: #353a3c;
+  border-radius: 3px;
+  min-height: 480px;
+  padding: 24px 36px;
+  position: relative;
+}
+
+
+
 
 .title {
   color: white;
@@ -35,7 +119,7 @@ figure {
 }
 
 a {
-  color: #8288fa !important;
+  color: #8288fa;
   text-decoration: inherit;
 }
 
