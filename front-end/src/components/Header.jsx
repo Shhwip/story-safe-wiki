@@ -9,6 +9,8 @@ function Header() {
 const navigate = useNavigate();
 const [isPopupActive, setIsPopupActive] = useState(false);
 const selectRef = useRef(null);
+const [prevScrollPos, setPrevScrollPos] = useState(0);
+const [visible, setVisible] = useState(true);
 
 function handleHeaderHomeClick() {
     navigate("/");
@@ -29,10 +31,33 @@ function handleCloseSearch() {
     setIsPopupActive(false);
 }
 
+useEffect(() => {
+    const handleScroll = () => {
+        const currentScrollPos = window.scrollY;
+
+        if (currentScrollPos > prevScrollPos) {
+            // scrolling down
+            setVisible(false);
+        } else {
+            // scrolling up
+            setVisible(true);
+        }
+
+        setPrevScrollPos(currentScrollPos);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+        // clean event on unmount
+        window.removeEventListener('scroll', handleScroll);
+    };
+}, [prevScrollPos]);
+
 
     return (
         <div>
-            <header className="app-header">
+            <header className={`app-header ${visible ? 'visible' : 'hidden'}`}>
                 <img className="logo-header"
                      src={logoHeader}
                      alt="Combined Horizontal Logo for Story Safe"

@@ -8,6 +8,12 @@
     justify-content: space-between;
     align-items: center;
     z-index: 99;
+    background-color: var(--primary-color);
+    transition: top 0.3s;
+}
+
+.app-header.hidden {
+    top: -100px;
 }
 
 .logo-header {
