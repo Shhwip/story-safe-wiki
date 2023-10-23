@@ -98,7 +98,13 @@
   position: relative;
 }
 
+.page-header {
+  margin-bottom: 20px;
+}
 
+.page-content {
+  font-size: 1em;
+}
 
 
 .title {

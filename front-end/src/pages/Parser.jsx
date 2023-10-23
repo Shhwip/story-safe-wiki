@@ -9,15 +9,14 @@ import wormLogoHeader from "../assets/worm-logo.png";
 function Parser() {
   const [displayMessage, setDisplayMessage] = useState(null);
   const [doc, setDoc] = useState(null);
+
+  // gets main body text
   useEffect(() => {
     const getMessage = () => {
       axios
-        .get("http://localhost:4000/parse/")
+        .get("http://localhost:4000/parse/body")
         .then(async (response) => {
           setDoc(response.data);
-          //await setDoc(DomParser.parseFromString(response.data, "text/html"));
-          console.log(doc);
-          //response.data ? setDisplayMessage(response.data) : setDisplayMessage("empty");
           console.log("success");
         })
         .catch((error) => {
@@ -26,9 +25,14 @@ function Parser() {
         });
     };
     getMessage();
-    console.log("displayMessage: ");
-    console.log(displayMessage);
   }, []);
+
+// TODO: other useEffect to get quote section
+// TODO: then javascript to alternate displaying WARD quote or WORM quote
+
+// TODO: other useEffect to get info box section then CSS to place next to body text
+
+
 
   if (!doc) return <div>Loading...</div>;
 
@@ -82,9 +86,7 @@ function Parser() {
                     </header>
                 </div>
                 <div className="page">
-                    <main className="page__main" lang="en">
-                        {parse(doc)}
-                    </main>
+                    {parse(doc)}
                 </div>
             </div>
         </div>
