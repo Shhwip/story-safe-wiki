@@ -4,6 +4,9 @@
     box-sizing: border-box;
 }
 
+.other {
+    padding-top: 100px;
+}
 .helloWorld {
     text-align: center;
 }

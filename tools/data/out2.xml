@@ -1,65 +1,7 @@
 <mediawiki xmlns="http://www.mediawiki.org/xml/export-0.11/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.11/ http://www.mediawiki.org/xml/export-0.11.xsd" version="0.11" xml:lang="en">
-  <siteinfo>
-    <sitename>Worm Wiki</sitename>
-    <dbname>parahumans</dbname>
-    <base>https://worm.fandom.com/wiki/Worm_Wiki</base>
-    <generator>MediaWiki 1.39.4</generator>
-    <case>first-letter</case>
-    <namespaces>
-      <namespace key="-2" case="first-letter">Media</namespace>
-      <namespace key="-1" case="first-letter">Special</namespace>
-      <namespace key="0" case="first-letter" />
-      <namespace key="1" case="first-letter">Talk</namespace>
-      <namespace key="2" case="first-letter">User</namespace>
-      <namespace key="3" case="first-letter">User talk</namespace>
-      <namespace key="4" case="first-letter">Worm Wiki</namespace>
-      <namespace key="5" case="first-letter">Worm Wiki talk</namespace>
-      <namespace key="6" case="first-letter">File</namespace>
-      <namespace key="7" case="first-letter">File talk</namespace>
-      <namespace key="8" case="first-letter">MediaWiki</namespace>
-      <namespace key="9" case="first-letter">MediaWiki talk</namespace>
-      <namespace key="10" case="first-letter">Template</namespace>
-      <namespace key="11" case="first-letter">Template talk</namespace>
-      <namespace key="12" case="first-letter">Help</namespace>
-      <namespace key="13" case="first-letter">Help talk</namespace>
-      <namespace key="14" case="first-letter">Category</namespace>
-      <namespace key="15" case="first-letter">Category talk</namespace>
-      <namespace key="110" case="first-letter">Forum</namespace>
-      <namespace key="111" case="first-letter">Forum talk</namespace>
-      <namespace key="420" case="first-letter">GeoJson</namespace>
-      <namespace key="421" case="first-letter">GeoJson talk</namespace>
-      <namespace key="500" case="first-letter">User blog</namespace>
-      <namespace key="501" case="first-letter">User blog comment</namespace>
-      <namespace key="502" case="first-letter">Blog</namespace>
-      <namespace key="503" case="first-letter">Blog talk</namespace>
-      <namespace key="828" case="first-letter">Module</namespace>
-      <namespace key="829" case="first-letter">Module talk</namespace>
-      <namespace key="1200" case="first-letter">Message Wall</namespace>
-      <namespace key="1201" case="first-letter">Thread</namespace>
-      <namespace key="1202" case="first-letter">Message Wall Greeting</namespace>
-      <namespace key="2000" case="first-letter">Board</namespace>
-      <namespace key="2001" case="first-letter">Board Thread</namespace>
-      <namespace key="2002" case="first-letter">Topic</namespace>
-      <namespace key="2900" case="first-letter">Map</namespace>
-      <namespace key="2901" case="first-letter">Map talk</namespace>
-    </namespaces>
-  </siteinfo>
   <page>
     <title>Lung</title>
-    <ns>0</ns>
-    <id>2057</id>
-    <revision>
-      <id>69698</id>
-      <parentid>69481</parentid>
-      <timestamp>2023-06-27T01:52:04Z</timestamp>
-      <contributor>
-        <username>Yareyareda</username>
-        <id>44536558</id>
-      </contributor>
-      <origin>69698</origin>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text bytes="58798" sha1="0mdz7g53m7p6fbeekqrduuh5xlhed07" xml:space="preserve">{{Sequel}}
+      <text bytes="58906" sha1="jk6hxvaga1f6mjf22wyvd1kfd7ntt7d" xml:space="preserve">{{Sequel}}
 &lt;tabber&gt;
 |-|Worm=
 {{quote|I dislike the idea of being a follower, little Skitter.  I maintain a territory, always.  I bring my enemies low, and I am feared and respected, always.  I enjoy the things I enjoy, drinking, food, fucking women.  Never being fully out of control.  You understand?|Lung to [[Taylor]]|[[Venom 29.8]]}}
@@ -85,43 +27,40 @@
 |general location = [[Japan]]&lt;br/&gt;[[Brockton Bay]]&lt;br/&gt;[[Baumann Parahuman Containment Center]]
 |web serial = [[Gestation 1.3]]&lt;br&gt;[[Interlude 6]] (PoV)&lt;br&gt;[[Interlude 22.y]] (Flashback)
 |ward = [[Gleaming 9.9]] (Image)&lt;br&gt;[[Gleaming 9.10]]
-}}'''Kenta''', known publicly as '''Lung''', is a [[parahuman]] and the former leader of the [[Azn Bad Boys]].
+}}
+'''Kenta''', known publicly as '''Lung''', is a [[parahuman]] and the former leader of the [[Azn Bad Boys]].
 
 ==Personality==
-[[Dragon]] described Lung as having a "veneer of civility over a feral core self".&lt;ref name="10.5"/&gt; [[Marquis]] described him similarly, and noted that he had broken the "[[Unwritten Rules|unspoken code]]" of parahumans, further he thought that Lung had excellent instincts, although he was better in a fight than over the course of a war.&lt;ref name="I16"&gt;[[Interlude 16.z]]&lt;/ref&gt; [[Taylor Hebert]] considered it plausible that he would take a group of gangsters to go shoot some kids based solely on his reputation.&lt;ref name="1.3"/&gt;
+[[Dragon]] described Lung as having a "veneer of civility over a feral core self".&lt;ref name="10.5" /&gt; [[Marquis]] described him similarly, and noted that he had broken the "[[Unwritten Rules|unspoken code]]" of parahumans, further he thought that Lung had excellent instincts, although he was better in a fight than over the course of a war.&lt;ref name="I16"&gt;[[Interlude 16.z]]&lt;/ref&gt; [[Taylor Hebert]] considered it plausible that he would take a group of gangsters to go shoot some kids based solely on his reputation.&lt;ref name="1.3" /&gt;
 
 His mind may have been affected by the circumstances of his trigger event.&lt;ref&gt;Peter was still talking, responding to something Kayden had said.  “Drugs tend to create conditional powers.  It’s not hard and fast, but you get situations where the power is directly linked to one’s physical, mental or emotional state.  We think it’s because the power works off a template it builds as the powers first manifest.  If someone is riding an emotional high as they trigger, their powers will always be looking for a similarly excited state to operate at peak efficiency, often an emotion or drugs.  When people were caught trying to fabricate trigger events, sometimes they were intending to use this so the subject would be more easily controlled.” - [https://parahumans.wordpress.com/2013/01/31 Excerpt] from [[Interlude 18.y]].&lt;/ref&gt;
 
-Lung tends to react to attempts at crude emotional manipulation, such as [[Victoria Dallon]]'s fear aura, with aggression.&lt;ref name=9.11IIeE/&gt;
+Lung tends to react to attempts at crude emotional manipulation, such as [[Victoria Dallon]]'s fear aura, with aggression.&lt;ref name="9.11IIeE" /&gt;
 
-Unconventionally, Lung tries to absorb all Asian gangs in his territory, regardless of nationality.&lt;ref name="2.2 e2"/&gt; This was at least partly motivated by the discrimination he faced as a half-Chinese man in prison, which affected him deeply.&lt;ref name="I6"/&gt;&lt;ref name="I22.y"/&gt;&lt;ref name="WoG1"&gt;[http://worm.wikia.com/index.php?title=Lung&amp;diff=4121&amp;oldid=4009 Edit by Wildbow]&lt;br/&gt;Note that this edit was [https://forums.spacebattles.com/posts/37804044/ partially retracted].&lt;/ref&gt;
+Unconventionally, Lung tries to absorb all Asian gangs in his territory, regardless of nationality.&lt;ref name="2.2 e2" /&gt; This was at least partly motivated by the discrimination he faced as a half-Chinese man in prison, which affected him deeply.&lt;ref name="I6" /&gt;&lt;ref name="I22.y" /&gt;&lt;ref name="WoG1"&gt;[http://worm.wikia.com/index.php?title=Lung&amp;diff=4121&amp;oldid=4009 Edit by Wildbow]&lt;br /&gt;Note that this edit was [https://forums.spacebattles.com/posts/37804044/ partially retracted].&lt;/ref&gt;
 
-He believed that there was no point in fighting the [[Endbringers]], as they could not be killed. He felt they were better regarded as forces of nature.&lt;ref name="I22.y"/&gt; he preferred to just rule his section of Brockton Bay uncontested.&lt;ref name"22.4 c1"&gt;Lung has a high classification but a relatively low level of ambition. He had one powered minion (until early 2011 when he recruited Bakuda) and sought primarily to hold the docks as his territory. He ruled like a lesser king, had prostitutes and sex slaves, a protection racket and drug dealing, but he wasn’t fighting for a footing downtown.&lt;br/&gt;&lt;br/&gt;For all his (potential) power, he’d settled into a role as a street thug and gang leader.&lt;br/&gt;&lt;br/&gt;In terms of actual fighting, he also has to hold his own long enough to transform, and that’s sometimes tricky. - [https://parahumans.wordpress.com/2013/05/11/cell-22-4/#comment-22333 Comment] by Wildbow on [[Cell 22.4]]&lt;/ref&gt;
+He believed that there was no point in fighting the [[Endbringers]], as they could not be killed. He felt they were better regarded as forces of nature.&lt;ref name="I22.y" /&gt; he preferred to just rule his section of Brockton Bay uncontested.&lt;ref name"22.4="" c1"=""&gt;Lung has a high classification but a relatively low level of ambition. He had one powered minion (until early 2011 when he recruited Bakuda) and sought primarily to hold the docks as his territory. He ruled like a lesser king, had prostitutes and sex slaves, a protection racket and drug dealing, but he wasn’t fighting for a footing downtown.&lt;br /&gt;&lt;br /&gt;For all his (potential) power, he’d settled into a role as a street thug and gang leader.&lt;br /&gt;&lt;br /&gt;In terms of actual fighting, he also has to hold his own long enough to transform, and that’s sometimes tricky. - [https://parahumans.wordpress.com/2013/05/11/cell-22-4/#comment-22333 Comment] by Wildbow on [[Cell 22.4]]&lt;/ref&gt;
 
-Lung claimed that he had grown too used to power to bow and scrape for any length of time, although he was exceptionally polite at first while in prison. He preferred to be seen as a madman.&lt;ref name="1.6"/&gt; He had a strong belief in the power of fear; he was content to remain a seemingly minor villain in [[Brockton Bay]] because everyone there knew and feared him, allowing him to slowly grow his reputation without fear.&lt;ref name="I22.y"/&gt;&lt;!--tie in the strong valid in fear to the madmen stuff--&gt;
+Lung claimed that he had grown too used to power to bow and scrape for any length of time, although he was exceptionally polite at first while in prison. He preferred to be seen as a madman.&lt;ref name="1.6" /&gt; He had a strong belief in the power of fear; he was content to remain a seemingly minor villain in [[Brockton Bay]] because everyone there knew and feared him, allowing him to slowly grow his reputation without fear.&lt;ref name="I22.y" /&gt;&lt;!--tie in the strong valid in fear to the madmen stuff--&gt;
 
-During his Interlude, he thought to himself that his power's greatest drawback was the risk that he might die before he grew strong enough. He made a vow to himself that he would never die, never lose a fight. He resolved to always defeat those who insulted him.&lt;ref name="I22.y"/&gt; [[Taylor]] suspected that he would resent her succeeding where he failed more than his defeats at her hands.&lt;ref name="28.3"/&gt;
+During his Interlude, he thought to himself that his power's greatest drawback was the risk that he might die before he grew strong enough. He made a vow to himself that he would never die, never lose a fight. He resolved to always defeat those who insulted him.&lt;ref name="I22.y" /&gt; [[Taylor]] suspected that he would resent her succeeding where he failed more than his defeats at her hands.&lt;ref name="28.3" /&gt;
 &lt;!---petty king happy to lounge around and do nothing
 --&gt;
 ===Relationships===
-[[Oni Lee]] was Lung's "flunky" in the [[ABB]], and his only [[parahuman]] subordinate for a time.&lt;ref name="1.3"/&gt;
+[[Oni Lee]] was Lung's "flunky" in the [[ABB]], and his only [[parahuman]] subordinate for a time.&lt;ref name="1.3" /&gt;
 
-His subordinates in the ABB didn't protest when he grabbed them, even when it was painful.&lt;ref name="1.3"/&gt; He occasionally lapsed into another language when speaking to them.&lt;ref name="1.3"/&gt;
+His subordinates in the ABB didn't protest when he grabbed them, even when it was painful.&lt;ref name="1.3" /&gt; He occasionally lapsed into another language when speaking to them.&lt;ref name="1.3" /&gt;
 
-[[Bakuda]] joined the ABB just before the story began.&lt;ref name="1.6"/&gt; His relationship with the half-White [[parahuman]] was influenced by his mixed-race background.&lt;ref name="I6"/&gt;&lt;ref name="I22.y"/&gt;&lt;ref name="WoG1"/&gt;
+[[Bakuda]] joined the ABB just before the story began.&lt;ref name="1.6" /&gt; His relationship with the half-White [[parahuman]] was influenced by his mixed-race background.&lt;ref name="I6" /&gt;&lt;ref name="I22.y" /&gt;&lt;ref name="WoG1" /&gt;
 ===Reputation===
 While his ability to solo an endbringer, which few parahumans can, is known to certain authorities it hasn't seemingly traveled outside parahuman circles, Lung also hasn't seemd to trumpet the fact considering such fights futile.&lt;ref name="I22.y EB"&gt;“''The American heroes approached you.  What deals did you strike?''“&lt;br&gt;&lt;br&gt;Again, he didn’t answer.  He’d tried to tell them the truth, that he’d told the heroes to go away.  The Endbringers couldn’t die.  There was no point to fighting them.  Twice they had approached him with better deals, promising him the world, but he’d turned them down twice in turn.  He’d considered the idea of taking the third offer, but then he’d followed his mother to the C.U.I. states and lost touch with the Americans.&lt;br&gt;[...]&lt;br&gt;“I have enemies,” Lung thought.  “Those who have slighted me, those who have won.”&lt;br&gt;&lt;br&gt;“Like Leviathan?”&lt;br&gt;&lt;br&gt;Lung shook his head.  “Leviathan, I beat, if you can even call it an enemy.  It is a force of nature.  No, I speak of other enemies, insults old and new.  I will defeat each of them in turn, and then I will rule.” - [https://parahumans.wordpress.com/2013/05/21 Excerpt] from [[Interlude 22.y]]&lt;/ref&gt;
 
 Of note Lung's page on [[Parahumans Online]] redirected to the page on the [[ABB]] which covered everyone on the team,&lt;ref name="2.2 e1"&gt;I looked up Lung on the wiki, which I had done often enough before, as part of my research and preparation for being a superhero.  I’d wanted to be sure I knew who prominent local villains were and what they could do.  The search for ‘Lung’ redirected to a catch-all page on his gang, the ABB, with quite a bit of detailed information.  The information on Lung’s powers was pretty in line with my own experience, though there was no mention of the super-hearing or him being fireproof. - [https://parahumans.wordpress.com/2011/07/09 Excerpt] from [[Insinuation 2.2]]&lt;/ref&gt; and makes no mention of his fight with Leviathan.
 
 ==Appearance==
-Lung was a little over six feet tall,&lt;ref name="1.3"/&gt; a half-Chinese, half-Japanese man.&lt;ref name="I6"&gt;[[Interlude 6]]&lt;/ref&gt; He was muscular, but not superhumanly so.
+Lung was a little over six feet tall,&lt;ref name="1.3" /&gt; a half-Chinese, half-Japanese man.&lt;ref name="I6"&gt;[[Interlude 6]]&lt;/ref&gt; He was muscular, but not superhumanly so.[[File:Lung Action Comics style.jpg|thumb]]He does not wear much of a costume, besides an ornate steel mask that resembled a dragon,&lt;ref name="1.3"&gt;[[Gestation 1.3]]&lt;/ref&gt;&lt;ref name="29.3"&gt;[[Venom 29.3]]&lt;/ref&gt; and left his eyes visible behind it.&lt;ref&gt;It was an image of Lung in his human shape, his eye sockets dark, raw and empty behind his steel dragon mask, his hand on one of his gang members’ shoulder. - [https://parahumans.wordpress.com/2011/12/17/tangle-6-2/ Excerpt] from [[Tangle 6.2]]&lt;/ref&gt; Instead he is the 'costume'; sprawling tattoos covered his body from the neck down, all depicting dragons from Eastern mythology. He wore a pair of jeans, and often went without a shirt exposing his tattoos.&lt;ref name="1.3"&gt;[[Gestation 1.3]]&lt;/ref&gt;&lt;ref name="29.3"&gt;[[Venom 29.3]]&lt;/ref&gt; The light brown of his eyes was permanently surrounded by an expanse of bloodshot red instead of whites.&lt;ref name="I16" /&gt;
 
-He does not wear much of a costume, besides an ornate steel mask that resembled a dragon,&lt;ref name="1.3"&gt;[[Gestation 1.3]]&lt;/ref&gt;&lt;ref name="29.3"&gt;[[Venom 29.3]]&lt;/ref&gt; and left his eyes visible behind it.&lt;ref&gt;It was an image of Lung in his human shape, his eye sockets dark, raw and empty behind his steel dragon mask, his hand on one of his gang members’ shoulder. - [https://parahumans.wordpress.com/2011/12/17/tangle-6-2/ Excerpt] from [[Tangle 6.2]]&lt;/ref&gt; Instead he is the 'costume'; sprawling tattoos covered his body from the neck down, all depicting dragons from Eastern mythology. He wore a pair of jeans, and often went without a shirt exposing his tattoos.&lt;ref name="1.3"&gt;[[Gestation 1.3]]&lt;/ref&gt;&lt;ref name="29.3"&gt;[[Venom 29.3]]&lt;/ref&gt; The light brown of his eyes was permanently surrounded by an expanse of bloodshot red instead of whites.&lt;ref name="I16" /&gt;
-
-In the [[Birdcage]], he wore the standard grey cotton clothing, but tore the sleeves off his shirt to expose his arms.&lt;ref name="I16" /&gt; He had more dragon tattoos done while in the [[Birdcage]], and grew his hair longer.&lt;ref name="28.3"/&gt;
-
-Lung spoke in a deep, gravelly, commanding voice&lt;ref name="1.3"/&gt; as a result of the changes his power made to his body.&lt;ref name="I22.y"/&gt; He had a strong accent.&lt;ref name="1.3"/&gt; Taylor noted that "for someone as brutal and vicious as he was in the heat of battle, Lung had cold eyes."&lt;ref name="28.3"/&gt;
+In the [[Birdcage]], he wore the standard grey cotton clothing, but tore the sleeves off his shirt to expose his arms.&lt;ref name="I16" /&gt; He had more dragon tattoos done while in the [[Birdcage]], and grew his hair longer.&lt;ref name="28.3"/&gt;[[File:Lung without mask.jpg|thumb]]Lung spoke in a deep, gravelly, commanding voice&lt;ref name="1.3"/&gt; as a result of the changes his power made to his body.&lt;ref name="I22.y"/&gt; He had a strong accent.&lt;ref name="1.3"/&gt; Taylor noted that "for someone as brutal and vicious as he was in the heat of battle, Lung had cold eyes."&lt;ref name="28.3"/&gt;
 
 When his power was in effect, Lung slowly transformed into a dragon-like creature with metal scales. Lung's transformation made his eyes glow orange, like molten metal.&lt;ref name="29.4"&gt;[[Venom 29.4]]&lt;/ref&gt;&lt;ref name="30.1"&gt;[[Speck 30.1]]&lt;/ref&gt;&lt;ref name="1.4"/&gt;&lt;ref name="1.5"/&gt; He would sometimes lose his mask in serious fights, revealing a catlike face with four mouthparts in an X shape, which made it difficult for him to speak when heavily transformed.&lt;ref name="5.8"/&gt;
 
@@ -321,7 +260,5 @@ https://old.reddit.com/r/Parahumans/comments/adgwqa/fanart_soon_everything_will_
 [[Category:Point of View Characters]]
 [[Category:Worm Characters]]
 [[Category:Ward Characters]]</text>
-      <sha1>0mdz7g53m7p6fbeekqrduuh5xlhed07</sha1>
-    </revision>
   </page>
 </mediawiki>
