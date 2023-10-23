@@ -12,7 +12,7 @@ const writeFile = util.promisify(fs.writeFile);
 router.get("/body", async (req, res) => {
     // get the wikitext
     // we will replace this with a call to the database
-    var document = fs.readFileSync('lung.xml', 'utf8');
+    var document = fs.readFileSync('../tools/data/out.xml', 'utf8');
 
     // parse the wikitext into a parsoid document
 	var pdoc = await Parsoid.parse(document, { pdoc: true });
@@ -82,6 +82,10 @@ router.get("/body", async (req, res) => {
     $('p[data-parsoid=\'{"dsr":[3763,3771,0,0]}\']').remove();
     $('p[data-parsoid=\'{"dsr":[3927,3942,0,0]}\']').remove();
 
+    $('p[data-parsoid=\'{"dsr":[24,41,0,0]}\']').remove();
+    $('p[data-parsoid=\'{"dsr":[351,359,0,0]}\']').remove();
+    $('p[data-parsoid=\'{"dsr":[515,524,0,0]}\']').remove();
+
     // remove grayed out stuff plus styles
     $('div[class="shortdescription nomobile noexcerpt noprint searchaux"]').remove();
     $('div[typeof="mw:Extension/templatestyles mw:Transclusion"]').remove();
@@ -89,6 +93,9 @@ router.get("/body", async (req, res) => {
     $('link[rel="mw:PageProp/Category"]').remove();
     $('span[about="#mwt4"]').remove();
 
+    // remove bottom pre and mediawiki
+    $('pre[data-parsoid=\'{"dsr":[63816,63892,1,0]}\']').remove();
+    $('p[data-parsoid=\'{"dsr":[63893,63905,0,0]}\']').remove();
 
     // Serialize the modified document
     const modifiedHTML = $.html();
