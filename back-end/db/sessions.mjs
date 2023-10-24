@@ -6,7 +6,7 @@ const ConnectMongoDBStore = ConnectMongoDBSession(session);
 const MongoDBStore = new ConnectMongoDBStore({
   uri: process.env.ATLAS_URI,
   collection: "mySessions",
-  databaseName: "sample_training",
+  databaseName: "Story-Safe",
 });
 
 export default MongoDBStore;
