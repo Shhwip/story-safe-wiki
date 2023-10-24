@@ -30,7 +30,7 @@
 }
 
 .search-nav:hover {
-    fill: var(--hover-color);
+  fill: var(--hover-color);
 }
 
 .user-nav {
@@ -39,8 +39,8 @@
 }
 
 .navigation {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .login,
@@ -50,19 +50,35 @@
 }
 
 .login {
-    display: flex;
-    margin-right: 10px;
+  display: flex;
+  margin-right: 10px;
+}
+
+.logout {
+  display: flex;
+  margin-right: 10px;
 }
 
 .register {
-    display: flex;
-    align-items: center;
-    border: none;
-    background: var(--seconday-color);
-    transition: background 0.25s;
+  display: flex;
+  align-items: center;
+  border: none;
+  background: var(--seconday-color);
+  transition: background 0.25s;
 }
 
 .register:hover {
-    background: var(--hover-color);
+  background: var(--hover-color);
+}
 
+.header-button-container {
+  display: flex;
+  align-items: center;
+}
+
+.account-button {
+  display: flex;
+  align-items: center;
+  border: none;
+  height: 3em;
 }

@@ -5,8 +5,10 @@
 }
 
 .other {
-    padding-top: 100px;
+    display: block;
+    margin-top: 100px;
 }
+
 .helloWorld {
     text-align: center;
 }
