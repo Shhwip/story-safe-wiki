@@ -9,7 +9,9 @@ router.post(
   asyncHandler(async (req, res) => {
     const articleCheck = await Article.findOne({ title: req.body.title });
     if (articleCheck)
-      res.status(401).send({ message: "article already created" });
+      console.log("articleCheck: ", articleCheck);
+    //if (articleCheck)
+      // res.status(401).send({ message: "article already created" });
     const { title, text } = req.body;
     const article = new Article({
       title,

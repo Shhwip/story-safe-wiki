@@ -8,7 +8,7 @@ import http from "http";
 import helloWorld from "./routes/helloWorld.mjs"
 import parse from "./routes/parse.mjs"
 import edit from "./routes/edit.mjs"
-
+import addArticle from "./routes/addArticle.mjs"
 
 const PORT = process.env.PORT || 5050;
 const app = express();
@@ -30,6 +30,8 @@ app.use(
 app.use("/helloWorld", helloWorld);
 app.use("/edit", edit);
 app.use("/parse", parse);
+app.use("/addArticle", addArticle);
+
 
 const server = http.createServer(app);
 
