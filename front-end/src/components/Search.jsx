@@ -46,8 +46,9 @@ function Search({ onCloseSearch }) {
     return (
         <div className="search-background">
             <div className="search-container">
-                <div className="input-box">
+                <div className="search-input-box">
                     <input
+                        className="search-input-box"
                         type="text"
                         placeholder="Search..."
                         value={searchQuery}
