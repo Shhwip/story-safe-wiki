@@ -1,13 +1,9 @@
 import express from "express";
-//import Promise from "prfun";
 import fs from "fs";
-import * as util from "util";
 import Parsoid from "parsoid-jsapi";
-import cheerio from "cheerio";
+import * as cheerio from "cheerio";
 
 const router = express.Router();
-
-const writeFile = util.promisify(fs.writeFile);
 
 router.get("/body", async (req, res) => {
     // get the wikitext
@@ -18,7 +14,7 @@ router.get("/body", async (req, res) => {
 	var pdoc = await Parsoid.parse(document, { pdoc: true });
 
     // serialize the document so we can send it to the client
-    var record = await pdoc.document.outerHTML;
+    var record = pdoc.document.outerHTML;
 
     // Load the HTML into cheerio
     const $ = cheerio.load(record);
