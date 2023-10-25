@@ -8,6 +8,8 @@ const router = express.Router();
 router.get(
   "/make-salt",
   asyncHandler(async (req, res) => {
+    if (!req.body.username)
+      res.status(401).send({ message: "Please enter a username." });
     const emailTaken = await User.findOne({ email: req.body.email });
     const userNameTaken = await User.findOne({ username: req.body.username });
     let message = "";
@@ -26,6 +28,8 @@ router.get(
 router.post(
   "/get-salt",
   asyncHandler(async (req, res) => {
+    if (!req.body.username)
+      res.status(401).send({ message: "Username or password invalid." });
     const user = await User.findOne({ username: req.body.username });
     if (!user)
       res.status(401).send({ message: "Username or password invalid." });

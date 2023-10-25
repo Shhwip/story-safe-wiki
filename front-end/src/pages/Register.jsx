@@ -6,47 +6,72 @@ import "./Register.css";
 import { Link } from "react-router-dom";
 
 function Register() {
-    const [form, setForm] = useState({
-        username: "",
-        email: "",
-        password: "",
-        confirmPassword: "",
-    });
-    const navigate = useNavigate();
+  const [form, setForm] = useState({
+    username: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
+  const [formValidation, setFormValidation] = useState({
+    username: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
 
-    const handleChange = (e) => {
-        setForm({ ...form, [e.target.id]: e.target.value });
+  const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.id]: e.target.value });
+  };
+
+  const handleFormValidation = (errorMessage) => {
+    let isValidated = true;
+    console.log(errorMessage);
+    if (errorMessage) {
+      isValidated = false;
+      setFormValidation({ ...formValidation, username: errorMessage });
+    }
+    if (form.password !== form.confirmPassword) {
+      isValidated = false;
+      alert("Passwords do not match");
+    }
+    return isValidated;
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    let errorMessage = "";
+    let salt;
+    try {
+      const { data } = await axios.get("http://localhost:4000/user/make-salt", {
+        username: form.username,
+        password: form.password,
+      });
+      salt = data;
+    } catch (error) {
+        console.log(error);
+      errorMessage = error.response.data.message;
     }
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
 
-        let salt;
-        try {
-            const { data } = await axios.get("http://localhost:4000/user/make-salt", {
-                username: form.username,
-                password: form.password,
-            });
-            salt = data;
-        } catch (error) {
-            console.log(error);
-        }
+    if (!handleFormValidation(errorMessage)) return;
 
-        try {
-            const hashedPassword = sha256(form.password + salt);
-            const { data } = await axios.post("http://localhost:4000/user/register", {
-                username: form.username,
-                email: form.email,
-                password: hashedPassword,
-                salt: salt,
-            });
-            localStorage.setItem("userSession", data.username);
-            navigate("/");
-        } catch (error) {
-            console.log(error);
-        }
+    try {
+      const hashedPassword = sha256(form.password + salt);
+      const { data } = await axios.post("http://localhost:4000/user/register", {
+        username: form.username,
+        email: form.email,
+        password: hashedPassword,
+        salt: salt,
+      });
+      localStorage.setItem("userSession", data.username);
+      navigate("/");
+    } catch (error) {
+      console.log(error);
     }
-
+  };
 
   return (
     <div>
@@ -79,8 +104,11 @@ function Register() {
             <input
               type="password"
               className="form-control"
+              pattern="[a-zA-Z0-9]{3,}"
               id="password"
               placeholder="Password"
+              required
+              aria-label="password"
               onChange={handleChange}
             />
           </div>
@@ -88,6 +116,7 @@ function Register() {
             <input
               type="password"
               className="form-control"
+              pattern="[a-zA-Z0-9]{3,}"
               id="confirmPassword"
               placeholder="Confirm Password"
               onChange={handleChange}
@@ -97,7 +126,11 @@ function Register() {
             <Link to="/">
               <button className="cancel-btn">Cancel</button>
             </Link>
-            <button type="submit" onClick={handleSubmit} className="register-btn">
+            <button
+              type="submit"
+              onClick={handleSubmit}
+              className="register-btn"
+            >
               Sign Up
             </button>
           </div>
