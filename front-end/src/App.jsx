@@ -1,5 +1,5 @@
 import { useState, createContext } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
 import "./App.css";
 import HomePage from "./pages/HomePage.jsx";
 import LoginPage from "./pages/Login.jsx";
@@ -18,7 +18,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
-          <Route path="/parse" element={<Parser />} />
+          <Route path="/parse/:title" element={<Parser />} />
         </Routes>
       </BrowserRouter>
     </AppContext.Provider>

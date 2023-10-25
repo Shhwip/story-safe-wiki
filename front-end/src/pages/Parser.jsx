@@ -1,4 +1,5 @@
 import React from "react";
+import {useParams} from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./Parser.css";
@@ -9,12 +10,13 @@ import wormLogoHeader from "../assets/worm-logo.png";
 function Parser() {
   //const [displayMessage, setDisplayMessage] = useState("loading...");
   const [doc, setDoc] = useState(null);
+  const { title } = useParams();
 
   // gets main body text
   useEffect(() => {
     const getMessage = () => {
       axios
-        .get("http://localhost:4000/parse/Lung")
+        .get("http://localhost:4000/parse/" + title)
         .then(async (response) => {
           setDoc(response.data);
           console.log("success");
