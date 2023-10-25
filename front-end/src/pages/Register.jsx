@@ -1,3 +1,5 @@
+import React from "react";
+import Header from "../components/Header.jsx";
 import { useState } from "react";
 import axios from "axios";
 import sha256 from "js-sha256";
@@ -89,6 +91,7 @@ function Register() {
 
   return (
     <div>
+        <Header />
       <div className="login-modal">
         <div className="modal-header">Join StorySafeWiki</div>
         <div className="no-account">

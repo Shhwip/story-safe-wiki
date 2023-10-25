@@ -18,7 +18,7 @@ function HomePage() {
   return (
     <div>
       <Header />
-      <div className="body">
+      <div className="other">
         <button className="parser-button" onClick={handleToParserClick}>
           To Parser
         </button>

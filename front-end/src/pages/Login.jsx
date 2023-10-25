@@ -1,4 +1,6 @@
-import { useState } from "react";
+import React from "react";
+import Header from "../components/Header.jsx";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import "./Login.css";
 import { Link, useNavigate } from "react-router-dom";
@@ -62,6 +64,7 @@ function Login() {
 
   return (
     <div>
+      <Header />
       <div className="login-modal">
         <div className="modal-header">Welcome Back!</div>
         <div className="no-account">

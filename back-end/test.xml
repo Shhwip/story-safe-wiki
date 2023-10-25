@@ -1,59 +1,5 @@
-<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.10/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.10/ http://www.mediawiki.org/xml/export-0.10.xsd" version="0.10" xml:lang="en">
-  <siteinfo>
-    <sitename>Wikipedia</sitename>
-    <dbname>enwiki</dbname>
-    <base>https://en.wikipedia.org/wiki/Main_Page</base>
-    <generator>MediaWiki 1.41.0-wmf.29</generator>
-    <case>first-letter</case>
-    <namespaces>
-      <namespace key="-2" case="first-letter">Media</namespace>
-      <namespace key="-1" case="first-letter">Special</namespace>
-      <namespace key="0" case="first-letter" />
-      <namespace key="1" case="first-letter">Talk</namespace>
-      <namespace key="2" case="first-letter">User</namespace>
-      <namespace key="3" case="first-letter">User talk</namespace>
-      <namespace key="4" case="first-letter">Wikipedia</namespace>
-      <namespace key="5" case="first-letter">Wikipedia talk</namespace>
-      <namespace key="6" case="first-letter">File</namespace>
-      <namespace key="7" case="first-letter">File talk</namespace>
-      <namespace key="8" case="first-letter">MediaWiki</namespace>
-      <namespace key="9" case="first-letter">MediaWiki talk</namespace>
-      <namespace key="10" case="first-letter">Template</namespace>
-      <namespace key="11" case="first-letter">Template talk</namespace>
-      <namespace key="12" case="first-letter">Help</namespace>
-      <namespace key="13" case="first-letter">Help talk</namespace>
-      <namespace key="14" case="first-letter">Category</namespace>
-      <namespace key="15" case="first-letter">Category talk</namespace>
-      <namespace key="100" case="first-letter">Portal</namespace>
-      <namespace key="101" case="first-letter">Portal talk</namespace>
-      <namespace key="118" case="first-letter">Draft</namespace>
-      <namespace key="119" case="first-letter">Draft talk</namespace>
-      <namespace key="710" case="first-letter">TimedText</namespace>
-      <namespace key="711" case="first-letter">TimedText talk</namespace>
-      <namespace key="828" case="first-letter">Module</namespace>
-      <namespace key="829" case="first-letter">Module talk</namespace>
-      <namespace key="2300" case="case-sensitive">Gadget</namespace>
-      <namespace key="2301" case="case-sensitive">Gadget talk</namespace>
-      <namespace key="2302" case="case-sensitive">Gadget definition</namespace>
-      <namespace key="2303" case="case-sensitive">Gadget definition talk</namespace>
-    </namespaces>
-  </siteinfo>
-  <page>
     <title>Boat</title>
-    <ns>0</ns>
-    <id>3996</id>
-    <revision>
-      <id>1167757943</id>
-      <parentid>1164487469</parentid>
-      <timestamp>2023-07-29T18:14:54Z</timestamp>
-      <contributor>
-        <username>Autisticeditor 20</username>
-        <id>45963401</id>
-      </contributor>
-      <comment>tweaked</comment>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text bytes="20355" xml:space="preserve">{{short description|Vessel for transport by water}}
+{{short description|Vessel for transport by water}}
 {{Other uses}}
 {{pp-semi-indef|small=yes}}
 [[File:Motorboat at Kankaria lake.JPG|thumb|right|A recreational [[motorboat]] with an [[outboard motor]]]]
@@ -182,8 +128,4 @@ Europe is the main producer of recreational boats (the second production in the 
 
 [[Category:Boats| ]]
 [[Category:Watercraft]]
-[[Category:Fishing equipment]]</text>
-      <sha1>nmsuuvfl3pdybbo9vu7hjcuvtadgg3q</sha1>
-    </revision>
-  </page>
-</mediawiki>
+[[Category:Fishing equipment]]
