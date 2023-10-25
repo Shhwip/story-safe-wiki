@@ -1,4 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
+import { useNavigate } from "react-router-dom";
 import './Search.css';
 import axios from "axios";
 
@@ -7,7 +8,7 @@ function Search({ onCloseSearch }) {
     const [searchResults, setSearchResults] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const inputRef = useRef(null);
-
+    const navigate = useNavigate();
     function handleCloseSearchClick() {
         // setIsPopupActive to false in Header.jsx
         onCloseSearch();
@@ -24,10 +25,20 @@ function Search({ onCloseSearch }) {
         try {
             const response = await axios.get(`http://localhost:4000/search?q=${searchQuery}`);
 
-            if (response.data && response.data.length > 0) {
+            if (response.data && response.data.length === 1) {
                 setSearchResults(response.data);
+                const title = response.data[0].title;
+                const encodedTitle = encodeURIComponent(title);
+                navigate(`/parse/${encodedTitle}`);
+                console.log("Found 1 search result.");
+                console.log("Navigating to /parse/" + encodedTitle);
+            } else if (response.data.length > 1) {
+                setSearchResults(response.data);
+                console.log("Search sent back more than 1 result.")
+                console.log("Result count: " + response.data.length);
             } else {
                 setSearchResults([]);
+                console.log("Search found: " + response.data.length + " results.");
             }
         } catch (error) {
             console.error('Error searching:', error);
