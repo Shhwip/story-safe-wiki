@@ -14,7 +14,7 @@ function Parser() {
   useEffect(() => {
     const getMessage = () => {
       axios
-        .get("http://localhost:4000/parse/body")
+        .get("http://localhost:4000/parse/Lung")
         .then(async (response) => {
           setDoc(response.data);
           console.log("success");
