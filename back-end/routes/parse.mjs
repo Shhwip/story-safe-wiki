@@ -1,14 +1,16 @@
 import express from "express";
-import fs from "fs";
-import Parsoid from "parsoid-jsapi";
 import * as cheerio from "cheerio";
+import Parsoid from "parsoid-jsapi";
+import Article from "../db/models/article.mjs";
 
 const router = express.Router();
 
-router.get("/body", async (req, res) => {
+router.get("/:title", async (req, res) => {
     // get the wikitext
-    // we will replace this with a call to the database
-    var document = fs.readFileSync('../tools/data/out.xml', 'utf8');
+    var title = req.params.title;
+    console.log("title: ", title);
+    var article = await Article.findOne({ title: title });
+    var document = article.text;
 
     // parse the wikitext into a parsoid document
 	var pdoc = await Parsoid.parse(document, { pdoc: true });
@@ -26,10 +28,6 @@ router.get("/body", async (req, res) => {
 
     // remove grayed out stuff plus styles
     $('meta, link[rel="dc:isVersionOf"], link[href*="mediawiki.legacy.commonPrint"], title, base').remove();
-
-    // remove top part with the p tag data-parsoid
-    $('p[data-parsoid=\'{"dsr":[0,252,0,0]}\']').remove();
-
 
     // EXTRACT TITLE
     // find <pre> elements
@@ -73,15 +71,6 @@ router.get("/body", async (req, res) => {
     pageHeaderDiv.after(pageContentDiv);
 
 
-    // remove tabber and infobox section
-    $('p[data-parsoid=\'{"dsr":[3430,3453,0,0]}\']').remove();
-    $('p[data-parsoid=\'{"dsr":[3763,3771,0,0]}\']').remove();
-    $('p[data-parsoid=\'{"dsr":[3927,3942,0,0]}\']').remove();
-
-    $('p[data-parsoid=\'{"dsr":[24,41,0,0]}\']').remove();
-    $('p[data-parsoid=\'{"dsr":[351,359,0,0]}\']').remove();
-    $('p[data-parsoid=\'{"dsr":[515,524,0,0]}\']').remove();
-
     // remove grayed out stuff plus styles
     $('div[class="shortdescription nomobile noexcerpt noprint searchaux"]').remove();
     $('div[typeof="mw:Extension/templatestyles mw:Transclusion"]').remove();
@@ -89,9 +78,6 @@ router.get("/body", async (req, res) => {
     $('link[rel="mw:PageProp/Category"]').remove();
     $('span[about="#mwt4"]').remove();
 
-    // remove bottom pre and mediawiki
-    $('pre[data-parsoid=\'{"dsr":[63816,63892,1,0]}\']').remove();
-    $('p[data-parsoid=\'{"dsr":[63893,63905,0,0]}\']').remove();
 
     // Serialize the modified document
     const modifiedHTML = $.html();
