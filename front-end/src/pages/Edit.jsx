@@ -1,1 +1,0 @@
-// get the xhtml from "http://localhost:4000/parse/" and display it in a editable text box
