@@ -27,14 +27,26 @@ function Register() {
 
   const handleFormValidation = (errorMessage) => {
     let isValidated = true;
-    console.log(errorMessage);
     if (errorMessage) {
       isValidated = false;
-      setFormValidation({ ...formValidation, username: errorMessage });
+      if (errorMessage.includes("email"))
+        setFormValidation({ ...formValidation, email: errorMessage });
+      else if (errorMessage.includes("username"))
+        setFormValidation({ ...formValidation, username: errorMessage });
     }
     if (form.password !== form.confirmPassword) {
       isValidated = false;
-      alert("Passwords do not match");
+      setFormValidation({
+        ...formValidation,
+        confirmPassword: "Passwords do not match.",
+      });
+    }
+    if (form.password.length < 8) {
+      isValidated = false;
+      setFormValidation({
+        ...formValidation,
+        password: "Password must be at least 8 characters.",
+      });
     }
     return isValidated;
   };
@@ -45,16 +57,18 @@ function Register() {
     let errorMessage = "";
     let salt;
     try {
-      const { data } = await axios.get("http://localhost:4000/user/make-salt", {
-        username: form.username,
-        password: form.password,
-      });
+      const { data } = await axios.post(
+        "http://localhost:4000/user/make-salt",
+        {
+          username: form.username,
+          password: form.password,
+          email: form.email,
+        }
+      );
       salt = data;
     } catch (error) {
-        console.log(error);
       errorMessage = error.response.data.message;
     }
-
 
     if (!handleFormValidation(errorMessage)) return;
 
@@ -78,7 +92,7 @@ function Register() {
       <div className="login-modal">
         <div className="modal-header">Join StorySafeWiki</div>
         <div className="no-account">
-          already have an account,
+          Already have an account,
           <a href="/login"> Log In</a>
         </div>
         <div className="register-form">
@@ -91,6 +105,11 @@ function Register() {
               onChange={handleChange}
             />
           </div>
+          {formValidation.username ? (
+            <div className="form-error-message">{formValidation.username}</div>
+          ) : (
+            <div></div>
+          )}
           <div className="form-group">
             <input
               type="email"
@@ -100,6 +119,11 @@ function Register() {
               onChange={handleChange}
             />
           </div>
+          {formValidation.email ? (
+            <div className="form-error-message">{formValidation.email}</div>
+          ) : (
+            <div></div>
+          )}
           <div className="form-group">
             <input
               type="password"
@@ -112,6 +136,11 @@ function Register() {
               onChange={handleChange}
             />
           </div>
+          {formValidation.password ? (
+            <div className="form-error-message">{formValidation.password}</div>
+          ) : (
+            <div></div>
+          )}
           <div className="form-group">
             <input
               type="password"
@@ -122,6 +151,13 @@ function Register() {
               onChange={handleChange}
             />
           </div>
+          {formValidation.confirmPassword ? (
+            <div className="form-error-message">
+              {formValidation.confirmPassword}
+            </div>
+          ) : (
+            <div></div>
+          )}
           <div className="buttons-container">
             <Link to="/">
               <button className="cancel-btn">Cancel</button>

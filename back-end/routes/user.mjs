@@ -5,20 +5,22 @@ import bcrypt from "bcrypt";
 
 const router = express.Router();
 
-router.get(
+router.post(
   "/make-salt",
   asyncHandler(async (req, res) => {
+    console.log(req.body);
     if (!req.body.username)
-      res.status(401).send({ message: "Please enter a username." });
+      return res.status(401).send({ message: "Please enter a username." });
     const emailTaken = await User.findOne({ email: req.body.email });
     const userNameTaken = await User.findOne({ username: req.body.username });
     let message = "";
 
     if (emailTaken) message = "An account already exists with this email.";
 
-    if (userNameTaken) message = "userName is already taken.";
+    if (userNameTaken) message = "Username is already taken.";
 
-    if (emailTaken || userNameTaken) res.status(401).send({ message: message });
+    if (emailTaken || userNameTaken)
+      return res.status(401).send({ message: message });
 
     const salt = await bcrypt.genSalt(10);
     res.status(200).send(salt);

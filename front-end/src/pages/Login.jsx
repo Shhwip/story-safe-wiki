@@ -1,11 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
 import "./Login.css";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import sha256 from "js-sha256";
 
 function Login() {
   const [form, setForm] = useState({
+    username: "",
+    password: "",
+  });
+  const [formValidation, setFormValidation] = useState({
     username: "",
     password: "",
   });
@@ -15,23 +19,34 @@ function Login() {
     setForm({ ...form, [e.target.id]: e.target.value });
   };
 
+  const handleFormValidation = (errorMessage) => {
+    let isValidated = true;
+
+    if (errorMessage) {
+      isValidated = false;
+      if (errorMessage.includes("username"))
+        setFormValidation({ ...formValidation, password: errorMessage });
+    }
+    return isValidated;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(form);
 
     let salt;
+    let errorMessage = "";
     try {
-      console.log(form.username);
       const { data } = await axios.post("http://localhost:4000/user/get-salt", {
         username: form.username,
       });
       salt = data;
     } catch (error) {
-      console.log(error);
+      errorMessage = error.response.data.message;
     }
-    console.log("test");
+
+    if (!handleFormValidation(errorMessage)) return;
+
     try {
-      console.log(salt);
       const hashedPassword = sha256(form.password + salt);
       const { data } = await axios.post("http://localhost:4000/user/login", {
         username: form.username,
@@ -40,7 +55,8 @@ function Login() {
       navigate("/");
       localStorage.setItem("userSession", data.username);
     } catch (error) {
-      console.log(error);
+      errorMessage = error.response.data.message;
+      setFormValidation({ ...formValidation, password: errorMessage });
     }
   };
 
@@ -71,6 +87,11 @@ function Login() {
               onChange={handleChange}
             />
           </div>
+          {formValidation.password ? (
+            <div className="form-error-message">{formValidation.password}</div>
+          ) : (
+            <div></div>
+          )}
           <div className="buttons-container">
             <Link to="/">
               <button className="cancel-btn">Cancel</button>
