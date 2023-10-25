@@ -62,6 +62,7 @@
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.25s;
+  justify-content: center;
 }
 
 .register-btn:hover {
@@ -73,7 +74,7 @@
 }
 
 .cancel-btn {
-  margin-top: 15px;
+  margin-top: 15px 15px 0 0;
   width: 125px;
   text-align: center;
   background-color: #fff;
@@ -85,4 +86,10 @@
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.25s;
+  justify-content: center;
+}
+
+.form-error-message {
+  color: var(--seconday-color);
+  font-size: 0.8em;
 }
