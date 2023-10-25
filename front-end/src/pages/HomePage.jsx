@@ -12,7 +12,7 @@ function HomePage() {
   const navigate = useNavigate();
 
   function handleToParserClick() {
-    navigate("/parse");
+    navigate("/parse/Lung");
   }
 
   return (
