@@ -13,6 +13,11 @@ router.get("/:title", async (req, res) => {
     var title = req.params.title;
     console.log("title: ", title);
     var article = await Article.findOne({ title: title });
+    if(!article) {
+        console.log("article not found");
+        res.status(404).send("article not found");
+        return;
+    }
     var document = article.text;
 
     // parse the wikitext into a parsoid document
