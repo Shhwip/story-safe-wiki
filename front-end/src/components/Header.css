@@ -1,0 +1,77 @@
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+}
+
+.logo-header {
+  height: 3em;
+  cursor: pointer;
+}
+
+.search-nav {
+  display: flex;
+  height: 3em;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: fill 0.3s ease;
+}
+
+.search-nav:hover {
+  fill: var(--hover-color);
+}
+
+.user-nav {
+  height: 1.5em;
+  margin-right: 10px;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+}
+
+.login,
+.register {
+  height: 3em;
+}
+
+.login {
+  display: flex;
+  margin-right: 10px;
+}
+
+.logout {
+  display: flex;
+  margin-right: 10px;
+}
+
+.register {
+  display: flex;
+  align-items: center;
+  border: none;
+  background: var(--seconday-color);
+  transition: background 0.25s;
+}
+
+.register:hover {
+  background: var(--hover-color);
+}
+
+.header-button-container {
+  display: flex;
+  align-items: center;
+}
+
+.account-button {
+  display: flex;
+  align-items: center;
+  border: none;
+  height: 3em;
+}

@@ -1,0 +1,88 @@
+
+
+.register-modal {
+  background-color: #fff;
+  border-radius: 8px;
+  margin: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  min-width: 400px;
+  width: 50%;
+  max-width: 600px;
+  padding: 2em;
+  text-align: center;
+}
+
+.modal-header {
+  font-size: 3em;
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+.no-account {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.form-group input {
+  font-size: 1em;
+  background-color: #fff;
+  padding: 7px 10px 7px 10px;
+  margin: 5px;
+  width: 50%;
+  border: 1px solid #707070;
+  border-radius: 6px;
+}
+
+.form-group input:focus {
+  outline: none;
+  border: 1px solid var(--hover-color);
+  box-shadow: 0 0 0 3px #A6212C55;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.register-btn {
+  margin-top: 15px;
+  width: 125px;
+  text-align: center;
+  background-color: var(--seconday-color);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px 10px 20px;
+  font-size: 1.2em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.25s;
+}
+
+.register-btn:hover {
+  background-color: var(--hover-color);
+}
+
+.register-btn:focus {
+  outline: none;
+}
+
+.cancel-btn {
+  margin-top: 15px;
+  width: 125px;
+  text-align: center;
+  background-color: #fff;
+  color: var(--primary-color);
+  border: 1px solid var(--seconday-color);
+  border-radius: 6px;
+  padding: 10px 20px 10px 20px;
+  font-size: 1.2em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.25s;
+}

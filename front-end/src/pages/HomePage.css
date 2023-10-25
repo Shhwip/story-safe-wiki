@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+.body {
+    display: block;
+    margin-top: 100px;
+}
+
 .helloWorld {
     text-align: center;
 }
