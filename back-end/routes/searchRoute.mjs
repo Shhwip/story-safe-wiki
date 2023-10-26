@@ -11,7 +11,7 @@ router.get("/", async (req, res) => {
 
     try {
         const results = await Article
-            .find({ title: searchQuery });
+            .find({ title: { $regex: new RegExp(searchQuery, 'i') } });
 
         // Check if there are any search results
         if (!results || results.length === 0) {
@@ -24,7 +24,9 @@ router.get("/", async (req, res) => {
             console.log(results.length);
         } else {
             // more than 1 result
+            res.status(200).json(results);
             console.log(results.length);
+            console.log(results)
         }
     } catch (error) {
         console.error('Error searching:', error);
