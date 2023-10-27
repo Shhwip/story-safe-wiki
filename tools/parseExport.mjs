@@ -1,22 +1,22 @@
-
 // function removeTags(str) {
 //     return str.replace(/^\s*<(?!title).*>/g, '');
 //   }
+
 import axios from 'axios';
 import fs from 'fs';
 import readline from 'readline';
 
-function addArticle(title, text) {
+async function addArticle(title, text) {
 
     const data = { title: title, text: text };
-    axios.post('http://localhost:4000/addArticle/add', data)
+    await axios.post('http://localhost:4000/addArticle/add', data)
     .then((res) => {
         console.log(`statusCode: ${res.statusCode}`)
-        console.log(res)
     })
     .catch((error) => {
-        console.error(error)
-    })
+        console.log("upload error")
+        console.log(error)
+    });
 
 }
 
@@ -44,8 +44,6 @@ const pageCloseRegex = /^\s*<\/page>/g
 const titleRegex = /^\s*<title>(.*)</
 var pageCount = 0;
 rl.on('line', (line) => {
-    //console.log(`Line from file: ${line}`);
-    // tagsRegex is any line that starts with whitespace and then a tag that isn't title
 
     var title = line.match(titleRegex);
     if (line.match(pageOpenRegex))
@@ -61,9 +59,7 @@ rl.on('line', (line) => {
 
     if (!line.match(notTitleRegex))
     {
-        addTags(line);
-        fixRefTags(line);
-        articleText = articleText.concat(line , '\n');
+        articleText = articleText.concat(fixRefTags(addTags(line)) , '\n');
     }
 
     else if (line.match(pageCloseRegex))
