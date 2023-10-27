@@ -44,6 +44,7 @@ function Search({ onCloseSearch }) {
             console.error('Error searching:', error);
         } finally {
             setIsLoading(false);
+            onCloseSearch();
         }
     };
 
@@ -82,10 +83,11 @@ function Search({ onCloseSearch }) {
                 </svg>
             </div>
             {isLoading ? (
-                <p className="search-results">Loading...</p>
+                <p className="search-results">Searching...</p>
             ) : (
                 <div className="search-results">
-                    {searchResults.length > 0 ? (
+                    { searchResults.length === 0 ? (<p></p>) : (
+                        searchResults.length > 0 ? (
                         <ul>
                             {searchResults.map((result) => (
                                 <li key={result._id}>{result.title}</li>
@@ -93,6 +95,7 @@ function Search({ onCloseSearch }) {
                         </ul>
                     ) : (
                         <p>No search results found</p>
+                        )
                     )}
                 </div>
             )}

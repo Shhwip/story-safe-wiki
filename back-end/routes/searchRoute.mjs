@@ -5,20 +5,22 @@ import Article from "../db/models/article.mjs";
 
 router.get("/", async (req, res) => {
     // Get the search query from the request
-    const searchQuery = req.query.q;
+    const searchQuery = req.query.q.replace(/\w\S*/g, (word) => {
+        return word.charAt(0).toUpperCase() + word.substring(1).toLowerCase();
+    });
     console.log("Search Start")
     console.log(searchQuery);
 
     try {
         const results = await Article
-            .find({ title: { $regex: new RegExp(searchQuery, 'i') } });
+            .find({ title: searchQuery });
 
         // Check if there are any search results
         if (!results || results.length === 0) {
             // no results
             res.status(404).json({ message: "Could not find any search results for that term" });
         } else if (results.length === 1) {
-            // exact match
+            // 1 result
             res.status(200).json(results);
             //console.log(results);
             console.log(results.length);

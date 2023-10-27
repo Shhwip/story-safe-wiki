@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams} from "react-router-dom";
+import { useParams, useNavigate} from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./Parser.css";
@@ -8,12 +8,13 @@ import Header from "../components/Header.jsx";
 import wormLogoHeader from "../assets/worm-logo.png";
 
 function Parser() {
-  //const [displayMessage, setDisplayMessage] = useState("loading...");
-  const [doc, setDoc] = useState(null);
-  const { title } = useParams();
+    //const [displayMessage, setDisplayMessage] = useState("loading...");
+    const [doc, setDoc] = useState(null);
+    const { title } = useParams();
+    const navigate = useNavigate();
 
-  // gets main body text
-  useEffect(() => {
+    // gets main body text
+    useEffect(() => {
     const getMessage = () => {
       axios
         .get("http://localhost:4000/parse/" + title)
@@ -27,15 +28,26 @@ function Parser() {
         });
     };
     getMessage();
-  }, []);
-
-// TODO: other useEffect to get quote section
-// TODO: then javascript to alternate displaying WARD quote or WORM quote
-
-// TODO: other useEffect to get info box section then CSS to place next to body text
+    }, []);
 
 
+    // Refresh page when searching
+    useEffect(() => {
+        const getMessage = async () => {
+            try {
+                const response = await axios.get(`http://localhost:4000/parse/${title}`);
+                setDoc(response.data);
+                console.log("success");
+            } catch (error) {
+                console.log("error: ");
+                console.log(error);
+            }
+        };
+        getMessage();
+    }, [title]);
 
+    // possibly set doc to null when searching
+    
     if (!doc) {
         // While loading or if there's an error, display the message
         return (
