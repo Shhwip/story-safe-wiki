@@ -6,7 +6,6 @@ import "./Parser.css";
 import parse from "html-react-parser";
 import Header from "../components/Header.jsx";
 import FandomCommunityHeader from "../components/FandomCommunityHeader.jsx";
-import wormLogoHeader from "../assets/worm-logo.png";
 
 function Parser() {
     //const [displayMessage, setDisplayMessage] = useState("loading...");

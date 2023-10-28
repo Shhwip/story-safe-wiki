@@ -18,9 +18,12 @@ function SearchPage() {
         axios
             .get(`http://localhost:4000/search/bigSearch?q=${query}`)
             .then((response) => {
-                setSearchResults(response.data); // Update the state with search results
+                if (response.data && response.data.length > 0) {
+                    setSearchResults(response.data);
+                } else {
+                    setSearchResults([]);
+                }
                 setIsLoading(false);
-                console.log("Pink Dinosaur")
             })
             .catch((error) => {
                 console.error("Error searching:", error);
@@ -57,7 +60,7 @@ function SearchPage() {
                                         ) : (
                                             <ul>
                                                 {searchResults.map((result) => (
-                                                    <li key={result._id}>{result.title}</li>
+                                                    <li key={result._id.toString()}>{result.title}</li>
                                                 ))}
                                             </ul>
                                         )}

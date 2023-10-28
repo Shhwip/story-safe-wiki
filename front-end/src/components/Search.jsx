@@ -9,6 +9,11 @@ function Search({ onCloseSearch }) {
     const [isLoading, setIsLoading] = useState(false);
     const inputRef = useRef(null);
     const navigate = useNavigate();
+
+    useEffect(() => {
+        inputRef.current.focus();
+    }, []);
+
     function handleCloseSearchClick() {
         onCloseSearch();
     }
@@ -29,13 +34,13 @@ function Search({ onCloseSearch }) {
                 const title = response.data[0].title;
                 const encodedTitle = encodeURIComponent(title);
                 navigate(`/parse/${encodedTitle}`);
-                onCloseSearch();
             } else {
                 // go to search page
                 navigate(`/search/${searchQuery}`);
                 setSearchResults([]);
                 console.log("Search found no exact matches.");
             }
+            onCloseSearch();
         } catch (error) {
             console.error('Error searching:', error);
         } finally {
@@ -62,6 +67,7 @@ function Search({ onCloseSearch }) {
                         onChange={handleSearchInputChange}
                         onKeyDown={handleKeyDown}
                         ref={inputRef}
+                        autoFocus
                     />
                 </div>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#fff"

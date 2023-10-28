@@ -18,7 +18,6 @@ router.get("/", async (req, res) => {
         // Check if there are any search results
         if (results.length === 1) {
             res.status(200).json(results);
-            //console.log(results);
             console.log(results.length);
         } else {
             // no exact matches
@@ -43,13 +42,18 @@ router.get("/bigSearch", async (req, res) => {
         const titleResults = await Article.find({ title: { $regex: new RegExp(searchQuery, 'i') } });
         const bodyResults = await Article.find({ text: { $regex: new RegExp(searchQuery, 'i') } });
 
+        // Remove items from bodyResults that are also in titleResults based on _id
+        const uniqueBodyResults = bodyResults.filter((bodyResult) => {
+            return !titleResults.some((titleResult) => titleResult._id.toString() === bodyResult._id.toString());
+        });
+
         // combine the results from both title and body searches
-        const results = [...titleResults, ...bodyResults];
+        const results = [...titleResults, ...uniqueBodyResults];
 
         // Check if there are any search results
         if (!results || results.length === 0) {
             // no results
-            res.status(404).json({ message: "Could not find any search results for that term" });
+            res.status(200).json({ message: "Could not find any search results for that term" });
         } else {
             // more than 1 result
             res.status(200).json(results);
