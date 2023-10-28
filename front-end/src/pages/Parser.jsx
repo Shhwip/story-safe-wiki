@@ -5,6 +5,7 @@ import axios from "axios";
 import "./Parser.css";
 import parse from "html-react-parser";
 import Header from "../components/Header.jsx";
+import FandomCommunityHeader from "../components/FandomCommunityHeader.jsx";
 import wormLogoHeader from "../assets/worm-logo.png";
 
 function Parser() {
@@ -33,6 +34,7 @@ function Parser() {
 
     // Refresh page when searching
     useEffect(() => {
+        setDoc(null);
         const getMessage = async () => {
             try {
                 const response = await axios.get(`http://localhost:4000/parse/${title}`);
@@ -59,45 +61,7 @@ function Parser() {
                 <div className="main-container">
                     <div className="resizable-container">
                         <div className="community-header-wrapper">
-                            <header className="fandom-community-header">
-                                <a className="fandom-community-header__image" href="#">
-                                    <img src={wormLogoHeader}
-                                         width="225" height="65" alt="Worm Wiki">
-                                    </img>
-                                </a>
-                                <div className="fandom-community-header__top-container">
-                                    <div className="fandom-community-header__community-name-wrapper">
-                                        <a className="fandom-community-header__community-name" href="#">
-                                            Worm Wiki
-                                        </a>
-                                    </div>
-                                </div>
-                                <nav className="fandom-community-header__local-navigation">
-                                    <ul className="wds-tabs">
-                                        <li className="wds-dropdown explore-menu">
-                                            <a href="#">
-                                                <span>Explore</span>
-                                            </a>
-                                        </li>
-                                        <li className="wds-dropdown">
-                                            <a href="#">
-                                                <span>Help Out</span>
-                                            </a>
-                                        </li>
-                                        <li className="wds-dropdown">
-                                            <a href="#">
-                                                <span>Top Articles</span>
-                                            </a>
-                                        </li>
-                                        <li className="wds-dropdown">
-                                            <a href="#">
-                                                <span>Community</span>
-                                            </a>
-                                        </li>
-
-                                    </ul>
-                                </nav>
-                            </header>
+                            <FandomCommunityHeader />
                         </div>
                         <div className="page">
                             <main className="page__main" lang="en">
@@ -131,45 +95,7 @@ function Parser() {
         <div className="main-container">
             <div className="resizable-container">
                 <div className="community-header-wrapper">
-                    <header className="fandom-community-header">
-                        <a className="fandom-community-header__image" href="#">
-                            <img src={wormLogoHeader}
-                                 width="225" height="65" alt="Worm Wiki">
-                            </img>
-                        </a>
-                        <div className="fandom-community-header__top-container">
-                            <div className="fandom-community-header__community-name-wrapper">
-                                <a className="fandom-community-header__community-name" href="#">
-                                    Worm Wiki
-                                </a>
-                            </div>
-                        </div>
-                        <nav className="fandom-community-header__local-navigation">
-                            <ul className="wds-tabs">
-                                <li className="wds-dropdown explore-menu">
-                                    <a href="#">
-                                        <span>Explore</span>
-                                    </a>
-                                </li>
-                                <li className="wds-dropdown">
-                                    <a href="#">
-                                        <span>Help Out</span>
-                                    </a>
-                                </li>
-                                <li className="wds-dropdown">
-                                    <a href="#">
-                                        <span>Top Articles</span>
-                                    </a>
-                                </li>
-                                <li className="wds-dropdown">
-                                    <a href="#">
-                                        <span>Community</span>
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </nav>
-                    </header>
+                    <FandomCommunityHeader />
                 </div>
                 <div className="page">
                     {parse(doc)}

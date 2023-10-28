@@ -10,7 +10,6 @@ function Search({ onCloseSearch }) {
     const inputRef = useRef(null);
     const navigate = useNavigate();
     function handleCloseSearchClick() {
-        // setIsPopupActive to false in Header.jsx
         onCloseSearch();
     }
 
@@ -30,21 +29,17 @@ function Search({ onCloseSearch }) {
                 const title = response.data[0].title;
                 const encodedTitle = encodeURIComponent(title);
                 navigate(`/parse/${encodedTitle}`);
-                console.log("Found 1 search result.");
-                console.log("Navigating to /parse/" + encodedTitle);
-            } else if (response.data.length > 1) {
-                setSearchResults(response.data);
-                console.log("Search sent back more than 1 result.")
-                console.log("Result count: " + response.data.length);
+                onCloseSearch();
             } else {
+                // go to search page
+                navigate(`/search/${searchQuery}`);
                 setSearchResults([]);
-                console.log("Search found: " + response.data.length + " results.");
+                console.log("Search found no exact matches.");
             }
         } catch (error) {
             console.error('Error searching:', error);
         } finally {
             setIsLoading(false);
-            onCloseSearch();
         }
     };
 
@@ -87,15 +82,11 @@ function Search({ onCloseSearch }) {
             ) : (
                 <div className="search-results">
                     { searchResults.length === 0 ? (<p></p>) : (
-                        searchResults.length > 0 ? (
                         <ul>
                             {searchResults.map((result) => (
                                 <li key={result._id}>{result.title}</li>
                             ))}
                         </ul>
-                    ) : (
-                        <p>No search results found</p>
-                        )
                     )}
                 </div>
             )}
