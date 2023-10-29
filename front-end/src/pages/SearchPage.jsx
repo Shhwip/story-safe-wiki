@@ -1,17 +1,21 @@
-import React, { useEffect, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import Header from "../components/Header.jsx";
 import "./SearchPage.css";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import FandomCommunityHeader from "../components/FandomCommunityHeader.jsx";
 
 function SearchPage() {
     const { query } = useParams(); // Retrieve the search query from the URL
+    const [searchQuery, setSearchQuery] = useState('');
     const [searchResults, setSearchResults] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-    console.log("SearchPage rendered");
+    const inputRef = useRef(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
+        inputRef.current.focus();
+
         // Make an axios GET request to your backend's /bigSearch route
         console.log(query);
         setIsLoading(true);
@@ -31,6 +35,23 @@ function SearchPage() {
                 setIsLoading(false);
             });
     }, [query]);
+
+
+    const handleSearchInputChange = (event) => {
+        setSearchQuery(event.target.value);
+    };
+
+    const handleBroadSearchSubmit = async (event) => {
+        event.preventDefault();
+        navigate(`/search/${searchQuery}`);
+    };
+
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+            handleBroadSearchSubmit(event);
+        }
+    }
+
 
     function truncateText(text, wordCount) {
         const words = text.split(' ');
@@ -68,15 +89,20 @@ function SearchPage() {
                                             <div className="unified-search__input">
                                                 <div className="unified-search__input__wrapper__inner">
                                                     <div className="unified-search__input__wrapper">
-                                                        <input className="unified-search__input__query" placeholder={query}/>
+                                                        <input className="unified-search__input__query"
+                                                               placeholder={query}
+                                                               value={searchQuery}
+                                                               onChange={handleSearchInputChange}
+                                                               onKeyDown={handleKeyDown}
+                                                               ref={inputRef}
+                                                               autoFocus/>
                                                     </div>
                                                     <svg
                                                         xmlns="http://www.w3.org/2000/svg"
                                                         viewBox="0 0 512 512"
                                                         fill="#fff"
                                                         className="search-result-button"
-                                                        //ref={selectRef}
-                                                        //onClick={handleHeaderSearchClick}
+                                                        onClick={handleBroadSearchSubmit}
                                                     >
                                                         <path d="M256 64C150.13 64 64 150.13 64 256s86.13 192 192 192 192-86.13 192-192S361.87 64 256 64zm91.31 283.31a16 16 0 01-22.62 0l-42.84-42.83a88.08 88.08 0 1122.63-22.63l42.83 42.84a16 16 0 010 22.62z" />
                                                         <circle cx="232" cy="232" r="56" />
