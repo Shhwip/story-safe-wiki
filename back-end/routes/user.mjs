@@ -73,4 +73,22 @@ router.post(
   })
 );
 
+router.post(
+  "/logout",
+  asyncHandler(async (req, res) => {
+    req.session.destroy();
+    res.status(200).send({ message: "Logged out." });
+  })
+);
+
+router.post(
+  "/set-spoiler-level",
+  asyncHandler(async (req, res) => {
+    const user = await User.findOne({ username: req.session.username.username });
+    user.spoilerLevel = req.body.spoilerLevel;
+    await user.save();
+    res.status(200).send(user);
+  })
+)
+
 export default router;

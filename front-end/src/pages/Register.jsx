@@ -27,13 +27,16 @@ function Register() {
 
   const handleFormValidation = (errorMessage) => {
     let isValidated = true;
+    console.log(errorMessage);
+    console.log(errorMessage.toString().includes("Username"));
     if (errorMessage) {
       isValidated = false;
-      if (errorMessage.includes("email"))
-        setFormValidation({ ...formValidation, email: errorMessage });
-      else if (errorMessage.includes("username"))
-        setFormValidation({ ...formValidation, username: errorMessage });
+      if (errorMessage.toString().includes("email"))
+        setFormValidation({ ...formValidation, email: errorMessage.toString() });
+      else if (errorMessage.toString().includes("Username"))
+        setFormValidation({ ...formValidation, username: errorMessage.toString(), });
     }
+    console.log(formValidation);
     if (form.password !== form.confirmPassword) {
       isValidated = false;
       setFormValidation({
@@ -54,6 +57,7 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    console.log(formValidation)
     let errorMessage = "";
     let salt;
     try {
@@ -67,6 +71,7 @@ function Register() {
       );
       salt = data;
     } catch (error) {
+      console.log(error.response.data.message);
       errorMessage = error.response.data.message;
     }
 

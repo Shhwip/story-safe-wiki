@@ -1,9 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Header.css";
-import logoHeader from "../assets/Horizontal Combination Mark.svg";
 import user from "../Icons/person-circle-outline.svg";
+import logoHeader from "../assets/Horizontal Combination Mark.svg";
 import { useNavigate } from "react-router-dom";
 import Search from "./Search.jsx";
+import AccountMenu from "./AccountMenu";
+import axios from "axios";
 
 function Header() {
   const navigate = useNavigate();
@@ -13,6 +15,7 @@ function Header() {
   function handleHeaderHomeClick() {
     navigate("/");
   }
+
   function handleHeaderLoginClick() {
     navigate("/login");
   }
@@ -27,6 +30,17 @@ function Header() {
 
   function handleCloseSearch() {
     setIsPopupActive(false);
+  }
+
+  const handleLogOut = async () => {
+    localStorage.removeItem("userSession");
+    navigate("/");
+    try {
+      await axios.post("http://localhost:4000/user/logout");
+    }
+    catch (error) {
+      console.log(error);
+    }
   }
 
   return (
@@ -54,14 +68,11 @@ function Header() {
             <div className="header-button-container">
               <button
                 className="logout"
-                onClick={() => {
-                  localStorage.removeItem("userSession");
-                  navigate("/");
-                }}
+                onClick={handleLogOut}
               >
                 Logout
               </button>
-              <button className="account-button">{localStorage.getItem("userSession")}</button>
+              <AccountMenu handleLogOut={handleLogOut}/>
             </div>
           ) : (
             <div className="header-button-container">
@@ -78,17 +89,6 @@ function Header() {
               </button>
             </div>
           )}
-          {/* <button className="login" onClick={handleHeaderLoginClick}>
-            Sign In
-          </button>
-          <button className="register" onClick={handleHeaderRegisterClick}>
-            <img
-              className="user-nav"
-              src={user}
-              alt="User Icon Circle Outline"
-            ></img>
-            Register
-          </button> */}
         </nav>
       </header>
       {isPopupActive && <Search onCloseSearch={handleCloseSearch} />}

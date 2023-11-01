@@ -1,0 +1,59 @@
+.side-bar-content {
+  margin: 10px;
+  width: 100%;
+}
+
+.side-bar-header {
+  font-size: 1.5em;
+  font-weight: 500;
+  margin-top: 15px;
+}
+
+.side-bar-link {
+  font-size: 1.0em;
+  font-weight: 400;
+  padding: 10px;
+  user-select: none;
+}
+
+.side-bar-sub-link {
+  font-size: 1.0em;
+  font-weight: 400;
+  margin-top: 10px;
+  margin-left: 20px;
+  user-select: none;
+  width: 75%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.side-bar-link:hover {
+  cursor: pointer;
+}
+
+.spoil-level {
+  width: 45px;
+  padding-left: 5px;
+  margin-left: 20px;
+}
+
+.save-spoil-level {
+  font-size: 1.0em;
+  font-weight: 400;
+  margin-top: 10px;
+  margin-left: 40px;
+  user-select: none;
+  width: 75%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.save-spoil-level:hover {
+  cursor: pointer;
+}
+
+.side-bar-error-message {
+  color: var(--hover-color);
+  font-size: 0.8;
+  margin-left: 20px;
+}
