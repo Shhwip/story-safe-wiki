@@ -21,8 +21,8 @@ router.get("/:title", async (req, res) => {
 
 router.post("/:title", async (req, res) => {
         const articleCheck = await Article.findOne({ title: req.body.title });
-        if (articleCheck){
-            res.status(401).send({ message: "article already created" });
+        if (!articleCheck){
+            res.status(401).send({ message: "article hasn't been created" });
         }
         const { title, text } = req.body;
         // TODO: call the edit history function here
