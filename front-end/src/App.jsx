@@ -20,7 +20,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/edit" element={<Edit />} />
-          <Route path="/parse/:title" element={<Parser />} />
+          <Route path="/w/:title" element={<Parser />} />
         </Routes>
       </BrowserRouter>
     </AppContext.Provider>

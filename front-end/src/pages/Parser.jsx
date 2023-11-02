@@ -16,7 +16,7 @@ function Parser() {
   useEffect(() => {
     const getMessage = () => {
       axios
-        .get("http://localhost:4000/parse/" + title)
+        .get("http://localhost:4000/w/" + title)
         .then(async (response) => {
           setDoc(response.data);
           console.log("success");
@@ -30,10 +30,8 @@ function Parser() {
   }, []);
 
 // TODO: other useEffect to get quote section
-// TODO: then javascript to alternate displaying WARD quote or WORM quote
 
 // TODO: other useEffect to get info box section then CSS to place next to body text
-
 
 
     if (!doc) {

@@ -8,10 +8,10 @@ router.post(
   "/add",
   asyncHandler(async (req, res) => {
     const articleCheck = await Article.findOne({ title: req.body.title });
-    if (articleCheck)
-      console.log("articleCheck: ", articleCheck);
-    //if (articleCheck)
-      // res.status(401).send({ message: "article already created" });
+    if (articleCheck){
+       res.status(401).send({ message: "article already created" });
+    }
+    else{
     const { title, text } = req.body;
     const article = new Article({
       title,
@@ -20,7 +20,7 @@ router.post(
     await article.save();
 
     res.status(201).send(article);
-  })
+  }})
 );
 
 export default router;

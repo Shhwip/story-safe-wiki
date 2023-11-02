@@ -1,5 +1,5 @@
-import Header from "../Components/Header";
-import EditTool from "../Components/EditTool";
+import Header from "../components/Header";
+import EditTool from "../components/EditTool";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
@@ -9,7 +9,7 @@ export default function Edit() {
   useEffect(() => {
     const getMessage = () => {
       axios.get(
-        "http://localhost:4000/parse/"
+        "http://localhost:4000/w/"
       ).then((response) => {
         response.data ? setArticle(response.data) : setArticle("empty");
         console.log("success")

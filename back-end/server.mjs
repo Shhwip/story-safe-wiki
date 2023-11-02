@@ -8,7 +8,7 @@ import http from "http";
 import helloWorld from "./routes/helloWorld.mjs"
 import searchRoute from "./routes/searchRoute.mjs";
 import user from "./routes/user.mjs";
-import parse from "./routes/parse.mjs"
+import wiki from "./routes/parse.mjs"
 import edit from "./routes/edit.mjs"
 import addArticle from "./routes/addArticle.mjs"
 
@@ -31,7 +31,7 @@ app.use(
 );
 
 app.use("/edit", edit);
-app.use("/parse", parse);
+app.use("/w", wiki);
 app.use("/search", searchRoute);
 app.use("/user", user);
 app.use("/addArticle", addArticle);

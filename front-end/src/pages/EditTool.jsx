@@ -1,4 +1,4 @@
-// get the xhtml from "http://localhost:4000/parse/" and display it in a editable text box
+// get the xhtml from "http://localhost:4000/w/" and display it in a editable text box
 
 import React, { useRef } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
