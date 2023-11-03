@@ -177,3 +177,76 @@ b {
     transform: translateY(10px);
   }
 }
+
+.toc {
+  background-color: transparent;
+  border: 1px solid var(--boder-color);
+  border-radius: 3px;
+  font-size: 100%;
+  margin: 24px auto 24px 0;
+  padding: 0;
+  display: table;
+}
+
+.toc .toctitle {
+  align-items: center;
+  border-bottom: 1px solid var(--boder-color);
+  display: flex;
+  justify-content: space-between;
+  line-height: 1;
+  padding: 12px;
+  direction: ltr;
+  text-align: center;
+}
+
+.toc .toctitle h2 {
+  align-items: center;
+  border: 0;
+  display: flex;
+  font-size: 1.25em;
+  font-weight: 500;
+  line-height: 1.25;
+  margin: 0;
+  padding: 0;
+}
+
+.toc ul {
+  padding: 0 12px 0 0;
+  max-width: 400px;
+}
+.toc ul li {
+  overflow-wrap: break-word;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.toc ul li a {
+  border-radius: 3px;
+  color: #e6e6e6;
+  display: block;
+  line-height: 1.75;
+  padding: 2px 6px;
+  text-decoration: none;
+  transition-duration: .3s;
+  transition-property: background-color,color;
+}
+
+.toc ul li a .tocnumber::after {
+  content: ".";
+}
+
+.toc ul li a .tocnumber {
+  color: rgba(230, 230, 230,.6);
+  transition-duration: .3s;
+  transition-property: color;
+}
+
+.tocnumber, .toctext {
+  display: table-cell;
+}
+
+.tocnumber {
+  padding-left: 0;
+  padding-right: 0.5em;
+}

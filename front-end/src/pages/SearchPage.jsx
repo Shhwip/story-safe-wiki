@@ -16,7 +16,6 @@ function SearchPage() {
     useEffect(() => {
         inputRef.current.focus();
 
-        // Make an axios GET request to your backend's /bigSearch route
         console.log(query);
         setIsLoading(true);
 
