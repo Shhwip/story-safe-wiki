@@ -8,7 +8,6 @@ import Header from "../components/Header.jsx";
 import FandomCommunityHeader from "../components/FandomCommunityHeader.jsx";
 
 function Parser() {
-    //const [displayMessage, setDisplayMessage] = useState("loading...");
     const [doc, setDoc] = useState(null);
     const { title } = useParams();
     const navigate = useNavigate();
@@ -50,14 +49,12 @@ function Parser() {
         };
         getMessage();
     }, [title]);
-
-    // possibly set doc to null when searching
+    
     
     if (!doc) {
         // While loading or if there's an error, display the message
         return (
             <div>
-                <base href="localhost"></base>
                 <div className="global-navigation">
                     <Header/>
                 </div>
@@ -91,7 +88,6 @@ function Parser() {
 
   return (
     <div>
-        <base href="localhost"></base>
         <div className="global-navigation">
             { <Header /> }
         </div>
