@@ -10,7 +10,12 @@ const articleSchema = new mongoose.Schema({
     type: String,
     required: true,
     unique: true
-  }
+  },
+  infobox:{
+    type: String,
+    required: false,
+    unique: false
+  },
 })
 
 const Article = mongoose.model('Article', articleSchema)
