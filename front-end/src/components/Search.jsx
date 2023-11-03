@@ -1,4 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
+import { useNavigate } from "react-router-dom";
 import './Search.css';
 import axios from "axios";
 
@@ -7,9 +8,13 @@ function Search({ onCloseSearch }) {
     const [searchResults, setSearchResults] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const inputRef = useRef(null);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        inputRef.current.focus();
+    }, []);
 
     function handleCloseSearchClick() {
-        // setIsPopupActive to false in Header.jsx
         onCloseSearch();
     }
 
@@ -24,11 +29,18 @@ function Search({ onCloseSearch }) {
         try {
             const response = await axios.get(`http://localhost:4000/search?q=${searchQuery}`);
 
-            if (response.data && response.data.length > 0) {
+            if (response.data && response.data.length === 1) {
                 setSearchResults(response.data);
+                const title = response.data[0].title;
+                const encodedTitle = encodeURIComponent(title);
+                navigate(`/parse/${encodedTitle}`);
             } else {
+                // go to search page
+                navigate(`/search/${searchQuery}`);
                 setSearchResults([]);
+                console.log("Search found no exact matches.");
             }
+            onCloseSearch();
         } catch (error) {
             console.error('Error searching:', error);
         } finally {
@@ -55,6 +67,7 @@ function Search({ onCloseSearch }) {
                         onChange={handleSearchInputChange}
                         onKeyDown={handleKeyDown}
                         ref={inputRef}
+                        autoFocus
                     />
                 </div>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#fff"
@@ -71,17 +84,15 @@ function Search({ onCloseSearch }) {
                 </svg>
             </div>
             {isLoading ? (
-                <p className="search-results">Loading...</p>
+                <p className="search-results">Searching...</p>
             ) : (
                 <div className="search-results">
-                    {searchResults.length > 0 ? (
+                    { searchResults.length === 0 ? (<p></p>) : (
                         <ul>
                             {searchResults.map((result) => (
                                 <li key={result._id}>{result.title}</li>
                             ))}
                         </ul>
-                    ) : (
-                        <p>No search results found</p>
                     )}
                 </div>
             )}

@@ -4,6 +4,7 @@ import logoHeader from '../assets/Horizontal Combination Mark.svg';
 import user from '../icons/person-circle-outline.svg';
 import {useNavigate} from "react-router-dom";
 import Search from './Search.jsx'
+import SearchPage from "../pages/SearchPage.jsx";
 
 function Header() {
 const navigate = useNavigate();
@@ -111,7 +112,7 @@ const [visible, setVisible] = useState(true);
           )}
         </nav>
       </header>
-      {isPopupActive && <Search onCloseSearch={handleCloseSearch} />}
+        {isPopupActive && <Search onCloseSearch={handleCloseSearch} />}
     </div>
   );
 }

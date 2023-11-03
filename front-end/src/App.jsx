@@ -6,6 +6,7 @@ import HomePage from "./pages/HomePage.jsx";
 import LoginPage from "./pages/Login.jsx";
 import RegisterPage from "./pages/Register.jsx";
 import Parser from "./pages/Parser.jsx";
+import SearchPage from "./pages/SearchPage.jsx";
 
 export const AppContext = createContext();
 
@@ -21,6 +22,7 @@ function App() {
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/edit/:title" element={<Edit />} />
           <Route path="/w/:title" element={<Parser />} />
+          <Route path="/search/:query" element={<SearchPage />} />
         </Routes>
       </BrowserRouter>
     </AppContext.Provider>

@@ -7,7 +7,7 @@
 
   --primary-color: #171D21;
   --seconday-color: #A6212C;
-  --hover-color: #E82F3F;
+  --hover-color: #a12029;
   --action-color: #00BCB7;
   --light-gray: #3A373C;
   --link-color: #65C1FF;
@@ -54,7 +54,7 @@
 }
 
 .page-content ul {
-  list-style-type: disc;
+  list-style-type: none;
 }
 
 .page-content ol, .page-content ul {
