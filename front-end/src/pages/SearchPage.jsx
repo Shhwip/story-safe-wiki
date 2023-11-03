@@ -131,7 +131,7 @@ function SearchPage() {
                                                                         <article>
                                                                             <h3 className="unified-search__result__header">
                                                                                 <a className="unified-search__result__title"
-                                                                                   href={`/parse/${encodeURIComponent(result.title)}`}>
+                                                                                   href={`/w/${encodeURIComponent(result.title)}`}>
                                                                                     {result.title}
                                                                                 </a>
                                                                             </h3>

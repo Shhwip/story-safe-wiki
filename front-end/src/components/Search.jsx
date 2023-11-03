@@ -33,7 +33,7 @@ function Search({ onCloseSearch }) {
                 setSearchResults(response.data);
                 const title = response.data[0].title;
                 const encodedTitle = encodeURIComponent(title);
-                navigate(`/parse/${encodedTitle}`);
+                navigate(`/w/${encodedTitle}`);
             } else {
                 // go to search page
                 navigate(`/search/${searchQuery}`);
