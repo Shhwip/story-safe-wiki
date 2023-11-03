@@ -8,11 +8,11 @@ import { DefaultEditor } from "react-simple-wysiwyg";
 
 export default function EditTool({ article }) {
   const editorRef = useRef(null);
-  // const log = () => {
-  //   if (editorRef.current) {
-  //     console.log(editorRef.current.getContent());
-  //   }
-  // };
+  const log = () => {
+    if (editorRef.current) {
+      console.log(editorRef.current.getContent());
+    }
+  };
   return (
     <div className="ParentContainer">
       <DefaultEditor
@@ -21,7 +21,7 @@ export default function EditTool({ article }) {
       />
     </div>
 
-    // <div className="ParentContainer">
+    // {/* <div className="ParentContainer"> */}
     //   <Editor
     //     apiKey="elrv3xvxslj1qyr9kyg5vccvu8lmkujc4igdrjzoe1gcr69b"
     //     onInit={(evt, editor) => (editorRef.current = editor)}
