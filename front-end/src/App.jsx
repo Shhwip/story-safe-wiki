@@ -19,7 +19,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
-          <Route path="/edit" element={<Edit />} />
+          <Route path="/edit/:title" element={<Edit />} />
           <Route path="/w/:title" element={<Parser />} />
         </Routes>
       </BrowserRouter>

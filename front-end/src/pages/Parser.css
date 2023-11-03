@@ -107,6 +107,29 @@ b {
   scrollbar-width: none;
 }
 
+.page-container {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 0 auto;
+  max-width: 1236px;
+  position: relative;
+  width: 100%;
+}
+
+.edit-button {
+  border-radius: 3px;
+  color: #000;
+  font-size: 1em;
+  font-weight: 700;
+  text-decoration: none;
+  width: 0;
+  height: 20px;
+}
+
+.edit-button:hover {
+  cursor: pointer;
+}
+
 .page {
   margin-top: 12px;
   position: relative;
