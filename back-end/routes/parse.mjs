@@ -29,7 +29,7 @@ router.get("/:title", async (req, res) => {
 
     // Replace <html> with <div> tag, keeping its children
     $('html').replaceWith(function () {
-        return $('<main class="page__main" lang="en"></main>').append($(this).contents());
+        return $('<div></div>').append($(this).contents());
     });
 
     // remove grayed out stuff plus styles
