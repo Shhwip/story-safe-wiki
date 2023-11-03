@@ -9,7 +9,7 @@ export default function Edit() {
   useEffect(() => {
     const getMessage = () => {
       axios.get(
-        "http://localhost:4000/w/"
+        "http://localhost:4000/parse/" + "Lung"
       ).then((response) => {
         response.data ? setArticle(response.data) : setArticle("empty");
         console.log("success")

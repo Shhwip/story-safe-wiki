@@ -6,6 +6,7 @@ import "./Parser.css";
 import parse from "html-react-parser";
 import Header from "../components/Header.jsx";
 import wormLogoHeader from "../assets/worm-logo.png";
+import user from "../icons/person-circle-outline.svg";
 
 function Parser() {
   //const [displayMessage, setDisplayMessage] = useState("loading...");
@@ -157,8 +158,16 @@ function Parser() {
                         </nav>
                     </header>
                 </div>
-                <div className="page">
-                    {parse(doc)}
+                <div className="page-container">
+                    <img
+                    className="edit-button"
+                    src={user}
+                    alt="User Icon Circle Outline"
+                    >
+                    </img>
+                    <div className="page">
+                        {parse(doc)}
+                    </div>
                 </div>
             </div>
         </div>
