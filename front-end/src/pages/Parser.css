@@ -273,3 +273,36 @@ b {
   padding-left: 0;
   padding-right: 0.5em;
 }
+
+.page-side-tools__wrapper {
+  height: 100%;
+  left: 0;
+  padding-bottom: 430px;
+  position: absolute;
+  top: 18px;
+  transform: translateX(-50%);
+  z-index: 200;
+}
+
+.page-side-tools {
+  position: sticky;
+  top: 58px;
+}
+
+.page-side-tool {
+  align-items: center;
+  background: #636262;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 3px 12px 0 rgba(0,0,0,.3);
+  color: var(--link-color);
+  cursor: pointer;
+  display: flex;
+  height: 36px;
+  justify-content: center;
+  margin-bottom: 9px;
+  outline: none;
+  transition: color .3s;
+  width: 36px;
+  padding: 0;
+}
