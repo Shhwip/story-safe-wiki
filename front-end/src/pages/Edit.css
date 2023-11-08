@@ -1,0 +1,10 @@
+.container {
+  margin-top: 100px;
+}
+
+.w-md-editor-text-pre > code,
+.w-md-editor-text-input {
+  font-size: 18px !important;
+  font-weight: 400 !important;
+  line-height: 24px !important;
+}
