@@ -1,26 +1,32 @@
 .app-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 20px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 99;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    background-color: var(--primary-color);
+    transition: top 0.3s;
+}
+
+.app-header.hidden {
+    top: -100px;
 }
 
 .logo-header {
-  height: 3em;
-  cursor: pointer;
+    height: 2em;
+    cursor: pointer;
 }
 
 .search-nav {
-  display: flex;
-  height: 3em;
-  margin-right: 10px;
-  cursor: pointer;
-  transition: fill 0.3s ease;
+    display: flex;
+    height: 2.25em;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: fill 0.3s ease;
 }
 
 .search-nav:hover {
@@ -28,8 +34,8 @@
 }
 
 .user-nav {
-  height: 1.5em;
-  margin-right: 10px;
+    height: 1.3em;
+    margin-right: 10px;
 }
 
 .navigation {
@@ -39,7 +45,8 @@
 
 .login,
 .register {
-  height: 3em;
+    height: 2.25em;
+    font-size: 1em;
 }
 
 .login {

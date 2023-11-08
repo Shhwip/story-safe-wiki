@@ -4,6 +4,7 @@ import user from "../Icons/person-circle-outline.svg";
 import logoHeader from "../assets/Horizontal Combination Mark.svg";
 import { useNavigate } from "react-router-dom";
 import Search from "./Search.jsx";
+import SearchPage from "../pages/SearchPage";
 import AccountMenu from "./AccountMenu";
 import axios from "axios";
 
@@ -11,6 +12,8 @@ function Header() {
   const navigate = useNavigate();
   const [isPopupActive, setIsPopupActive] = useState(false);
   const selectRef = useRef(null);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
 
   function handleHeaderHomeClick() {
     navigate("/");
@@ -37,15 +40,37 @@ function Header() {
     navigate("/");
     try {
       await axios.post("http://localhost:4000/user/logout");
-    }
-    catch (error) {
+    } catch (error) {
       console.log(error);
     }
-  }
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.scrollY;
+
+      if (currentScrollPos > prevScrollPos) {
+        // scrolling down
+        setVisible(false);
+      } else {
+        // scrolling up
+        setVisible(true);
+      }
+
+      setPrevScrollPos(currentScrollPos);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      // clean event on unmount
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [prevScrollPos]);
 
   return (
     <div>
-      <header className="app-header">
+      <header className={`app-header ${visible ? "visible" : "hidden"}`}>
         <img
           className="logo-header"
           src={logoHeader}
@@ -66,13 +91,10 @@ function Header() {
           </svg>
           {localStorage.getItem("userSession") ? (
             <div className="header-button-container">
-              <button
-                className="logout"
-                onClick={handleLogOut}
-              >
+              <button className="logout" onClick={handleLogOut}>
                 Logout
               </button>
-              <AccountMenu handleLogOut={handleLogOut}/>
+              <AccountMenu handleLogOut={handleLogOut} />
             </div>
           ) : (
             <div className="header-button-container">

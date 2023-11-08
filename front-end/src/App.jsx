@@ -1,11 +1,12 @@
 import { useState, createContext } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
 import "./App.css";
 import Edit from './pages/Edit.jsx';
 import HomePage from "./pages/HomePage.jsx";
 import LoginPage from "./pages/Login.jsx";
 import RegisterPage from "./pages/Register.jsx";
 import Parser from "./pages/Parser.jsx";
+import SearchPage from "./pages/SearchPage.jsx";
 
 export const AppContext = createContext();
 
@@ -19,8 +20,9 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
-          <Route path="/parse" element={<Parser />} />
-          <Route path="/edit" element={<Edit />} />
+          <Route path="/edit/:title" element={<Edit />} />
+          <Route path="/w/:title" element={<Parser />} />
+          <Route path="/search/:query" element={<SearchPage />} />
         </Routes>
       </BrowserRouter>
     </AppContext.Provider>
