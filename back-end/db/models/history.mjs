@@ -21,6 +21,10 @@ const historySchema = new mongoose.Schema({
         type: String,
         required: false,
     },
+    outputSize: {
+        type: Number,
+        required: false,
+    },
 });
 
 export default mongoose.model('History', historySchema);
