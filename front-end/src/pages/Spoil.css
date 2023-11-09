@@ -6,6 +6,11 @@ em, em a{
     font-style: normal;
     filter: blur(5px);
     user-select: none;
+    pointer-events: none;
+}
+
+em a:hover {
+
 }
 
 /*Show Text */
@@ -24,6 +29,7 @@ em, em a{
     font-weight: inherit;
     color: var(--link-color);
     filter: blur(0);
-    background-color: transparent;
-    border-radius: 0;
+    user-select: inherit;
+    pointer-events: all;
+
 }
