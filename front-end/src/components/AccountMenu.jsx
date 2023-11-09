@@ -82,7 +82,7 @@ export default function AccountMenu({ handleLogOut }) {
                     min={0}
                     max={30}
                     defaultValue={spoilerLevel}
-                    onChange={(e) => setSpoilerLevel(e.target.value)}
+                    onChange={(e) => {setSpoilerLevel(e.target.value)}}
                   ></input>
                 </div>
                 {errorMessage ? (
