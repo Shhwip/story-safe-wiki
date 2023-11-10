@@ -5,7 +5,7 @@ import Edit from './pages/Edit.jsx';
 import HomePage from "./pages/HomePage.jsx";
 import LoginPage from "./pages/Login.jsx";
 import RegisterPage from "./pages/Register.jsx";
-import Parser from "./pages/Parser.jsx";
+import Wiki from "./pages/Wiki.jsx";
 import SearchPage from "./pages/SearchPage.jsx";
 
 export const AppContext = createContext();
@@ -21,7 +21,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/edit/:title" element={<Edit />} />
-          <Route path="/w/:title" element={<Parser />} />
+          <Route path="/w/:title" element={<Wiki />} />
           <Route path="/search/:query" element={<SearchPage />} />
         </Routes>
       </BrowserRouter>
