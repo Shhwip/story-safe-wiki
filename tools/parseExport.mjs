@@ -11,13 +11,13 @@ function sleepFor(sleepDuration){
     while(new Date().getTime() < now + sleepDuration){ /* Do nothing */ }
 }
 
-async function addArticle(title, text, infobox) {
+async function addArticle(title, text, infobox, spoiler_level = 0) {
 
     if (infobox == '')
     {
         infobox = null;
     }
-    const data = { title: title, text: text, infobox: infobox };
+    const data = { title: title, text: text, infobox: infobox, spoiler_level: spoiler_level };
     await axios.post('http://localhost:4000/addArticle/add', data)
     .then((res) => {
         console.log(`statusCode: ${res.statusCode}`)
@@ -58,6 +58,8 @@ const tabberCloseRegex = /.*&lt;\/tabber.*/
 const galleryRegex = /==Fanart Gallery==/
 const galleryOpenRegex = /.*&lt;gallery.*/
 const galleryCloseRegex = /.*&lt;\/gallery.*/
+const refNumberRegex = /name="([0-9]+)/g
+var minRefNumber = 0;
 var tabberFlag = false;
 var galleryFlag = false;
 var infobox = '';
@@ -76,11 +78,20 @@ rl.on('line', (line) => {
         console.log('gallery found');
         galleryFlag = true;
     }
-
+    if (line.matchAll(refNumberRegex))
+    {
+        var match = line.matchAll(refNumberRegex);
+        for (const m of match) {
+            if (m[1] < minRefNumber || minRefNumber == 0)
+            {
+                minRefNumber = m[1];
+            }
+        }
+    }
 
     if (line.match(infoboxOpenRegex))
     {
-        console.log('infobox found1');
+        console.log('infobox found');
         infoboxFlag = true;
     }
     if (infoboxFlag)
@@ -128,7 +139,8 @@ rl.on('line', (line) => {
             console.log(articleText);
         }
         //sleepFor(150);
-        addArticle(articleTitle, articleText, infobox);
+        addArticle(articleTitle, articleText, infobox, minRefNumber);
+        minRefNumber = 0;
         infobox = '';
         articleText = '';
         articleTitle = '';
