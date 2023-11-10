@@ -52,10 +52,6 @@ function Parser() {
         getMessage();
     }, [title]);
 
-
-    // CSS rules
-    let cssRules = "";
-    
     
     if (!doc) {
         // While loading or if there's an error, display the message
