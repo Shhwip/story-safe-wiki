@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 const historySchema = new mongoose.Schema({
     delta: {
-        type: String,
+        type: Array,
         required: true,
     },
     title: {
