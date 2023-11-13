@@ -16,22 +16,23 @@ function Wiki() {
     navigate("/edit/" + title);
     };
 
-    // gets main body text
-    useEffect(() => {
-    const getMessage = () => {
-      axios
-        .get("http://localhost:4000/w/" + title)
-        .then(async (response) => {
-          setDoc(response.data);
-          console.log("success");
-        })
-        .catch((error) => {
-          console.log("error: ");
-          console.log(error);
-        });
-    };
-    getMessage();
-    }, []);
+    // put this back if there is a problem with the below useEffect
+    // useEffect(() => {
+    // const getMessage = () => {
+    //   axios
+    //     .get("http://localhost:4000/w/" + title)
+    //     .then(async (response) => {
+    //       setDoc(response.data);
+    //       console.log("success");
+    //     })
+    //     .catch((error) => {
+    //       console.log("error1: ");
+    //       console.log(error);
+    //       return(<h1>404 Not Found</h1>);
+    //     });
+    // };
+    // getMessage();
+    // }, []);
 
 
     // Refresh page when searching
@@ -43,8 +44,9 @@ function Wiki() {
                 setDoc(response.data);
                 console.log("success");
             } catch (error) {
-                console.log("error: ");
+                console.log("error2: ");
                 console.log(error);
+                return(<h1>404 Not Found</h1>);
             }
         };
         getMessage();
