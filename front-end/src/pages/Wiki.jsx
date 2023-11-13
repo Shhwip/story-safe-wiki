@@ -9,6 +9,7 @@ import FandomCommunityHeader from "../components/FandomCommunityHeader.jsx";
 
 function Wiki() {
     const [doc, setDoc] = useState(null);
+    const [notFound, setNotFound] = useState(false); // [notFound, setNotFound
     const { title } = useParams();
     const navigate = useNavigate();
 
@@ -16,6 +17,9 @@ function Wiki() {
     navigate("/edit/" + title);
     };
 
+    const handleCreateButtonClick = () => {
+        navigate("/create/" + title);
+    };
     // put this back if there is a problem with the below useEffect
     // useEffect(() => {
     // const getMessage = () => {
@@ -46,12 +50,23 @@ function Wiki() {
             } catch (error) {
                 console.log("error2: ");
                 console.log(error);
-                return(<h1>404 Not Found</h1>);
+                setNotFound(true);
             }
         };
         getMessage();
     }, [title]);
     
+    if (notFound) {
+        return (
+            <div>
+                <h1>article {title} not found</h1>
+                <p>Would you like to create it?</p>
+                <button onClick={handleCreateButtonClick}>Create</button>
+            </div>
+        );
+    }
+
+
     
     if (!doc) {
         // While loading or if there's an error, display the message
