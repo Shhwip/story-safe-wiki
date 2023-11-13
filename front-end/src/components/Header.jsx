@@ -1,21 +1,24 @@
-import React, {useEffect, useRef, useState} from 'react';
-import './Header.css';
-import logoHeader from '../assets/Horizontal Combination Mark.svg';
-import user from '../icons/person-circle-outline.svg';
-import {useNavigate} from "react-router-dom";
-import Search from './Search.jsx'
-import SearchPage from "../pages/SearchPage.jsx";
+import React, { useEffect, useRef, useState } from "react";
+import "./Header.css";
+import user from "../Icons/person-circle-outline.svg";
+import logoHeader from "../assets/Horizontal Combination Mark.svg";
+import { useNavigate } from "react-router-dom";
+import Search from "./Search.jsx";
+import SearchPage from "../pages/SearchPage";
+import AccountMenu from "./AccountMenu";
+import axios from "axios";
 
 function Header() {
-const navigate = useNavigate();
-const [isPopupActive, setIsPopupActive] = useState(false);
-const selectRef = useRef(null);
-const [prevScrollPos, setPrevScrollPos] = useState(0);
-const [visible, setVisible] = useState(true);
+  const navigate = useNavigate();
+  const [isPopupActive, setIsPopupActive] = useState(false);
+  const selectRef = useRef(null);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
 
   function handleHeaderHomeClick() {
     navigate("/");
   }
+
   function handleHeaderLoginClick() {
     navigate("/login");
   }
@@ -32,36 +35,47 @@ const [visible, setVisible] = useState(true);
     setIsPopupActive(false);
   }
 
-    useEffect(() => {
-        const handleScroll = () => {
-            const currentScrollPos = window.scrollY;
+  const handleLogOut = async () => {
+    localStorage.removeItem("userSession");
+    navigate("/");
+    try {
+      await axios.post("http://localhost:4000/user/logout");
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-            if (currentScrollPos > prevScrollPos) {
-                // scrolling down
-                setVisible(false);
-            } else {
-                // scrolling up
-                setVisible(true);
-            }
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.scrollY;
 
-            setPrevScrollPos(currentScrollPos);
-        };
+      if (currentScrollPos > prevScrollPos) {
+        // scrolling down
+        setVisible(false);
+      } else {
+        // scrolling up
+        setVisible(true);
+      }
 
-        window.addEventListener('scroll', handleScroll);
+      setPrevScrollPos(currentScrollPos);
+    };
 
-        return () => {
-            // clean event on unmount
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, [prevScrollPos]);
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      // clean event on unmount
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [prevScrollPos]);
 
   return (
     <div>
-      <header className={`app-header ${visible ? 'visible' : 'hidden'}`}>
-        <img className="logo-header"
-              src={logoHeader}
-              alt="Combined Horizontal Logo for Story Safe"
-              onClick={handleHeaderHomeClick}
+      <header className={`app-header ${visible ? "visible" : "hidden"}`}>
+        <img
+          className="logo-header"
+          src={logoHeader}
+          alt="Combined Horizontal Logo for Story Safe"
+          onClick={handleHeaderHomeClick}
         />
         <nav className="navigation">
           <svg
@@ -77,42 +91,29 @@ const [visible, setVisible] = useState(true);
           </svg>
           {localStorage.getItem("userSession") ? (
             <div className="header-button-container">
-              <button
-                className="logout"
-                onClick={() => {
-                  localStorage.removeItem("userSession");
-                  navigate("/");
-                }}
-              >
+              <button className="logout" onClick={handleLogOut}>
                 Logout
               </button>
-              <button className="account-button">
-                  {localStorage.getItem("userSession")}
-              </button>
+              <AccountMenu handleLogOut={handleLogOut} />
             </div>
           ) : (
             <div className="header-button-container">
-              <button className="login"
-                      onClick={handleHeaderLoginClick}
-              >
+              <button className="login" onClick={handleHeaderLoginClick}>
                 Sign In
               </button>
-              <button className="register"
-                      onClick={handleHeaderRegisterClick}
-              >
+              <button className="register" onClick={handleHeaderRegisterClick}>
                 <img
                   className="user-nav"
                   src={user}
                   alt="User Icon Circle Outline"
-                >
-                </img>
+                ></img>
                 Register
               </button>
             </div>
           )}
         </nav>
       </header>
-        {isPopupActive && <Search onCloseSearch={handleCloseSearch} />}
+      {isPopupActive && <Search onCloseSearch={handleCloseSearch} />}
     </div>
   );
 }

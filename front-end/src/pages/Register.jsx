@@ -27,29 +27,37 @@ function Register() {
     setForm({ ...form, [e.target.id]: e.target.value });
   };
 
-  const handleFormValidation = (errorMessage) => {
+  const handleFormValidation = async (errorMessage) => {
     let isValidated = true;
+    let username = "";
+    let email = "";
+    let password = "";
+    let confirmPassword = "";
+
     if (errorMessage) {
       isValidated = false;
-      if (errorMessage.includes("email"))
-        setFormValidation({ ...formValidation, email: errorMessage });
-      else if (errorMessage.includes("username"))
-        setFormValidation({ ...formValidation, username: errorMessage });
+      if (errorMessage.toString().includes("email"))
+        email = await errorMessage.toString();
+      else if (errorMessage.toString().includes("Username")) {
+        username = await errorMessage.toString();
+      }
     }
+
     if (form.password !== form.confirmPassword) {
       isValidated = false;
-      setFormValidation({
-        ...formValidation,
-        confirmPassword: "Passwords do not match.",
-      });
+      confirmPassword = "Passwords do not match.";
     }
     if (form.password.length < 8) {
       isValidated = false;
-      setFormValidation({
-        ...formValidation,
-        password: "Password must be at least 8 characters.",
-      });
+      password = "Password must be at least 8 characters.";
     }
+    setFormValidation({
+      username: username,
+      email: email,
+      password: password,
+      confirmPassword: confirmPassword,
+    });
+    console.log(isValidated);
     return isValidated;
   };
 
@@ -72,7 +80,8 @@ function Register() {
       errorMessage = error.response.data.message;
     }
 
-    if (!handleFormValidation(errorMessage)) return;
+    let formIsValidated = await handleFormValidation(errorMessage);
+    if (!formIsValidated) return;
 
     try {
       const hashedPassword = sha256(form.password + salt);

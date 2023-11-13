@@ -18,6 +18,8 @@ router.get("/:title", async (req, res) => {
 
     var document = article;
 
+    console.log(document);
+
     res.status(200).send(document);
 });
 
