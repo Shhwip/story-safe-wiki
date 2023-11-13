@@ -8,9 +8,10 @@ import http from "http";
 import helloWorld from "./routes/helloWorld.mjs"
 import searchRoute from "./routes/searchRoute.mjs";
 import user from "./routes/user.mjs";
-import wiki from "./routes/parse.mjs"
+import wiki from "./routes/wiki.mjs"
 import edit from "./routes/edit.mjs"
 import addArticle from "./routes/addArticle.mjs"
+import history from "./routes/history.mjs"
 
 const PORT = process.env.PORT || 5050;
 const app = express();
@@ -35,6 +36,7 @@ app.use("/w", wiki);
 app.use("/search", searchRoute);
 app.use("/user", user);
 app.use("/addArticle", addArticle);
+app.use("/h", history);
 
 const server = http.createServer(app);
 

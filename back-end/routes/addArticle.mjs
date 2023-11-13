@@ -12,11 +12,12 @@ router.post(
        res.status(401).send({ message: "article already created" });
     }
     else{
-    const { title, text, infobox } = req.body;
+    const { title, text, infobox, spoiler_level} = req.body;
     const article = new Article({
       title,
       text,
-      infobox
+      infobox,
+      spoiler_level
     });
     await article.save();
 

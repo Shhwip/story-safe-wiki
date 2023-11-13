@@ -1,7 +1,9 @@
 import express from "express";
 import Article from "../db/models/article.mjs";
+import { updateHistory } from "./helpers/updateHistory.mjs";
 
 const router = express.Router();
+
 
 router.get("/:title", async (req, res) => {
     
@@ -26,13 +28,16 @@ router.post("/:title", async (req, res) => {
         if (!articleCheck){
             res.status(401).send({ message: "article hasn't been created" });
         }
-        const { title, text } = req.body;
-        // TODO: call the edit history function here
-        const article = new Article({
-            title,
-            text,
-        });
-        await article.save();
+        const { title, text, username } = req.body;
+        if(await updateHistory(title, text, articleCheck.text, username) == false)
+        {
+            res.status(401).send({ message: "history is invalid" });
+        }
+        const article = {
+            title: title,
+            text: text,
+        };
+        await Article.findOneAndUpdate({ title: title }, article);
         
         res.status(201).send(article);
     });

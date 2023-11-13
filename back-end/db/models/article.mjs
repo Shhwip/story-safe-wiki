@@ -16,6 +16,11 @@ const articleSchema = new mongoose.Schema({
     required: false,
     unique: false
   },
+  spoiler_level: {
+    type: Number,
+    required: false,
+    unique: false
+  },
 })
 
 const Article = mongoose.model('Article', articleSchema)
