@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Header.css";
-import user from "../Icons/person-circle-outline.svg";
+import user from "../icons/person-circle-outline.svg";
 import logoHeader from "../assets/Horizontal Combination Mark.svg";
 import { useNavigate } from "react-router-dom";
 import Search from "./Search.jsx";
