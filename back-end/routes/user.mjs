@@ -84,10 +84,22 @@ router.post(
 router.post(
   "/set-spoiler-level",
   asyncHandler(async (req, res) => {
-    const user = await User.findOne({ username: req.session.username.username });
-    user.spoilerLevel = req.body.spoilerLevel;
+    const user = await User.findOne({ username: req.body.username });
+    if (!user)
+      res.status(401).send({ message: "Failed to save spoiler level. Please try again." });
+    user.spoilerlevel = req.body.spoilerlevel;
     await user.save();
     res.status(200).send(user);
+  })
+)
+
+router.get(
+  "/get-spoiler-level",
+  asyncHandler(async (req, res) => {
+    const user = await User.findOne({ username: req.body.username });
+    if (!user)
+      res.status(401).send({ message: "Failed to get spoiler level. Please try again." });
+    res.status(200).send(user.spoilerlevel);
   })
 )
 

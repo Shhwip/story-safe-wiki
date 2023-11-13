@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
+import axios from "axios";
 import "./AccountMenu.css";
 
 export default function AccountMenu({ handleLogOut }) {
@@ -25,6 +26,23 @@ export default function AccountMenu({ handleLogOut }) {
     if (localStorage.getItem("noSpoilLevel") != null) {
       setSpoilerLevel(localStorage.getItem("noSpoilLevel"));
     }
+    if (
+      localStorage.getItem("userSession") != null &&
+      localStorage.getItem("noSpoilLevel") == null
+    ) {
+      const getUser = async () => {
+        await axios
+          .get("http://localhost:4000/user/get-spoiler-level")
+          .then((response) => {
+            setSpoilerLevel(response.data);
+          })
+          .catch((error) => {
+            console.log("error: ");
+            console.log(error);
+          });
+      };
+      getUser();
+    }
   }, []);
 
   useEffect(() => {
@@ -42,13 +60,24 @@ export default function AccountMenu({ handleLogOut }) {
     };
   }, []);
 
-  const handleSaveSpoilerLevel = () => {
-    if (spoilerLevel < 0 || spoilerLevel > 30) {
-      setErrorMessage("Number must be between 0 and 30");
+  const handleSaveSpoilerLevel = async () => {
+    if (spoilerLevel < 0 || spoilerLevel > 31) {
+      setErrorMessage("Number must be between 0 and 31");
       return;
     }
     setErrorMessage("");
     localStorage.setItem("noSpoilLevel", spoilerLevel);
+    if (localStorage.getItem("userSession") != null) {
+      await axios
+        .post("http://localhost:4000/user/set-spoiler-level", {
+          username: localStorage.getItem("userSession"),
+          spoilerlevel: spoilerLevel,
+        })
+        .catch((error) => {
+          console.log("error: ");
+          console.log(error);
+        });
+    }
     setShowSpoilLevel(false);
   };
 
@@ -80,7 +109,7 @@ export default function AccountMenu({ handleLogOut }) {
                     className="spoil-level"
                     type="number"
                     min={0}
-                    max={30}
+                    max={31}
                     defaultValue={spoilerLevel}
                     onChange={(e) => setSpoilerLevel(e.target.value)}
                   ></input>

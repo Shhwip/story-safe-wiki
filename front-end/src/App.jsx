@@ -7,6 +7,7 @@ import LoginPage from "./pages/Login.jsx";
 import RegisterPage from "./pages/Register.jsx";
 import Parser from "./pages/Parser.jsx";
 import SearchPage from "./pages/SearchPage.jsx";
+import Discussion from "./pages/Discussion.jsx";
 
 export const AppContext = createContext();
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/edit/:title" element={<Edit />} />
           <Route path="/w/:title" element={<Parser />} />
           <Route path="/search/:query" element={<SearchPage />} />
+          <Route path="/discussion/:title" element={<Discussion />} />
         </Routes>
       </BrowserRouter>
     </AppContext.Provider>

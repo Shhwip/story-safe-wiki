@@ -1,5 +1,7 @@
 .container {
+  margin: auto;
   margin-top: 100px;
+  width: 90%;
 }
 
 .w-md-editor-text-pre > code,
@@ -7,4 +9,9 @@
   font-size: 18px !important;
   font-weight: 400 !important;
   line-height: 24px !important;
+}
+
+.submit-button {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }

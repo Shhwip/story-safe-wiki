@@ -1,0 +1,51 @@
+
+/* Styling for messages */
+.message-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow-y: scroll;
+  height: 70vh;
+  padding: 1rem;
+}
+
+.message {
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  max-width: 60%;
+}
+
+.message p {
+  margin: 0;
+}
+
+/* Styling for input box */
+.input-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f2f2f2;
+  padding: 1rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.input-container input {
+  flex-grow: 1;
+  margin-right: 1rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: none;
+}
+
+.input-container button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}

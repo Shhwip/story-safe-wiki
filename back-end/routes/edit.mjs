@@ -14,7 +14,7 @@ router.get("/:title", async (req, res) => {
         return;
     }
 
-    var document = article.text;
+    var document = article;
 
     console.log(document);
 
