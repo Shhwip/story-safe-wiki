@@ -1,11 +1,28 @@
 import Header from "../components/Header";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate} from "react-router-dom";
+
+
+const getEdit = async (title, id) => {
+    console.log("getEdit")
+    await axios
+        .get("http://localhost:4000/h/"+ title + "/" + id)
+        .then((response) => {
+            console.log("single history success");
+            console.log(response.data);
+            return response.data;
+        })
+        .catch((error) => {
+            console.log("error: ");
+            console.log(error);
+        });
+};
 
 export default function History() {
     const { title } = useParams();
     const [history, setHistory] = useState(null);
+
 
     useEffect(() => {
         const getHistory = async () => {
@@ -21,7 +38,7 @@ export default function History() {
                 });
         };
         getHistory();
-    });
+    }, [title]);
 
     return (
         <div>
@@ -36,6 +53,8 @@ export default function History() {
                                     <h3>{item.username}</h3>
                                     <p>{item.timestamp}</p>
                                     <p>{item.outputSize}</p>
+                                    <button onClick={() => {getEdit(title, item.previousID);}}>before</button>
+                                    <button onClick={() => {getEdit(title, item._id);}}>after</button>
                                 </div>
                             );
                         })
