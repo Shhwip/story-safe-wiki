@@ -34,7 +34,7 @@ router.get("/:title/:id", async (req, res) => {
         res.send(article.text);
         return;
     }
-    history.sort((a, b) => (a.timestamp > b.timestamp) ? 1 : -1);
+    history.sort((a, b) => (a.timestamp < b.timestamp) ? 1 : -1);
     var index = history.findIndex(x => x._id == id);
     if (index == -1)
     {
