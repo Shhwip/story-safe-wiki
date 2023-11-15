@@ -9,6 +9,10 @@ const historySchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    comment: {
+        type: String,
+        required: true,
+    }, 
     timestamp: {
         type: Date,
         required: true,

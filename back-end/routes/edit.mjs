@@ -18,8 +18,6 @@ router.get("/:title", async (req, res) => {
 
     var document = article;
 
-    console.log(document);
-
     res.status(200).send(document);
 });
 
@@ -28,8 +26,12 @@ router.post("/:title", async (req, res) => {
         if (!articleCheck){
             res.status(401).send({ message: "article hasn't been created" });
         }
-        const { title, text, username } = req.body;
-        if(await updateHistory(title, text, articleCheck.text, username) == false)
+        var { title, text, username, comment } = req.body;
+        if (username == null || username == ""){
+            username = req.socket.remoteAddress;
+            console.log(username);
+        }
+        if(await updateHistory(title, text, articleCheck.text, username, comment) == false)
         {
             res.status(401).send({ message: "history is invalid" });
         }

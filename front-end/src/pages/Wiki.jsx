@@ -8,9 +8,10 @@ import Header from "../components/Header.jsx";
 import FandomCommunityHeader from "../components/FandomCommunityHeader.jsx";
 
 function Wiki() {
-  const [doc, setDoc] = useState(null);
-  const { title } = useParams();
-  const navigate = useNavigate();
+    const [doc, setDoc] = useState(null);
+    const [notFound, setNotFound] = useState(false); // [notFound, setNotFound
+    const { title } = useParams();
+    const navigate = useNavigate();
 
   const handleEditButtonClick = () => {
     navigate("/edit/" + title);
@@ -20,73 +21,91 @@ function Wiki() {
     navigate("/discussion/" + title);
   };
 
-  // gets main body text
-  useEffect(() => {
-    const getMessage = () => {
-      axios
-        .get("http://localhost:4000/w/" + title)
-        .then(async (response) => {
-          setDoc(response.data);
-          console.log("success");
-        })
-        .catch((error) => {
-          console.log("error: ");
-          console.log(error);
-        });
+    const handleCreateButtonClick = () => {
+        navigate("/create/" + title);
     };
-    getMessage();
-  }, []);
+    // put this back if there is a problem with the below useEffect
+    // useEffect(() => {
+    // const getMessage = () => {
+    //   axios
+    //     .get("http://localhost:4000/w/" + title)
+    //     .then(async (response) => {
+    //       setDoc(response.data);
+    //       console.log("success");
+    //     })
+    //     .catch((error) => {
+    //       console.log("error1: ");
+    //       console.log(error);
+    //       return(<h1>404 Not Found</h1>);
+    //     });
+    // };
+    // getMessage();
+    // }, []);
 
-  // Refresh page when searching
-  useEffect(() => {
-    setDoc(null);
-    const getMessage = async () => {
-      try {
-        const response = await axios.get(`http://localhost:4000/w/${title}`);
-        setDoc(response.data);
-        console.log("success");
-      } catch (error) {
-        console.log("error: ");
-        console.log(error);
-      }
-    };
-    getMessage();
-  }, [title]);
 
-  if (!doc) {
-    // While loading or if there's an error, display the message
-    return (
-      <div>
-        <div className="global-navigation">
-          <Header />
-        </div>
-        <div className="main-container">
-          <div className="resizable-container">
-            <div className="community-header-wrapper">
-              <FandomCommunityHeader />
+    // Refresh page when searching
+    useEffect(() => {
+        setDoc(null);
+        const getMessage = async () => {
+            try {
+                const response = await axios.get(`http://localhost:4000/w/${title}`);
+                setDoc(response.data);
+                console.log("success");
+            } catch (error) {
+                console.log("error2: ");
+                console.log(error);
+                setNotFound(true);
+            }
+        };
+        getMessage();
+    }, [title]);
+    
+    if (notFound) {
+        return (
+            <div>
+                <h1>article {title} not found</h1>
+                <p>Would you like to create it?</p>
+                <button onClick={handleCreateButtonClick}>Create</button>
             </div>
-            <div className="page">
-              <main className="page__main" lang="en">
-                <div className="page-header">
-                  <div className="page-header__title-wrapper">
-                    <h1 className="page-header__title">
-                      <span className="loading-text">
-                        {"Loading...".split("").map((letter, index) => (
-                          <span key={index} style={{ "--index": index }}>
-                            {letter}
-                          </span>
-                        ))}
-                      </span>
-                    </h1>
-                  </div>
+        );
+    }
+
+
+    
+    if (!doc) {
+        // While loading or if there's an error, display the message
+        return (
+            <div>
+                <div className="global-navigation">
+                    <Header/>
                 </div>
-              </main>
+                <div className="main-container">
+                    <div className="resizable-container">
+                        <div className="community-header-wrapper">
+                            <FandomCommunityHeader/>
+                        </div>
+                        <div className="page">
+                            <main className="page__main" lang="en">
+                                <div className="page-header">
+                                    <div className="page-header__title-wrapper">
+                                        <h1 className="page-header__title">
+                                            <span className="loading-text">
+                                                  {'Loading...'.split('').map((letter, index) => (
+                                                      <span key={index} style={{'--index': index}}>
+                                                          {letter}
+                                                        </span>
+                                                  ))}
+                                            </span>
+                                        </h1>
+                                    </div>
+                                </div>
+                            </main>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
+        );
+    }
 
   return (
     <div>

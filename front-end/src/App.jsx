@@ -8,6 +8,7 @@ import RegisterPage from "./pages/Register.jsx";
 import Wiki from "./pages/Wiki.jsx";
 import SearchPage from "./pages/SearchPage.jsx";
 import Discussion from "./pages/Discussion.jsx";
+import History from "./pages/History.jsx";
 
 export const AppContext = createContext();
 
@@ -25,6 +26,8 @@ function App() {
           <Route path="/w/:title" element={<Wiki />} />
           <Route path="/search/:query" element={<SearchPage />} />
           <Route path="/discussion/:title" element={<Discussion />} />
+          <Route path="/h/:title" element={<History />} />
+          <Route path="*" element={<h1>404 Not Found</h1>} />
         </Routes>
       </BrowserRouter>
     </AppContext.Provider>

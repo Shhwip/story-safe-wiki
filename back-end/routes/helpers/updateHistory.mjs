@@ -13,7 +13,7 @@ async function checkValidHistory(history) {
     return true;
 }
 
-export async function updateHistory(title, editText, previousText, username) {
+export async function updateHistory(title, editText, previousText, username, comment) {
     var history = await History.find({ title: title });
     if(await checkValidHistory(history) == false)
     {
@@ -32,6 +32,7 @@ export async function updateHistory(title, editText, previousText, username) {
     var newHistory = new History({
         delta: delta,
         title: title,
+        comment: comment,
         timestamp: Date.now(),
         username: username,
         previousID: lastID,
