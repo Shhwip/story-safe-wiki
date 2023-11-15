@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import './Discussion.css';
+import Header from '../components/Header';
 
 function Discussion() {
   const { title } = useParams();
@@ -41,10 +42,8 @@ function Discussion() {
   };
 
   const convertTimeToString = (timestamp) => {
-    console.log(timestamp)
     let dateString = '';
     const date = new Date(timestamp);
-    console.log(date);
     const now = new Date();
     const diff = now - date;
     if (diff < 60000) {
@@ -74,21 +73,24 @@ function Discussion() {
 
   return (
     <div>
-      <h1>{title} Discussion</h1>
-      <div className='message-container'>
-        {messages.map((message, index) => (
-          <div className='message' key={index}>
-            <div className='message-header'>
-              <div className='message-username'>{message.user}</div>
-              <div className='message-timestamp'>{convertTimeToString(message.timestamp)}</div>
+      <Header />
+      <div className='page-container'>
+        <h1 className='page-title'>{title} Discussion</h1>
+        <div className='message-container'>
+          {messages.map((message, index) => (
+            <div className='message' key={index}>
+              <div className='message-header'>
+                <div className='message-username'>{message.user.username}</div>
+                <div className='message-timestamp'>{convertTimeToString(message.timeStamp)}</div>
+              </div>
+              {message.text}
             </div>
-            {message.message}
-          </div>
-        ))}
-      </div>
-      <div className='input-container'>
-        <textarea type="text" value={newMessage}  placeholder='Add a comment' onChange={handleNewMessageChange} />
-        <button onClick={handleSendMessage}>Send</button>
+          ))}
+        </div>
+        <div className='input-container'>
+          <textarea type="text" value={newMessage}  placeholder='Add a comment' onChange={handleNewMessageChange} />
+          <button onClick={handleSendMessage}>Send</button>
+        </div>
       </div>
     </div>
   );
