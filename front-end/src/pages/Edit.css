@@ -4,6 +4,10 @@
   width: 90%;
 }
 
+.modalIsOpen {
+  filter: blur(5px);
+}
+
 .w-md-editor-text-pre > code,
 .w-md-editor-text-input {
   font-size: 18px !important;
@@ -12,6 +16,52 @@
 }
 
 .submit-button {
+  background-color: var(--seconday-color);
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.submit-button:hover {
+  background-color: var(--hover-color);
+}
+
+.modal {
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.modal-content {
+  background-color: var(--primary-color);
+  margin: auto;
+  padding: 20px;
+  border-radius: 15px;
+  width: 600px;
+}
+
+.comment-textarea {
+  height: 125px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid var(--border-color);
+  padding: 10px;
+  resize: none;
+}
+
+.buttons-container {
+  display: flex;
+}
+
+.cancel-button {
+  border: 1px solid var(--seconday-color);
+  margin: 20px 0 20px 10px;
+}
+
+.cancel-button:hover {
+  border: 1px solid var(--hover-color);
 }

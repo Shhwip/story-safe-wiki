@@ -9,6 +9,8 @@ export default function Edit() {
   const { title } = useParams();
   const [article, setArticle] = useState(null);
   const [articleLoaded, setArticleLoaded] = useState(false);
+  const [isCommentModalActive, setIsCommentModalActive] = useState(false);
+  const [comment, setComment] = useState("");
   const [ip, setIP] = useState("");
 
   const getData = async () => {
@@ -40,6 +42,14 @@ export default function Edit() {
     console.log(article);
   }, []);
 
+  const openCloseCommentModal = () => {
+    setIsCommentModalActive(!isCommentModalActive);
+  };
+
+  const handleCommentChange = (event) => {
+    setComment(event.target.value);
+  };
+
   const handleSubmit = async () => {
     console.log(article);
     await axios
@@ -48,6 +58,7 @@ export default function Edit() {
         text: article,
         ip: ip,
         username: localStorage.getItem("userSession"),
+        comment: comment,
       })
       .then((response) => {
         console.log("success");
@@ -56,12 +67,13 @@ export default function Edit() {
         console.log("error: ");
         console.log(error);
       });
+    openCloseCommentModal();
   };
 
   return (
     <div>
       <Header />
-      <div className="container">
+      <div className={`container ${isCommentModalActive ? "modalIsOpen" : ""}`}>
         <div data-color-mode="light">
           {articleLoaded ? (
             <div>
@@ -73,13 +85,37 @@ export default function Edit() {
                 commands={[]}
                 extraCommands={[]}
               />
-              <button onClick={handleSubmit} className="submit-button">Submit</button>
+              <button onClick={openCloseCommentModal} className="submit-button">
+                Submit
+              </button>
             </div>
           ) : (
             <div>Loading</div>
           )}
         </div>
       </div>
+      {isCommentModalActive ? (
+        <div className="modal">
+          <div className="modal-background" onClick={openCloseCommentModal}></div>
+          <div className="modal-content">
+            <div className="modal-box">
+              <textarea
+                className="comment-textarea"
+                placeholder="Please enter a description of your changes."
+                onChange={handleCommentChange}
+              ></textarea>
+              <div className="buttons-container">
+                <button className="submit-button" onClick={handleSubmit}>
+                  Submit
+                </button>
+                <button onClick={openCloseCommentModal} className="cancel-button">
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 }
