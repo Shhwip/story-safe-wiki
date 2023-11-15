@@ -8,7 +8,9 @@ const router = express.Router();
 router.get("/:title", async (req, res) => {
   const article = await Article.findOne({ title: req.params.title });
   const messages = await Comment.find({ article: article._id })
-    .sort({ timeStamp: -1 });
+    .sort({ timeStamp: 1 })
+    .populate("user", "username")
+    .exec()
   res.status(200).send(messages);
 });
 
@@ -22,7 +24,7 @@ router.post("/:title", async (req, res) => {
   }
   const comment = new Comment({
     text: text,
-    user: user._id,
+    user: user,
     article: article._id,
     timeStamp: Date.now(),
     flags: 0,
