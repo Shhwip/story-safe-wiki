@@ -26,12 +26,12 @@ router.post("/:title", async (req, res) => {
         if (!articleCheck){
             res.status(401).send({ message: "article hasn't been created" });
         }
-        var { title, text, username } = req.body;
+        var { title, text, username, comment } = req.body;
         if (username == null || username == ""){
             username = req.socket.remoteAddress;
             console.log(username);
         }
-        if(await updateHistory(title, text, articleCheck.text, username) == false)
+        if(await updateHistory(title, text, articleCheck.text, username, comment) == false)
         {
             res.status(401).send({ message: "history is invalid" });
         }

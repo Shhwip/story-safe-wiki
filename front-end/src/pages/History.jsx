@@ -53,6 +53,7 @@ export default function History() {
                                     <h3>{item.username}</h3>
                                     <p>{item.timestamp}</p>
                                     <p>{item.outputSize}</p>
+                                    <p>{item.comment}</p>
                                     <button onClick={() => {getEdit(title, item.previousID);}}>before</button>
                                     <button onClick={() => {getEdit(title, item._id);}}>after</button>
                                 </div>
