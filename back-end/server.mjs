@@ -35,7 +35,7 @@ app.use("/edit", edit);
 app.use("/w", wiki);
 app.use("/search", searchRoute);
 app.use("/user", user);
-app.use("/addArticle", addArticle);
+app.use("/add", addArticle);
 app.use("/h", history);
 
 const server = http.createServer(app);
