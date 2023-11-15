@@ -12,6 +12,7 @@ import wiki from "./routes/wiki.mjs"
 import edit from "./routes/edit.mjs"
 import addArticle from "./routes/addArticle.mjs"
 import history from "./routes/history.mjs"
+import discussion from "./routes/discussion.mjs"
 
 const PORT = process.env.PORT || 5050;
 const app = express();
@@ -37,6 +38,7 @@ app.use("/search", searchRoute);
 app.use("/user", user);
 app.use("/addArticle", addArticle);
 app.use("/h", history);
+app.use("/discussion", discussion);
 
 const server = http.createServer(app);
 
