@@ -124,7 +124,48 @@ button:focus-visible {
 }
 
 footer {
-  display: flex;
+  display: grid;
+  position: relative;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: .1fr 1fr .2fr;
+  grid-template-areas:
+          "area1 area2 area3"
+          "area4 menu area6"
+          "end end end";
+  gap: 1em;
   min-height: 33vh;
-  background-color: var(--light-gray);
+  overflow-wrap: normal;
+}
+
+.logo__footer {
+  grid-area: area4;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.logo-image__footer {
+  width: 20em;
+}
+
+.footer-menu {
+  grid-area: menu;
+}
+
+.menu-list__footer a {
+  color: white;
+
+}
+
+li::marker {
+  content: none;
+}
+
+.foot {
+  grid-area: end;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  background-color: #A8262D;
 }
