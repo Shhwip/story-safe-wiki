@@ -1,7 +1,7 @@
 import Header from "../components/Header";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import MDEditor from "@uiw/react-md-editor";
 import "./Edit.css";
 
@@ -12,6 +12,8 @@ export default function Edit() {
   const [isCommentModalActive, setIsCommentModalActive] = useState(false);
   const [comment, setComment] = useState("");
   const [ip, setIP] = useState("");
+  const navigate = useNavigate();
+
 
   const getData = async () => {
     const res = await axios.get("https://api.ipify.org/?format=json");
@@ -68,6 +70,8 @@ export default function Edit() {
         console.log(error);
       });
     openCloseCommentModal();
+    const encodedTitle = encodeURIComponent(title);
+    navigate(`/w/${encodedTitle}`);
   };
 
   return (
