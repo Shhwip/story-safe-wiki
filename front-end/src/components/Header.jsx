@@ -4,7 +4,6 @@ import user from "../icons/person-circle-outline.svg";
 import logoHeader from "../assets/Horizontal_Combination_Mark.svg";
 import { useNavigate } from "react-router-dom";
 import Search from "./Search.jsx";
-import SearchPage from "../pages/SearchPage";
 import AccountMenu from "./AccountMenu";
 import axios from "axios";
 
@@ -14,6 +13,29 @@ function Header() {
   const selectRef = useRef(null);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
+  const [spoilerLevel, setSpoilerLevel] = useState(0);
+  const [errorMessage, setErrorMessage] = useState("");
+  const maxNumberOfArcs = 31;
+
+  useEffect(() => {
+    const storedSpoilerLevel = localStorage.getItem("noSpoilLevel");
+
+    if (storedSpoilerLevel != null) {
+      setSpoilerLevel(parseInt(storedSpoilerLevel, 10));
+    }
+  }, []);
+
+  const handleSaveSpoilerLevel = () => {
+    if (spoilerLevel < 0 || spoilerLevel > maxNumberOfArcs) {
+      setErrorMessage("Number must be between 0 and 30");
+      return;
+    }
+    setErrorMessage("");
+    localStorage.setItem("noSpoilLevel", spoilerLevel);
+
+    // Reload the page to apply the new spoiler level
+    window.location.reload();
+  };
 
   function handleHeaderHomeClick() {
     navigate("/");
@@ -68,6 +90,8 @@ function Header() {
     };
   }, [prevScrollPos]);
 
+
+
   return (
     <div>
       <header className={`app-header ${visible ? "visible" : "hidden"}`}>
@@ -77,6 +101,29 @@ function Header() {
           alt="Combined Horizontal Logo for Story Safe"
           onClick={handleHeaderHomeClick}
         />
+        <div className="spoil-level__header">
+          <span className="spoil-level__text">Spoiler Level:</span>
+          <input
+              className="spoil-level__input"
+              type="number"
+              min={0}
+              max={maxNumberOfArcs}
+              value={spoilerLevel}
+              onChange={(e) => setSpoilerLevel(e.target.value)}
+          >
+          </input>
+          {errorMessage ? (
+              <div className="side-bar-error-message">{errorMessage}</div>
+          ) : (
+              <></>
+          )}
+          <div
+              className="spoil-level__save"
+              onClick={handleSaveSpoilerLevel}
+          >
+            Save
+          </div>
+        </div>
         <nav className="navigation">
           <svg
             xmlns="http://www.w3.org/2000/svg"

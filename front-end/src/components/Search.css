@@ -5,7 +5,7 @@
     top: 0;
     background: transparent;
     backdrop-filter: blur(20px);
-    z-index: 98;
+    z-index: 201;
 }
 
 .search-container {
