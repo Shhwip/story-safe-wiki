@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./Wiki.css";
+import "./Spoil.css";
 import parse from "html-react-parser";
 import Header from "../components/Header.jsx";
 import FandomCommunityHeader from "../components/FandomCommunityHeader.jsx";
