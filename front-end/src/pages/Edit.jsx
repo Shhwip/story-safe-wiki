@@ -54,16 +54,19 @@ export default function Edit() {
 
   const handleSubmit = async () => {
     console.log(article);
+    const username = localStorage.getItem("userSession") || ip;
     await axios
       .post("http://localhost:4000/edit/" + title, {
         title: title,
         text: article,
         ip: ip,
-        username: localStorage.getItem("userSession"),
+        username: username,
         comment: comment,
       })
       .then((response) => {
         console.log("success");
+        console.log(ip);
+        console.log(localStorage.getItem("userSession"));
       })
       .catch((error) => {
         console.log("error: ");

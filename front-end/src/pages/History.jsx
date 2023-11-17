@@ -31,6 +31,7 @@ export default function History() {
                 .then((response) => {
                     setHistory(response.data);
                     console.log("success");
+                    console.log(response.data);
                 })
                 .catch((error) => {
                     console.log("error: ");
