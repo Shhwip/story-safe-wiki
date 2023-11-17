@@ -12,6 +12,8 @@ function Wiki() {
     const [notFound, setNotFound] = useState(false); // [notFound, setNotFound
     const { title } = useParams();
     const navigate = useNavigate();
+    const userSpoilLevel = parseInt(localStorage.getItem("noSpoilLevel"), 10);
+
 
   const handleEditButtonClick = () => {
     navigate("/edit/" + title);
@@ -168,8 +170,9 @@ function Wiki() {
                     </button>
                 </div>
               </div>
-
-              {parse(doc)}
+                <div data-spoil-level={userSpoilLevel}>
+                    {parse(doc)}
+                </div>
             </main>
           </div>
         </div>
