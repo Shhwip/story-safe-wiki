@@ -21,7 +21,7 @@ export async function updateHistory(title, editText, previousText, username, com
         return false;
     }
     if(history.length == 0) {
-        console.log("no edits");
+        console.log("new article");
         lastID = null;
     } else {
         var lastID = history[history.length - 1]._id;
