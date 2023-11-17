@@ -17,7 +17,7 @@ b {
 .main-container {
   display: flex;
   flex-direction: column;
-  margin-top: 76px;
+  margin-top: 0;
   min-width: 702px;
   min-height: 100vh;
   width: 100%;

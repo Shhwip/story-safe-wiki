@@ -77,13 +77,10 @@ export default function Edit() {
         <div data-color-mode="light">
           {articleLoaded ? (
             <div>
-              <MDEditor
-                height={800}
+              <textarea
+                className="article-textarea"
                 value={article}
-                onChange={setArticle}
-                preview="edit"
-                commands={[]}
-                extraCommands={[]}
+                onChange={(e) => setArticle(e.target.value)}
               />
               <button onClick={openCloseCommentModal} className="submit-button">
                 Submit
