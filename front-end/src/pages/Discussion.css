@@ -54,14 +54,14 @@
 /* Styling for input box */
 .input-container {
   display: flex;
+  position: relative;
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
-  position: fixed;
   bottom: 0;
   width: 75%;
   margin: auto;
-  left: 12.5%;
+  /*left: 12.5%;*/
 }
 
 .input-container textarea {
