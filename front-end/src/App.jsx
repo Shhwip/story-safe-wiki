@@ -10,6 +10,7 @@ import SearchPage from "./pages/SearchPage.jsx";
 import Discussion from "./pages/Discussion.jsx";
 import History from "./pages/History.jsx";
 import Add from "./pages/Add.jsx";
+import Random from "./pages/Random.jsx";
 
 export const AppContext = createContext();
 
@@ -29,6 +30,7 @@ function App() {
           <Route path="/discussion/:title" element={<Discussion />} />
           <Route path="/h/:title" element={<History />} />
           <Route path="/create/:title" element={<Add />} />
+          <Route path="/random" element={<Random />} />
           <Route path="*" element={<h1>404 Not Found</h1>} />
         </Routes>
       </BrowserRouter>
