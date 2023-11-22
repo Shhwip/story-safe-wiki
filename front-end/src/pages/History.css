@@ -1,0 +1,43 @@
+.history {
+    display: grid;
+    position: relative;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: .1fr 1fr;
+    grid-template-areas:
+          "area1 area2 area3"
+          "area4 history area6";
+    gap: 1em;
+    min-height: 33vh;
+    overflow-wrap: normal;
+}
+
+.history-title {
+    grid-area: area2;
+}
+.history-list {
+    grid-area: history;
+}
+
+.history-item {
+    background-color: white;
+    margin-bottom: 2em;
+    display: flex;
+    color: black;
+    border-radius: 6px;
+    padding: 16px 24px;
+}
+
+.history-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.history-buttons {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+}
+
+.history-buttons button {
+    margin-left: 1em;
+}

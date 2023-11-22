@@ -1,4 +1,5 @@
 import Header from "../components/Header";
+import "./History.css"
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate} from "react-router-dom";
@@ -18,6 +19,15 @@ const getEdit = async (title, id) => {
             console.log(error);
         });
 };
+
+function formatDate(timestamp) {
+    const date = new Date(timestamp);
+    const dateString = `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
+    const timeString = `${date.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit', second: '2-digit' })} UTC`;
+
+    return `${dateString} ${timeString}`;
+}
+
 
 export default function History() {
     const { title } = useParams();
@@ -41,22 +51,29 @@ export default function History() {
         getHistory();
     }, [title]);
 
+
     return (
         <div>
             <Header />
-            <div className="history" style={{"display":"block"}}>
-                <h1>History</h1>
+            <div className="history">
+                <h1 className="history-title">History</h1>
                 <div className="history-list">
                     {history ? (
                         history.map((item) => {
                             return (
                                 <div className="history-item">
-                                    <h3>{item.username}</h3>
-                                    <p>{item.timestamp}</p>
-                                    <p>{item.outputSize}</p>
-                                    <p>{item.comment}</p>
-                                    <button onClick={() => {getEdit(title, item.previousID);}}>before</button>
-                                    <button onClick={() => {getEdit(title, item._id);}}>after</button>
+                                    <div className="history-details">
+                                        <h3>{item.username}</h3>
+                                        <p>{formatDate(item.timestamp)}</p>
+                                        <p>{item.outputSize}</p>
+                                        <p>{item.comment}</p>
+                                    </div>
+
+                                    <div className="history-buttons">
+                                        <button onClick={() => {getEdit(title, item.previousID);}}>before</button>
+                                        <button onClick={() => {getEdit(title, item._id);}}>after</button>
+                                    </div>
+
                                 </div>
                             );
                         })
