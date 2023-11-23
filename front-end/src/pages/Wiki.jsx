@@ -31,24 +31,6 @@ function Wiki() {
   const handleCreateButtonClick = () => {
       navigate("/create/" + title);
   };
-    // put this back if there is a problem with the below useEffect
-    // useEffect(() => {
-    // const getMessage = () => {
-    //   axios
-    //     .get("http://localhost:4000/w/" + title)
-    //     .then(async (response) => {
-    //       setDoc(response.data);
-    //       console.log("success");
-    //     })
-    //     .catch((error) => {
-    //       console.log("error1: ");
-    //       console.log(error);
-    //       return(<h1>404 Not Found</h1>);
-    //     });
-    // };
-    // getMessage();
-    // }, []);
-
 
     // Refresh page when searching
     useEffect(() => {
