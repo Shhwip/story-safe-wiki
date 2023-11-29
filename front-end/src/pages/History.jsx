@@ -1,24 +1,12 @@
 import Header from "../components/Header";
+import Preview from "../components/Preview";
 import "./History.css"
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate} from "react-router-dom";
 
 
-const getEdit = async (title, id) => {
-    console.log("getEdit")
-    await axios
-        .get("http://localhost:4000/h/"+ title + "/" + id)
-        .then((response) => {
-            console.log("single history success");
-            console.log(response.data);
-            return response.data;
-        })
-        .catch((error) => {
-            console.log("error: ");
-            console.log(error);
-        });
-};
+
 
 function formatDate(timestamp) {
     const date = new Date(timestamp);
@@ -32,7 +20,27 @@ function formatDate(timestamp) {
 export default function History() {
     const { title } = useParams();
     const [history, setHistory] = useState(null);
+    const [content, setContent] = useState("");
 
+    const openCloseCommentModal = () => {
+        setContent("");
+      };
+
+    const getEdit = async (title, id) => {
+        console.log("getEdit")
+        await axios
+            .get("http://localhost:4000/h/"+ title + "/" + id)
+            .then((response) => {
+                console.log("single history success");
+                console.log(response.data);
+                setContent(response.data);
+                return response.data;
+            })
+            .catch((error) => {
+                console.log("error: ");
+                console.log(error);
+            });
+    };
 
     useEffect(() => {
         const getHistory = async () => {
@@ -53,6 +61,7 @@ export default function History() {
 
 
     return (
+        
         <div>
             <Header />
             <div className="history">
@@ -68,7 +77,7 @@ export default function History() {
                                         <p>{item.outputSize}</p>
                                         <p>{item.comment}</p>
                                     </div>
-
+                                    
                                     <div className="history-buttons">
                                         <button onClick={() => {getEdit(title, item.previousID);}}>before</button>
                                         <button onClick={() => {getEdit(title, item._id);}}>after</button>
@@ -81,6 +90,11 @@ export default function History() {
                         <div></div>
                     )}
                 </div>
+                {content ? (
+                <div className="history-preview">
+                    <Preview content={content} setContent={setContent}/>
+                    </div>
+                ) : null}
             </div>
         </div>
     );
