@@ -9,12 +9,12 @@ const commentSchema = new mongoose.Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
-    required: true
+    required: false
   },
   article: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Article',
-    required: true
+    required: false
   },
   timeStamp: {
     type: Date,
@@ -24,6 +24,10 @@ const commentSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
+  ip: {
+    type: String,
+    required: false
+  }
 });
 
 const Comment = mongoose.model('Comment', commentSchema);

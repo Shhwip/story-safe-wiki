@@ -1,26 +1,53 @@
+import { $getRoot } from "lexical";
+import { useEffect, useState, useRef } from "react";
+import { LexicalComposer } from "@lexical/react/LexicalComposer";
+import { PlainTextPlugin } from "@lexical/react/LexicalPlainTextPlugin";
+import { ContentEditable } from "@lexical/react/LexicalContentEditable";
+import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
+import { OnChangePlugin } from "@lexical/react/LexicalOnChangePlugin";
+import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
+import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
+import { $createParagraphNode, $createTextNode } from "lexical";
+import Toolbar from "../components/lexicalComponents/EditToolbar";
+import { root } from "lexical";
 import Header from "../components/Header";
 import axios from "axios";
-import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import MDEditor from "@uiw/react-md-editor";
+import PropTypes from "prop-types";
 import "./Edit.css";
 
-export default function Edit() {
+const theme = {};
+
+function onError(error) {
+  console.error(error);
+}
+
+function ToolbarPlugin({ editorState }) {
+  const [editor] = useLexicalComposerContext();
+
+  return <Toolbar editorState={editorState} editor={editor} />;
+}
+
+ToolbarPlugin.propTypes = {
+  editorState: PropTypes.object.isRequired,
+};
+
+export default function Editor() {
   const { title } = useParams();
-  const [article, setArticle] = useState(null);
+  const [article, setArticle] = useState("");
   const [articleLoaded, setArticleLoaded] = useState(false);
   const [isCommentModalActive, setIsCommentModalActive] = useState(false);
   const [comment, setComment] = useState("");
   const [ip, setIP] = useState("");
-
-  const getData = async () => {
-    const res = await axios.get("https://api.ipify.org/?format=json");
-    console.log(res.data);
-    setIP(res.data.ip);
-  };
+  const editorRef = useRef();
 
   useEffect(() => {
-    getData();
+    const getIPAddress = async () => {
+      const res = await axios.get("https://api.ipify.org/?format=json");
+      console.log(res.data);
+      setIP(res.data.ip);
+    };
+    getIPAddress();
   }, []);
 
   useEffect(() => {
@@ -29,6 +56,7 @@ export default function Edit() {
         .get("http://localhost:4000/edit/" + title)
         .then((response) => {
           response.data ? setArticle(response.data.text) : setArticle("empty");
+          editorRef.current = response.data.text;
           setArticleLoaded(true);
           console.log("success");
         })
@@ -38,11 +66,62 @@ export default function Edit() {
         });
     };
     getMessage();
-    console.log("displayMessage: ");
-    console.log(article);
   }, []);
 
+  const initialConfig = {
+    namespace: "MyEditor",
+    theme,
+    onError,
+    editorState: () => {
+      const paragraph = $createParagraphNode();
+      const text = $createTextNode(article);
+      paragraph.append(text);
+      $getRoot().append(paragraph);
+    },
+    initialEditorState: () => {
+      const paragraph = $createParagraphNode();
+      const text = $createTextNode("test");
+      paragraph.append(text);
+      $getRoot().append(paragraph);
+      root.selectEnd();
+    },
+  };
+
+  const handleSubmit = async () => {
+    const text = editorRef.current;
+    setArticle(text);
+
+    if (!comment) {
+      alert("Please enter a comment.");
+      return;
+    }
+
+    const username = localStorage.getItem("userSession") || ip;
+    await axios
+      .post("http://localhost:4000/edit/" + title, {
+        title: title,
+        text: text,
+        ip: ip,
+        username: username,
+        comment: comment,
+      })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log("error: ");
+        console.log(error.response.data);
+        alert(error.response.data);
+      });
+    openCloseCommentModal();
+  };
+
   const openCloseCommentModal = () => {
+    if (!editorRef.current) {
+      alert("No changes have been made.");
+      return;
+    }
+    console.log(editorRef.current);
     setIsCommentModalActive(!isCommentModalActive);
   };
 
@@ -50,53 +129,47 @@ export default function Edit() {
     setComment(event.target.value);
   };
 
-  const handleSubmit = async () => {
-    console.log(article);
-    await axios
-      .post("http://localhost:4000/edit/" + title, {
-        title: title,
-        text: article,
-        ip: ip,
-        username: localStorage.getItem("userSession"),
-        comment: comment,
-      })
-      .then((response) => {
-        console.log("success");
-      })
-      .catch((error) => {
-        console.log("error: ");
-        console.log(error);
-      });
-    openCloseCommentModal();
-  };
-
   return (
     <div>
       <Header />
       <div className={`container ${isCommentModalActive ? "modalIsOpen" : ""}`}>
-        <div data-color-mode="light">
-          {articleLoaded ? (
-            <div>
-              <MDEditor
-                height={800}
-                value={article}
-                onChange={setArticle}
-                preview="edit"
-                commands={[]}
-                extraCommands={[]}
+        {articleLoaded ? (
+          <div>
+            <LexicalComposer initialConfig={initialConfig}>
+              <ToolbarPlugin editorState={editorRef.current} />
+              <PlainTextPlugin
+                contentEditable={
+                  <div className="content-container">
+                    <ContentEditable className="content-editable" />
+                  </div>
+                }
+                placeholder={
+                  <div className="placeholder">Enter some text...</div>
+                }
+                ErrorBoundary={LexicalErrorBoundary}
               />
-              <button onClick={openCloseCommentModal} className="submit-button">
+              <HistoryPlugin />
+              <OnChangePlugin
+                onChange={(editorState) =>
+                  (editorRef.current =
+                    editorState.toJSON().root.children[0].children[0].text)
+                }
+              />
+              <button className="submit-button" onClick={openCloseCommentModal}>
                 Submit
               </button>
-            </div>
-          ) : (
-            <div>Loading</div>
-          )}
-        </div>
+            </LexicalComposer>
+          </div>
+        ) : (
+          <div>Loading</div>
+        )}
       </div>
       {isCommentModalActive ? (
         <div className="modal">
-          <div className="modal-background" onClick={openCloseCommentModal}></div>
+          <div
+            className="modal-background"
+            onClick={openCloseCommentModal}
+          ></div>
           <div className="modal-content">
             <div className="modal-box">
               <textarea
@@ -108,9 +181,23 @@ export default function Edit() {
                 <button className="submit-button" onClick={handleSubmit}>
                   Submit
                 </button>
-                <button onClick={openCloseCommentModal} className="cancel-button">
+                <button
+                  onClick={openCloseCommentModal}
+                  className="cancel-button"
+                >
                   Cancel
                 </button>
+              </div>
+              <div>
+                {localStorage.getItem("userSession") ? (
+                    <div></div>
+                  ) : (
+                    <div className="modal-warning">
+                      You are not logged in. Your IP address
+                      will be used to identify you.
+                    </div>
+                  )
+                }
               </div>
             </div>
           </div>

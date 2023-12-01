@@ -24,7 +24,13 @@ router.get("/:title", async (req, res) => {
 router.post("/:title", async (req, res) => {
         const articleCheck = await Article.findOne({ title: req.body.title });
         if (!articleCheck){
-            res.status(401).send({ message: "article hasn't been created" });
+            res.status(401).send("article hasn't been created" );
+            return;
+        }
+        if (articleCheck.text == req.body.text){
+            console.log("article hasn't been changed");
+            res.status(400).send("article hasn't been changed" );
+            return;
         }
         var { title, text, username, comment } = req.body;
         if (username == null || username == ""){
@@ -33,7 +39,8 @@ router.post("/:title", async (req, res) => {
         }
         if(await updateHistory(title, text, articleCheck.text, username, comment) == false)
         {
-            res.status(401).send({ message: "history is invalid" });
+            res.status(401).send("history is invalid" );
+            return;
         }
         const article = {
             title: title,

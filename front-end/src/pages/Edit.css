@@ -1,7 +1,33 @@
 .container {
   margin: auto;
+  position: relative;
   margin-top: 100px;
   width: 90%;
+}
+
+.content-container {
+  overflow: hidden;
+  border: 1px solid var(--boder-color);
+  border-radius: 0 0 10px 10px;
+}
+
+.content-editable {
+  padding: 10px;
+  min-height: 100px;
+  width: 100%;
+  height: 70vh;
+  z-index: 10;
+  overflow: auto;
+}
+
+.content-editable:focus {
+  outline: none;
+}
+
+.placeholder {
+  position: absolute;
+  top: 0;
+  margin: 10px 0 0 10px;
 }
 
 .modalIsOpen {
@@ -64,4 +90,9 @@
 
 .cancel-button:hover {
   border: 1px solid var(--hover-color);
+}
+
+.modal-warning {
+  color: var(--seconday-color);
+  text-align: center;
 }

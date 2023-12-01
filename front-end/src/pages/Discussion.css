@@ -18,7 +18,6 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  overflow-y: scroll;
   padding: 1rem;
 }
 
@@ -51,8 +50,13 @@
   margin: 0;
 }
 
+.block {
+  height: 192px;
+}
+
 /* Styling for input box */
 .input-container {
+  background-color: var(--primary-color);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -81,4 +85,9 @@
   border-radius: 5px;
   padding: 0.5rem 1rem;
   cursor: pointer;
+}
+
+.warning-message {
+  width: 300px;
+  color: var(--seconday-color);
 }
