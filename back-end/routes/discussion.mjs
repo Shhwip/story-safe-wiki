@@ -7,6 +7,10 @@ const router = express.Router();
 
 router.get("/:title", async (req, res) => {
   const article = await Article.findOne({ title: req.params.title });
+  if (!article) {
+    res.status(404).send({ message: "Article not found." });
+    return;
+  }
   const messages = await Comment.find({ article: article._id })
     .sort({ timeStamp: 1 })
     .populate("user", "username")
@@ -15,7 +19,6 @@ router.get("/:title", async (req, res) => {
 });
 
 router.post("/:title", async (req, res) => {
-  console.log(req.body)
   const { text, username } = req.body;
   const article = await Article.findOne({ title: req.params.title });
   const user = await User.findOne({ username: username });
