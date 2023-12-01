@@ -3,21 +3,19 @@
   flex-direction: column;
   margin-top: 100px;
 }
-
 .page-title {
   font-size: 3rem;
   font-weight: bold;
   width: 75%;
   margin: auto;
   margin-bottom: 1rem;
-
 }
-
 /* Styling for messages */
 .message-container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  overflow-y: scroll;
   padding: 1rem;
 }
 
@@ -27,17 +25,14 @@
   width: 100%;
   margin-bottom: 1rem;
 }
-
 .message-username {
   font-weight: bold;
   margin-right: 1rem;
 }
-
 .message-timestamp {
   font-size: 0.8rem;
   color: #6e6e6e;
 }
-
 .message {
   border-left: 1px solid #ccc;
   padding: 0.5rem;
@@ -45,7 +40,6 @@
   margin-bottom: 1rem;
   width: 75%;
 }
-
 .message p {
   margin: 0;
 }
@@ -58,16 +52,15 @@
 .input-container {
   background-color: var(--primary-color);
   display: flex;
-  position: relative;
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
+  position: fixed;
   bottom: 0;
   width: 75%;
   margin: auto;
-  /*left: 12.5%;*/
+  left: 12.5%;
 }
-
 .input-container textarea {
   background-color: var(--primary-color);
   border: 1px solid var(--boder-color);
@@ -78,7 +71,6 @@
   border-radius: 5px;
   resize: none;
 }
-
 .input-container button {
   color: white;
   border: 1px solid #ccc;
