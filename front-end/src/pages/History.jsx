@@ -31,6 +31,7 @@ export default function History() {
                 .then((response) => {
                     setHistory(response.data);
                     console.log("success");
+                    console.log(response.data);
                 })
                 .catch((error) => {
                     console.log("error: ");
@@ -43,7 +44,7 @@ export default function History() {
     return (
         <div>
             <Header />
-            <div className="history" style={{"top":"50%", "transform": "translateY(50%)"}}>
+            <div className="history" style={{"display":"block"}}>
                 <h1>History</h1>
                 <div className="history-list">
                     {history ? (

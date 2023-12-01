@@ -12,6 +12,7 @@ function SearchPage() {
     const [isLoading, setIsLoading] = useState(true);
     const inputRef = useRef(null);
     const navigate = useNavigate();
+    const noSpoilLevel = localStorage.getItem('noSpoilLevel') || 0;
 
     useEffect(() => {
         inputRef.current.focus();
@@ -23,7 +24,10 @@ function SearchPage() {
             .get(`http://localhost:4000/search/bigSearch?q=${query}`)
             .then((response) => {
                 if (response.data && response.data.length > 0) {
-                    setSearchResults(response.data);
+                    const filteredResults = response.data.filter((result) => {
+                        return result.spoiler_level <= noSpoilLevel;
+                    });
+                    setSearchResults(filteredResults);
                 } else {
                     setSearchResults([]);
                 }

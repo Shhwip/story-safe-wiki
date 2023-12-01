@@ -1,5 +1,5 @@
 .app-header {
-    position: fixed;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
@@ -7,7 +7,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 99;
+    z-index: 202;
     background-color: var(--primary-color);
     transition: top 0.3s;
 }

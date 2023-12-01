@@ -5,6 +5,13 @@ import Article from "../db/models/article.mjs";
 
 const router = express.Router();
 
+router.get("/random", async (req, res) => {
+    var count = await Article.countDocuments();
+    var random = Math.floor(Math.random() * count);
+    var article = await Article.findOne().skip(random);
+    res.status(200).send(article.title);
+});
+
 router.get("/:title", async (req, res) => {
     
     // get the wikitext

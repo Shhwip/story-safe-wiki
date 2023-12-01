@@ -17,8 +17,8 @@ async function addArticle(title, text, infobox, spoiler_level = 0) {
     {
         infobox = null;
     }
-    const data = { title: title, text: text, infobox: infobox, spoiler_level: spoiler_level };
-    await axios.post('http://localhost:4000/addArticle/add', data)
+    const data = { title: title, text: text, infobox: infobox, spoiler_level: spoiler_level, username: "admin" };
+    await axios.post('http://localhost:4000/add/add', data)
     .then((res) => {
         console.log(`statusCode: ${res.statusCode}`)
     })

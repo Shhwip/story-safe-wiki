@@ -31,7 +31,7 @@ router.get("/:title/:id", async (req, res) => {
     }
     if(id == null || id == "" || id == "null")
     {
-        res.send(article.text);
+        res.send("");
         return;
     }
     history.sort((a, b) => (a.timestamp < b.timestamp) ? 1 : -1);
@@ -41,9 +41,15 @@ router.get("/:title/:id", async (req, res) => {
         res.status(404).send("history not found");
         return;
     }
+    if (index == 0)
+    {
+        res.send(article.text);
+        return;
+    }
     var text = article.text;
     // TODO: off by one error
-    for (var i = 0; i <= index; i++)
+    console.log("getting edit number " + index);
+    for (var i = 0; i < index; i++)
     {
         console.log("applying delta");
         console.log(history[i].delta);
