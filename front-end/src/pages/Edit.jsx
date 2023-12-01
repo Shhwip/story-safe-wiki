@@ -102,7 +102,7 @@ export default function Editor() {
         title: title,
         text: text,
         ip: ip,
-        username: localStorage.getItem("userSession"),
+        username: username,
         comment: comment,
       })
       .then((response) => {
@@ -114,19 +114,6 @@ export default function Editor() {
         alert(error.response.data);
       });
     openCloseCommentModal();
-  };
-
-  const openCloseCommentModal = () => {
-    if (!editorRef.current) {
-      alert("No changes have been made.");
-      return;
-    }
-    console.log(editorRef.current);
-    setIsCommentModalActive(!isCommentModalActive);
-  };
-
-  const handleCommentChange = (event) => {
-    setComment(event.target.value);
   };
 
   const openCloseCommentModal = () => {
