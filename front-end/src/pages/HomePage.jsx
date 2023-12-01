@@ -5,6 +5,7 @@ import FandomCommunityHeader from "../components/FandomCommunityHeader.jsx";
 import {Link} from "react-router-dom";
 import Taylor from "../assets/Taylor.jpeg";
 import Lung from "../assets/Lung.jpeg";
+import SearchHome from "../components/SearchHome.jsx";
 
 function HomePage() {
 
@@ -13,6 +14,7 @@ function HomePage() {
       <Header />
       <div className="main-container">
         <div className="resizable-container">
+          <SearchHome/>
           <div className="community-header-wrapper">
             <FandomCommunityHeader />
           </div>

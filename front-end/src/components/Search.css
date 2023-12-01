@@ -18,6 +18,10 @@
     align-items: center;
 }
 
+.search-container.home {
+    top: 0;
+}
+
 .search-input-box {
     position: relative;
     width: 60%;
