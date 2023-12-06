@@ -137,6 +137,16 @@ footer {
   overflow-wrap: normal;
 }
 
+textarea {
+  font-family: "museo-sans", sans-serif!important;
+  font-weight: 300;
+  font-size: 1.2em;
+}
+
+textarea:focus {
+  outline: none;
+}
+
 .logo__footer {
   grid-area: area4;
   display: flex;
@@ -204,4 +214,8 @@ li::marker {
 .spoil-level__save:hover {
   color: black;
   background-color: white;
+}
+
+input::placeholder {
+  color: #e0e0e0;
 }

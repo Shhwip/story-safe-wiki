@@ -30,22 +30,59 @@ function HomePage() {
               <div className="page-content">
                 <div className="mw-body-content">
                   <h2>Welcome to the Parahumans Wiki on Story Safe</h2>
-                  <p>On Story Safe users are able to select how much they know of a story and if the article has been
-                  spoiler tagged then, that section of text is blurred out. On the header of the page you can select at
-                  what arc of the Worm series you are at and Story Safe will do the rest. There are 30 arcs and author
-                  comments are marked as arc 31.</p>
+                  <p>
+                    Welcome to the ultimate hub for fans of the "Worm" series! Our unique Story Safe feature lets you
+                    control spoilers based on how far you've read. Simply choose your current progress in the series,
+                    and our site will blur out any spoilers beyond that point. There are 30 arcs in the series, with
+                    author comments marked as Arc 31.
+                  </p>
 
-                  <p>Note: Not every article is spoiler tagged as of yet, so proceed with caution.</p>
+                  <p>
+                    A Note on Spoilers: We're still in the process of tagging spoilers throughout the site, so please
+                    browse carefully if you haven't finished the series.
+                  </p>
 
-                  <h2>Editing Spoil Instructions</h2>
-                  <p>If you know the content well you can help with adding the spoiler tags to content. Once you enter
-                  into the editor you can surround text with an "em" tag and then add the spoil level like this:
-                    &lt;em className=spoil_1&gt;Spoiler text surrounded by spoil tag&lt;/em&gt; The site will then
-                  handle the rest. If an arc is 2.3 then put the spoil level as 2, as we only accept whole numbers.</p>
+                  <h2>How to Set Your Spoiler Level</h2>
+                  <p>
+                    1. Select Your Progress: Find the dropdown menu in the page header.
+                  </p>
 
-                  <h2>Spoiler Level</h2>
-                  <p>You can change your spoiler level at any time and you don't need to be logged in for it to work.</p>
+                  <p>
+                    2. Choose Your Arc: Select the arc you're currently reading. We cover all 30 arcs, plus author
+                    comments.
+                  </p>
 
+                  <p>
+                    3. Enjoy a Spoiler-Free Experience: The site automatically blurs content beyond your selected arc.
+                  </p>
+
+
+                  <h2>Help Us Tag Spoilers</h2>
+                  <p>
+                    If you're well-versed in the "Worm" universe, you can contribute by tagging spoilers. It's easy:
+                  </p>
+                  <p>
+                    1. Enter the Editor: Start editing any article.
+                  </p>
+
+                  <p>
+                    2. Tag Spoilers: Wrap the spoiler text in an &lt;em&gt; tag with the appropriate class. For
+                    example, for a spoiler in Arc 1, use &lt;em className="spoil_1"&gt;Your spoiler text here&lt;/em&gt;.
+                  </p>
+
+                  <p>
+                    3. Stick to Whole Numbers: If a spoiler is from Arc 2.3, tag it as Arc 2.
+                  </p>
+
+                  <h2>Change Your Spoiler Level Anytime</h2>
+                  <p>You can adjust your spoiler level whenever you like, even without an account. Just revisit the
+                    selector menu at the top and select a new arc.</p>
+
+                  <h2>Explore Featured Articles</h2>
+                  <p>
+                    Dive deeper into the world of "Worm" with our featured articles. Click on the images below to
+                    learn more about characters like Taylor Hebert and Lung.
+                  </p>
                   <div className="page-header">
                     <div className="page-header__title-wrapper">
                       <h1 className="page-header__title">

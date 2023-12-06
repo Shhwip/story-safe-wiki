@@ -21,10 +21,25 @@ router.get("/:title", async (req, res) => {
 router.post("/:title", async (req, res) => {
   const { text, username } = req.body;
   const article = await Article.findOne({ title: req.params.title });
+
+  if (!username) {
+    const comment = new Comment({
+      text: text,
+      ip: username,
+      article: article._id,
+      timeStamp: Date.now(),
+      flags: 0,
+    });
+    await comment.save();
+    res.status(201).send(comment);
+    return;
+  }
+
   const user = await User.findOne({ username: username });
   if (!article || !user) {
     res.status(401).send({ message: "Error while saving message please try again later." });
   }
+
   const comment = new Comment({
     text: text,
     user: user,
