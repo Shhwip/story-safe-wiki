@@ -59,6 +59,14 @@ export default function History() {
         getHistory();
     }, [title]);
 
+    if(content) {
+        return(
+            <div>
+                <Header />
+                    <Preview content={content} setContent={setContent}/>
+                    </div>
+        )
+    }
 
     return (
         
@@ -90,11 +98,6 @@ export default function History() {
                         <div></div>
                     )}
                 </div>
-                {content ? (
-                <div className="history-preview">
-                    <Preview content={content} setContent={setContent}/>
-                    </div>
-                ) : null}
             </div>
         </div>
     );

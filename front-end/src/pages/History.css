@@ -18,6 +18,11 @@
     grid-area: history;
 }
 
+.preview {
+    position: relative;
+    width:auto;
+}
+
 .history-item {
     background-color: white;
     margin-bottom: 2em;
@@ -41,3 +46,5 @@
 .history-buttons button {
     margin-left: 1em;
 }
+
+  
