@@ -38,7 +38,7 @@ function Login() {
     let salt;
     let errorMessage = "";
     try {
-      const { data } = await axios.post("http://localhost:4000/user/get-salt", {
+      const { data } = await axios.post("/api/user/get-salt", {
         username: form.username,
       });
       salt = data;
@@ -50,7 +50,7 @@ function Login() {
 
     try {
       const hashedPassword = sha256(form.password + salt);
-      const { data } = await axios.post("http://localhost:4000/user/login", {
+      const { data } = await axios.post("/api/user/login", {
         username: form.username,
         password: hashedPassword,
       });

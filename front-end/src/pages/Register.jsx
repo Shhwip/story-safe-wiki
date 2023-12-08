@@ -67,14 +67,11 @@ function Register() {
     let errorMessage = "";
     let salt;
     try {
-      const { data } = await axios.post(
-        "http://localhost:4000/user/make-salt",
-        {
-          username: form.username,
-          password: form.password,
-          email: form.email,
-        }
-      );
+      const { data } = await axios.post("/api/user/make-salt", {
+        username: form.username,
+        password: form.password,
+        email: form.email,
+      });
       salt = data;
     } catch (error) {
       errorMessage = error.response.data.message;
@@ -85,7 +82,7 @@ function Register() {
 
     try {
       const hashedPassword = sha256(form.password + salt);
-      const { data } = await axios.post("http://localhost:4000/user/register", {
+      const { data } = await axios.post("/api/user/register", {
         username: form.username,
         email: form.email,
         password: hashedPassword,
@@ -100,7 +97,7 @@ function Register() {
 
   return (
     <div>
-        <Header />
+      <Header />
       <div className="login-modal">
         <div className="modal-header">Join StorySafeWiki</div>
         <div className="no-account">

@@ -4,7 +4,6 @@ import axios from "axios";
 import "./Discussion.css";
 import Header from "../components/Header";
 
-
 function Discussion() {
   const { title } = useParams();
   const [messages, setMessages] = useState([]);
@@ -23,9 +22,7 @@ function Discussion() {
   useEffect(() => {
     const getMessages = async () => {
       try {
-        const response = await axios.get(
-          `http://localhost:4000/discussion/${title}`
-        );
+        const response = await axios.get(`/api/discussion/${title}`);
         setMessages(response.data);
       } catch (error) {
         console.log("error: ");
@@ -58,7 +55,7 @@ function Discussion() {
       },
     ]);
     await axios
-      .post(`http://localhost:4000/discussion/${title}`, {
+      .post(`/api/discussion/${title}`, {
         text: newMessage,
         username: username ,
         timestamp: Date.now(),
