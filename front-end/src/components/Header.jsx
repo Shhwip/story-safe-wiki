@@ -61,7 +61,7 @@ function Header() {
     localStorage.removeItem("userSession");
     navigate("/");
     try {
-      await axios.post("http://localhost:4000/user/logout");
+      await axios.post("/api/user/logout");
     } catch (error) {
       console.log(error);
     }

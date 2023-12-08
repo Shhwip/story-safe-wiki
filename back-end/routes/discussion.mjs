@@ -21,9 +21,8 @@ router.get("/:title", async (req, res) => {
 router.post("/:title", async (req, res) => {
   const { text, username } = req.body;
   const article = await Article.findOne({ title: req.params.title });
-  let user;
 
-  if(!username){
+  if (!username) {
     const comment = new Comment({
       text: text,
       ip: username,
@@ -36,12 +35,11 @@ router.post("/:title", async (req, res) => {
     return;
   }
 
-
-  user = await User.findOne({ username: username });
-
+  const user = await User.findOne({ username: username });
   if (!article || !user) {
     res.status(401).send({ message: "Error while saving message please try again later." });
   }
+
   const comment = new Comment({
     text: text,
     user: user,

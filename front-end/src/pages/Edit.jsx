@@ -53,7 +53,7 @@ export default function Editor() {
   useEffect(() => {
     const getMessage = async () => {
       await axios
-        .get("http://localhost:4000/edit/" + title)
+        .get("/api/edit/" + title)
         .then((response) => {
           response.data ? setArticle(response.data.text) : setArticle("empty");
           editorRef.current = response.data.text;
@@ -98,7 +98,7 @@ export default function Editor() {
 
     const username = localStorage.getItem("userSession") || ip;
     await axios
-      .post("http://localhost:4000/edit/" + title, {
+      .post("/api/edit/" + title, {
         title: title,
         text: text,
         ip: ip,
@@ -190,14 +190,13 @@ export default function Editor() {
               </div>
               <div>
                 {localStorage.getItem("userSession") ? (
-                    <div></div>
-                  ) : (
-                    <div className="modal-warning">
-                      You are not logged in. Your IP address
-                      will be used to identify you.
-                    </div>
-                  )
-                }
+                  <div></div>
+                ) : (
+                  <div className="modal-warning">
+                    You are not logged in. Your IP address will be used to
+                    identify you.
+                  </div>
+                )}
               </div>
             </div>
           </div>

@@ -24,7 +24,7 @@ export default function Edit() {
   const handleSubmit = async () => {
     console.log(article);
     await axios
-      .post("http://localhost:4000/add/", {
+      .post("/api/add/", {
         title: title,
         text: article,
         spoiler_level: 0,
@@ -55,7 +55,9 @@ export default function Edit() {
                 commands={[]}
                 extraCommands={[]}
               />
-              <button onClick={handleSubmit} className="submit-button">Submit</button>
+              <button onClick={handleSubmit} className="submit-button">
+                Submit
+              </button>
             </div>
           ) : (
             <div>Loading</div>

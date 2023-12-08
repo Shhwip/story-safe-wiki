@@ -4,7 +4,6 @@ import axios from "axios";
 import "./Discussion.css";
 import Header from "../components/Header";
 
-
 function Discussion() {
   const { title } = useParams();
   const [messages, setMessages] = useState([]);
@@ -14,7 +13,7 @@ function Discussion() {
   useEffect(() => {
     const getIPAddress = async () => {
       const res = await axios.get("https://api.ipify.org/?format=json");
-      console.log(res.data);
+      console.log(res.data.ip);
       setIP(res.data.ip);
     };
     getIPAddress();
@@ -23,9 +22,7 @@ function Discussion() {
   useEffect(() => {
     const getMessages = async () => {
       try {
-        const response = await axios.get(
-          `http://localhost:4000/discussion/${title}`
-        );
+        const response = await axios.get(`/api/discussion/${title}`);
         setMessages(response.data);
       } catch (error) {
         console.log("error: ");
@@ -41,20 +38,26 @@ function Discussion() {
 
   const handleSendMessage = async () => {
     var username = localStorage.getItem("userSession");
-    console.log(username ? username : ip);
+    console.log(username);
+
+    if (username === null) {
+      username = ip.toString();
+      console.log("entered if statement, username: " + username);
+    }
+
     var date = new Date();
     setMessages([
       ...messages,
       {
         text: newMessage,
-        user: { username: username ? username : ip },
+        user: username,
         timeStamp: date.toISOString(),
       },
     ]);
     await axios
-      .post(`http://localhost:4000/discussion/${title}`, {
+      .post(`/api/discussion/${title}`, {
         text: newMessage,
-        username: localStorage.getItem("userSession"),
+        username: username ,
         timestamp: Date.now(),
         article: title,
       })
@@ -64,6 +67,8 @@ function Discussion() {
         }
       })
       .catch((error) => console.log(error));
+
+    console.log("end username: " + username);
 
     setNewMessage("");
   };

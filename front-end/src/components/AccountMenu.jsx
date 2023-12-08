@@ -32,7 +32,7 @@ export default function AccountMenu({ handleLogOut }) {
     ) {
       const getUser = async () => {
         await axios
-          .get("http://localhost:4000/user/get-spoiler-level")
+          .get("/api/user/get-spoiler-level")
           .then((response) => {
             setSpoilerLevel(response.data);
           })
@@ -69,7 +69,7 @@ export default function AccountMenu({ handleLogOut }) {
     localStorage.setItem("noSpoilLevel", spoilerLevel);
     if (localStorage.getItem("userSession") != null) {
       await axios
-        .post("http://localhost:4000/user/set-spoiler-level", {
+        .post("/api/user/set-spoiler-level", {
           username: localStorage.getItem("userSession"),
           spoilerlevel: spoilerLevel,
         })
@@ -111,7 +111,9 @@ export default function AccountMenu({ handleLogOut }) {
                     min={0}
                     max={31}
                     defaultValue={spoilerLevel}
-                    onChange={(e) => {setSpoilerLevel(e.target.value)}}
+                    onChange={(e) => {
+                      setSpoilerLevel(e.target.value);
+                    }}
                   ></input>
                 </div>
                 {errorMessage ? (
