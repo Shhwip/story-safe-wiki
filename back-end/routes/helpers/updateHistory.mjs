@@ -1,45 +1,49 @@
-import History from '../../db/models/history.mjs';
-import Delta from 'fossil-delta';
+import History from "../../db/models/history.mjs";
+import Delta from "fossil-delta";
 
 async function checkValidHistory(history) {
-    history.sort((a, b) => (a.timestamp > b.timestamp) ? 1 : -1);
-    for (var i = 0; i < history.length - 1; i++) {
-        var current = history[i];
-        var next = history[i + 1];
-        if (current._id != next.previousID) {
-            return false;
-        }
+  history.sort((a, b) => (a.timestamp > b.timestamp ? 1 : -1));
+  for (var i = 0; i < history.length - 1; i++) {
+    var current = history[i];
+    var next = history[i + 1];
+    if (current._id != next.previousID) {
+      return false;
     }
-    return true;
+  }
+  return true;
 }
 
-export async function updateHistory(title, editText, previousText, username, comment) {
-    var history = await History.find({ title: title });
-    if(await checkValidHistory(history) == false)
-    {
-        console.log("history is invalid");
-        return false;
-    }
-    if(history.length == 0) {
-        console.log("new article");
-        lastID = null;
-    } else {
-        var lastID = history[history.length - 1]._id;
-    }
+export async function updateHistory(
+  title,
+  editText,
+  previousText,
+  username,
+  comment
+) {
+  var history = await History.find({ title: title });
+  if ((await checkValidHistory(history)) == false) {
+    //Todo: add error handling, potentially a log file
+    return false;
+  }
+  if (history.length == 0) {
+    lastID = null;
+  } else {
+    var lastID = history[history.length - 1]._id;
+  }
 
-    var delta = Delta.create(editText, previousText);
+  var delta = Delta.create(editText, previousText);
 
-    var newHistory = new History({
-        delta: delta,
-        title: title,
-        comment: comment,
-        timestamp: Date.now(),
-        username: username,
-        previousID: lastID,
-        outputSize: Delta.outputSize(delta),
-    });
-    
-    await newHistory.save();
+  var newHistory = new History({
+    delta: delta,
+    title: title,
+    comment: comment,
+    timestamp: Date.now(),
+    username: username,
+    previousID: lastID,
+    outputSize: Delta.outputSize(delta),
+  });
 
-    return true;
+  await newHistory.save();
+
+  return true;
 }

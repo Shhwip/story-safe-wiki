@@ -9,14 +9,13 @@ import Parsoid from "parsoid-jsapi";
 const router = express.Router();
 
 router.get("/:title", async (req, res) => {
-    var title = req.params.title;
-    var history = await History.find({ title: title });
-    history.sort((a, b) => (a.timestamp > b.timestamp) ? 1 : -1);
-    for (var i = 0; i < history.length; i++)
-    {
-        history[i].delta = null;
-    }
-    res.send(history);
+  var title = req.params.title;
+  var history = await History.find({ title: title });
+  history.sort((a, b) => (a.timestamp > b.timestamp ? 1 : -1));
+  for (var i = 0; i < history.length; i++) {
+    history[i].delta = null;
+  }
+  res.send(history);
 });
 
 router.get("/:title/:id", async (req, res) => {
