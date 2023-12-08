@@ -37,7 +37,7 @@ function Wiki() {
         setDoc(null);
         const getMessage = async () => {
             try {
-                const response = await axios.get(`/api/w/${title}`);
+                const response = await axios.get(`/w/${title}`);
                 setDoc(response.data);
                 console.log("success");
             } catch (error) {
