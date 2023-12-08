@@ -23,7 +23,7 @@ function SearchHome({ onCloseSearch }) {
     setIsLoading(true);
 
     try {
-      const response = await axios.get(`/api/search?q=${searchQuery}`);
+      const response = await axios.get(`/search?q=${searchQuery}`);
 
       if (response.data && response.data.length === 1) {
         setSearchResults(response.data);

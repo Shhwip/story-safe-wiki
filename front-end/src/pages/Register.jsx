@@ -67,7 +67,7 @@ function Register() {
     let errorMessage = "";
     let salt;
     try {
-      const { data } = await axios.post("/api/user/make-salt", {
+      const { data } = await axios.post("/user/make-salt", {
         username: form.username,
         password: form.password,
         email: form.email,
@@ -82,7 +82,7 @@ function Register() {
 
     try {
       const hashedPassword = sha256(form.password + salt);
-      const { data } = await axios.post("/api/user/register", {
+      const { data } = await axios.post("/user/register", {
         username: form.username,
         email: form.email,
         password: hashedPassword,

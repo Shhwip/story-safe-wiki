@@ -25,7 +25,7 @@ async function addArticle(title, text, infobox, spoiler_level = 0) {
     username: "admin",
   };
   await axios
-    .post("/api/add/add", data)
+    .post("/add/add", data)
     .then((res) => {
       console.log(`statusCode: ${res.statusCode}`);
     })

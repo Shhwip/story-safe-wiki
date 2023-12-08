@@ -21,7 +21,7 @@ function SearchPage() {
     setIsLoading(true);
 
     axios
-      .get(`/api/search/bigSearch?q=${query}`)
+      .get(`/search/bigSearch?q=${query}`)
       .then((response) => {
         if (response.data && response.data.length > 0) {
           const filteredResults = response.data.filter((result) => {

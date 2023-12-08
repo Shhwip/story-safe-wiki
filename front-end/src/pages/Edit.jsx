@@ -43,7 +43,7 @@ export default function Editor() {
 
   useEffect(() => {
     const getIPAddress = async () => {
-      const res = await axios.get("https://api.ipify.org/?format=json");
+      const res = await axios.get("https:/.ipify.org/?format=json");
       console.log(res.data);
       setIP(res.data.ip);
     };
@@ -53,7 +53,7 @@ export default function Editor() {
   useEffect(() => {
     const getMessage = async () => {
       await axios
-        .get("/api/edit/" + title)
+        .get("/edit/" + title)
         .then((response) => {
           response.data ? setArticle(response.data.text) : setArticle("empty");
           editorRef.current = response.data.text;
@@ -98,7 +98,7 @@ export default function Editor() {
 
     const username = localStorage.getItem("userSession") || ip;
     await axios
-      .post("/api/edit/" + title, {
+      .post("/edit/" + title, {
         title: title,
         text: text,
         ip: ip,

@@ -12,7 +12,7 @@ function Discussion() {
 
   useEffect(() => {
     const getIPAddress = async () => {
-      const res = await axios.get("https://api.ipify.org/?format=json");
+      const res = await axios.get("https:/.ipify.org/?format=json");
       console.log(res.data.ip);
       setIP(res.data.ip);
     };
@@ -22,7 +22,7 @@ function Discussion() {
   useEffect(() => {
     const getMessages = async () => {
       try {
-        const response = await axios.get(`/api/discussion/${title}`);
+        const response = await axios.get(`/discussion/${title}`);
         setMessages(response.data);
       } catch (error) {
         console.log("error: ");
@@ -55,9 +55,9 @@ function Discussion() {
       },
     ]);
     await axios
-      .post(`/api/discussion/${title}`, {
+      .post(`/discussion/${title}`, {
         text: newMessage,
-        username: username ,
+        username: username,
         timestamp: Date.now(),
         article: title,
       })

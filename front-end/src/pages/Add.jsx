@@ -12,7 +12,7 @@ export default function Edit() {
   const [ip, setIP] = useState("");
 
   const getData = async () => {
-    const res = await axios.get("https://api.ipify.org/?format=json");
+    const res = await axios.get("https:/.ipify.org/?format=json");
     console.log(res.data);
     setIP(res.data.ip);
   };
@@ -24,7 +24,7 @@ export default function Edit() {
   const handleSubmit = async () => {
     console.log(article);
     await axios
-      .post("/api/add/", {
+      .post("/add/", {
         title: title,
         text: article,
         spoiler_level: 0,
