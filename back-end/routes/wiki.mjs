@@ -2,6 +2,7 @@ import express from "express";
 import * as cheerio from "cheerio";
 import Parsoid from "parsoid-jsapi";
 import Article from "../db/models/article.mjs";
+import { parseDocument } from "./helpers/parseDocument.mjs";
 
 const router = express.Router();
 

@@ -4,6 +4,7 @@ import Article from "../db/models/article.mjs";
 import Delta from 'fossil-delta';
 import * as cheerio from "cheerio";
 import Parsoid from "parsoid-jsapi";
+import { parseDocument } from "./helpers/parseDocument.mjs";
 
 
 const router = express.Router();
