@@ -59,7 +59,7 @@ router.get("/:title/:id", async (req, res) => {
     text = text.join("");
 
      // Serialize the modified document
-     modifiedHTML = parseDocument(text); 
+    const modifiedHTML = parseDocument(text); 
      
      // send the serialized document to the client
    res.status(200).send(modifiedHTML);

@@ -9,7 +9,7 @@ const router = express.Router();
 
 router.post("/parse", async (req, res) => {
     // Serialize the modified document
-    modifiedHTML = parseDocument(req.body.text); 
+   const modifiedHTML = parseDocument(req.body.text); 
      
      // send the serialized document to the client
    res.status(200).send(modifiedHTML);
