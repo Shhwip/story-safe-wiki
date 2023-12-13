@@ -7,7 +7,7 @@ export default function Random() {
   useEffect(() => {
     const getMessage = async () => {
       try {
-        const response = await axios.get(`/api/w/random`);
+        const response = await axios.get(`/w/random`);
         console.log(response.data);
         setTitle(response.data);
       } catch (error) {

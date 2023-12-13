@@ -14,7 +14,7 @@ router.get("/:title", async (req, res) => {
   const messages = await Comment.find({ article: article._id })
     .sort({ timeStamp: 1 })
     .populate("user", "username")
-    .exec()
+    .exec();
   res.status(200).send(messages);
 });
 
@@ -37,7 +37,9 @@ router.post("/:title", async (req, res) => {
 
   const user = await User.findOne({ username: username });
   if (!article || !user) {
-    res.status(401).send({ message: "Error while saving message please try again later." });
+    res
+      .status(401)
+      .send({ message: "Error while saving message please try again later." });
   }
 
   const comment = new Comment({

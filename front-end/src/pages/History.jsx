@@ -31,7 +31,7 @@ export default function History() {
   const getEdit = async (title, id) => {
     console.log("getEdit");
     await axios
-      .get("/api/h/" + title + "/" + id)
+      .get("/h/" + title + "/" + id)
       .then((response) => {
         console.log("single history success");
         console.log(response.data);
@@ -47,7 +47,7 @@ export default function History() {
   useEffect(() => {
     const getHistory = async () => {
       await axios
-        .get("/api/h/" + title)
+        .get("/h/" + title)
         .then((response) => {
           setHistory(response.data);
           console.log("success");

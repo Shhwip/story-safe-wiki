@@ -5,7 +5,6 @@ import session from "express-session";
 import express from "express";
 import cors from "cors";
 import http from "http";
-import helloWorld from "./routes/helloWorld.mjs"
 import searchRoute from "./routes/searchRoute.mjs";
 import user from "./routes/user.mjs";
 import wiki from "./routes/wiki.mjs"
