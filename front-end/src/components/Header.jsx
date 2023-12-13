@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import Search from "./Search.jsx";
 import AccountMenu from "./AccountMenu";
 import axios from "axios";
+import MobileHeader from "./MobileHeader.jsx";
 
 function Header() {
   const navigate = useNavigate();
@@ -16,6 +17,8 @@ function Header() {
   const [spoilerLevel, setSpoilerLevel] = useState(0);
   const [errorMessage, setErrorMessage] = useState("");
   const maxNumberOfArcs = 31;
+  const [isMobileView, setIsMobileView] = useState(false);
+
 
   useEffect(() => {
     const storedSpoilerLevel = localStorage.getItem("noSpoilLevel");
@@ -23,6 +26,32 @@ function Header() {
     if (storedSpoilerLevel != null) {
       setSpoilerLevel(parseInt(storedSpoilerLevel, 10));
     }
+  }, []);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 960px)');
+
+    const handleMediaQueryChange = (e) => {
+      if (e.matches !== undefined) {
+        setIsMobileView(e.matches);
+      }
+    };
+
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener('change', handleMediaQueryChange);
+    } else {
+      mediaQuery.addListener(handleMediaQueryChange);
+    }
+
+    setIsMobileView(mediaQuery.matches);
+
+    return () => {
+      if (mediaQuery.removeEventListener) {
+        mediaQuery.removeEventListener('change', handleMediaQueryChange);
+      } else {
+        mediaQuery.removeListener(handleMediaQueryChange);
+      }
+    };
   }, []);
 
   const handleSaveSpoilerLevel = () => {
@@ -93,75 +122,81 @@ function Header() {
 
 
   return (
-    <div>
-      <header className={`app-header ${visible ? "visible" : "hidden"}`}>
-        <img
-          className="logo-header"
-          src={logoHeader}
-          alt="Combined Horizontal Logo for Story Safe"
-          onClick={handleHeaderHomeClick}
-        />
-        <div className="spoil-level__header">
-          <span className="spoil-level__text">Spoiler Level:</span>
-          <input
-              className="spoil-level__input"
-              type="number"
-              min={0}
-              max={maxNumberOfArcs}
-              value={spoilerLevel}
-              onChange={(e) => setSpoilerLevel(e.target.value)}
-          >
-          </input>
-          {errorMessage ? (
-              <div className="side-bar-error-message">{errorMessage}</div>
-          ) : (
-              <></>
-          )}
-          <div
-              className="spoil-level__save"
-              onClick={handleSaveSpoilerLevel}
-          >
-            Save
-          </div>
-        </div>
-        <nav className="navigation">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 512 512"
-            fill="#fff"
-            className={`search-nav ${isPopupActive ? "active" : ""}`}
-            ref={selectRef}
-            onClick={handleHeaderSearchClick}
-          >
-            <path d="M256 64C150.13 64 64 150.13 64 256s86.13 192 192 192 192-86.13 192-192S361.87 64 256 64zm91.31 283.31a16 16 0 01-22.62 0l-42.84-42.83a88.08 88.08 0 1122.63-22.63l42.83 42.84a16 16 0 010 22.62z" />
-            <circle cx="232" cy="232" r="56" />
-          </svg>
-          {localStorage.getItem("userSession") ? (
-            <div className="header-button-container">
-              <button className="logout" onClick={handleLogOut}>
-                Logout
-              </button>
-              <AccountMenu handleLogOut={handleLogOut} />
-            </div>
-          ) : (
-            <div className="header-button-container">
-              <button className="login" onClick={handleHeaderLoginClick}>
-                Sign In
-              </button>
-              <button className="register" onClick={handleHeaderRegisterClick}>
-                <img
-                  className="user-nav"
-                  src={user}
-                  alt="User Icon Circle Outline"
-                ></img>
-                Register
-              </button>
-            </div>
-          )}
-        </nav>
-      </header>
-      {isPopupActive && <Search onCloseSearch={handleCloseSearch} />}
-    </div>
+    <>
+      {isMobileView ? (
+          <MobileHeader/>
+      ) : (
+          <>
+            <header className={`app-header ${visible ? "visible" : "hidden"}`}>
+              <img
+                  className="logo-header"
+                  src={logoHeader}
+                  alt="Logomark for Story Safe"
+                  onClick={handleHeaderHomeClick}
+              />
+              <div className="spoil-level__header">
+                <span className="spoil-level__text">Spoiler Level:</span>
+                <input
+                    className="spoil-level__input"
+                    type="number"
+                    min={0}
+                    max={maxNumberOfArcs}
+                    value={spoilerLevel}
+                    onChange={(e) => setSpoilerLevel(e.target.value)}
+                >
+                </input>
+                {errorMessage ? (
+                    <div className="side-bar-error-message">{errorMessage}</div>
+                ) : (
+                    <></>
+                )}
+                <div
+                    className="spoil-level__save"
+                    onClick={handleSaveSpoilerLevel}
+                >
+                  Save
+                </div>
+              </div>
+              <nav className="navigation">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 512 512"
+                    fill="#fff"
+                    className={`search-nav ${isPopupActive ? "active" : ""}`}
+                    ref={selectRef}
+                    onClick={handleHeaderSearchClick}
+                >
+                  <path d="M256 64C150.13 64 64 150.13 64 256s86.13 192 192 192 192-86.13 192-192S361.87 64 256 64zm91.31 283.31a16 16 0 01-22.62 0l-42.84-42.83a88.08 88.08 0 1122.63-22.63l42.83 42.84a16 16 0 010 22.62z" />
+                  <circle cx="232" cy="232" r="56" />
+                </svg>
+                {localStorage.getItem("userSession") ? (
+                    <div className="header-button-container">
+                      <button className="logout" onClick={handleLogOut}>
+                        Logout
+                      </button>
+                      <AccountMenu handleLogOut={handleLogOut} />
+                    </div>
+                ) : (
+                    <div className="header-button-container">
+                      <button className="login" onClick={handleHeaderLoginClick}>
+                        Sign In
+                      </button>
+                      <button className="register" onClick={handleHeaderRegisterClick}>
+                        <img
+                            className="user-nav"
+                            src={user}
+                            alt="User Icon Circle Outline"
+                        ></img>
+                        Register
+                      </button>
+                    </div>
+                )}
+              </nav>
+            </header>
+            {isPopupActive && <Search onCloseSearch={handleCloseSearch} />}
+          </>
+      )}
+    </>
   );
 }
 

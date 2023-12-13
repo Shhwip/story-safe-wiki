@@ -14,7 +14,33 @@ function Wiki() {
     const { title } = useParams();
     const navigate = useNavigate();
     const userSpoilLevel = parseInt(localStorage.getItem("noSpoilLevel"), 10);
+    const [isMobileView, setIsMobileView] = useState(false);
 
+    useEffect(() => {
+        const mediaQuery = window.matchMedia('(max-width: 628px)');
+
+        const handleMediaQueryChange = (e) => {
+            if (e.matches !== undefined) {
+                setIsMobileView(e.matches);
+            }
+        };
+
+        if (mediaQuery.addEventListener) {
+            mediaQuery.addEventListener('change', handleMediaQueryChange);
+        } else {
+            mediaQuery.addListener(handleMediaQueryChange);
+        }
+
+        setIsMobileView(mediaQuery.matches);
+
+        return () => {
+            if (mediaQuery.removeEventListener) {
+                mediaQuery.removeEventListener('change', handleMediaQueryChange);
+            } else {
+                mediaQuery.removeListener(handleMediaQueryChange);
+            }
+        };
+    }, []);
 
   const handleEditButtonClick = () => {
     navigate("/edit/" + title);
@@ -71,7 +97,13 @@ function Wiki() {
                 <div className="main-container">
                     <div className="resizable-container">
                         <div className="community-header-wrapper">
-                            <FandomCommunityHeader/>
+                            {isMobileView ? (
+                                <>
+                                    <h1>Worm Wiki</h1>
+                                </>
+                            ) : (
+                                <FandomCommunityHeader />
+                            )}
                         </div>
                         <div className="page">
                             <main className="page__main" lang="en">
@@ -101,9 +133,15 @@ function Wiki() {
       <div className="global-navigation">{<Header />}</div>
       <div className="main-container">
         <div className="resizable-container">
-          <div className="community-header-wrapper">
-            <FandomCommunityHeader />
-          </div>
+            <div className="community-header-wrapper">
+                {isMobileView ? (
+                    <>
+                        <h1>Worm Wiki</h1>
+                    </>
+                ) : (
+                    <FandomCommunityHeader />
+                )}
+            </div>
           <div className="page">
             <main className="page__main" lang="en">
               <div className="page-side-tools__wrapper">

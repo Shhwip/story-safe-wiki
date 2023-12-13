@@ -18,7 +18,7 @@ b {
   display: flex;
   flex-direction: column;
   margin-top: 0;
-  min-width: 702px;
+  /*min-width: 628px;*/
   min-height: 100vh;
   width: 100%;
   background-image: url("../assets/background.jpeg");

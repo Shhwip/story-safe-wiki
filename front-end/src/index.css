@@ -197,7 +197,7 @@ li::marker {
   font-size: 1em;
   border: none;
   background-color: transparent;
-  width: 10%;
+  max-width: 3.3em;
 }
 
 .spoil-level__save {

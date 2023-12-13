@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import "./HomePage.css";
 import Header from "../components/Header.jsx";
 import FandomCommunityHeader from "../components/FandomCommunityHeader.jsx";
@@ -9,6 +9,34 @@ import SearchHome from "../components/SearchHome.jsx";
 
 function HomePage() {
 
+  const [isMobileView, setIsMobileView] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 628px)');
+
+    const handleMediaQueryChange = (e) => {
+      if (e.matches !== undefined) {
+        setIsMobileView(e.matches);
+      }
+    };
+
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener('change', handleMediaQueryChange);
+    } else {
+      mediaQuery.addListener(handleMediaQueryChange);
+    }
+
+    setIsMobileView(mediaQuery.matches);
+
+    return () => {
+      if (mediaQuery.removeEventListener) {
+        mediaQuery.removeEventListener('change', handleMediaQueryChange);
+      } else {
+        mediaQuery.removeListener(handleMediaQueryChange);
+      }
+    };
+  }, []);
+
   return (
     <div>
       <Header />
@@ -16,7 +44,13 @@ function HomePage() {
         <div className="resizable-container">
           <SearchHome/>
           <div className="community-header-wrapper">
-            <FandomCommunityHeader />
+            {isMobileView ? (
+                <>
+                  <h1>Worm Wiki</h1>
+                </>
+            ) : (
+                <FandomCommunityHeader />
+            )}
           </div>
           <div className="page">
             <main className="page__main" lang="en">
