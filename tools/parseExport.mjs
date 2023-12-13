@@ -133,7 +133,7 @@ rl.on("line", (line) => {
     if (articleText.length < 100) {
       console.log(articleText);
     }
-    //sleepFor(150);
+    sleepFor(150);
     addArticle(articleTitle, articleText, infobox, minRefNumber);
     minRefNumber = 0;
     infobox = "";
