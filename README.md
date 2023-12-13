@@ -11,7 +11,11 @@ Story Safe Wiki is a unique wiki platform designed to enhance the user experienc
 
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
-  - [Installing Git](#installing-git)
+  - [Clone the Repository](#clone-the-repository)
+  - [Install Dependencies](#install-dependencies)
+  - [Connecting Your Database](#connecting-your-database)
+  - [Running Story Safe Wiki Locally](#running-story-safe-wiki-locally)
+- [Installing Git](#installing-git)
 
 
 </details>
