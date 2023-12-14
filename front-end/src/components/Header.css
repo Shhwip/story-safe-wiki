@@ -162,7 +162,11 @@
 }
 
 .innermenu {
+    display: flex;
+    flex-direction: column;
     padding: calc(9.33333333vw) calc(6.66666667vw) calc(6.66666667vw) calc(6.66666667vw);
+    gap: 3em;
+    align-items: center;
     overflow: scroll;
 }
 

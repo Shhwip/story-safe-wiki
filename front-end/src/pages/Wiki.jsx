@@ -77,11 +77,39 @@ function Wiki() {
     
     if (notFound) {
         return (
-            <div>
-                <h1>article {title} not found</h1>
-                <p>Would you like to create it?</p>
-                <button onClick={handleCreateButtonClick}>Create</button>
-            </div>
+            <>
+                <div className="global-navigation">
+                    <Header/>
+                </div>
+
+                <div className="main-container">
+                    <div className="resizable-container">
+                        <div className="community-header-wrapper">
+                            {isMobileView ? (
+                                <>
+                                    <h1>Worm Wiki</h1>
+                                </>
+                            ) : (
+                                <FandomCommunityHeader />
+                            )}
+                        </div>
+
+                        <div className="page">
+                            <main className="page__main" lang="en">
+                                <div className="page-header">
+                                    <div className="page-header__title-wrapper">
+                                        <h1 className="page-header__title">
+                                            article {title} not found
+                                        </h1>
+                                        <p>Would you like to create it?</p>
+                                        <button onClick={handleCreateButtonClick} className="login-btn">Create</button>
+                                    </div>
+                                </div>
+                            </main>
+                        </div>
+                    </div>
+                </div>
+            </>
         );
     }
 
