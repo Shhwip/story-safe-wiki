@@ -23,8 +23,11 @@ Information about how to use the wiki and import other wikis is found [here](imp
 </details>
 
 
-
 # Getting Started
+
+##How to Add Spoiler Tags
+Tag Spoilers: Wrap the spoiler text in an <em> tag with the appropriate class. For example, if the story you are making a wiki for is split into arcs. A spoiler in Arc 1, use <em className="spoil_1">Your spoiler text here</em>.
+You can wrap whole articles in these tags or just wrap specific words and paragraphs.
 
 
 ## Prerequisites
