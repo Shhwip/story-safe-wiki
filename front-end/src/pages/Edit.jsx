@@ -8,7 +8,7 @@ import { OnChangePlugin } from "@lexical/react/LexicalOnChangePlugin";
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
 import { $createParagraphNode, $createTextNode } from "lexical";
-import Toolbar from "../Components/lexicalComponents/EditToolbar";
+import Toolbar from "../components/lexicalComponents/EditToolbar";
 import { root } from "lexical";
 import Header from "../components/Header";
 import axios from "axios";
