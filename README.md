@@ -22,6 +22,7 @@ Information about how to use the wiki and import other wikis is found [here](imp
 
 </details>
 
+![Story-Safe Demo](Story-Safe.gif)
 
 # Getting Started
 
