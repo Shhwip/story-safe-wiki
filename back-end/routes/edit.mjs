@@ -2,14 +2,12 @@ import express from "express";
 import Article from "../db/models/article.mjs";
 import { updateHistory } from "./helpers/updateHistory.mjs";
 import { parseDocument } from "./helpers/parseDocument.mjs";
-import * as cheerio from "cheerio";
-import Parsoid from "parsoid-jsapi";
 
 const router = express.Router();
 
 router.post("/parse", async (req, res) => {
     // Serialize the modified document
-   const modifiedHTML = parseDocument(req.body.text); 
+   const modifiedHTML = await parseDocument(req.body.text); 
      
      // send the serialized document to the client
    res.status(200).send(modifiedHTML);

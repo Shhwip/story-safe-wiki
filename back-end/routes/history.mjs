@@ -2,8 +2,6 @@ import express from "express";
 import History from "../db/models/history.mjs";
 import Article from "../db/models/article.mjs";
 import Delta from 'fossil-delta';
-import * as cheerio from "cheerio";
-import Parsoid from "parsoid-jsapi";
 import { parseDocument } from "./helpers/parseDocument.mjs";
 
 
@@ -59,7 +57,7 @@ router.get("/:title/:id", async (req, res) => {
     text = text.join("");
 
      // Serialize the modified document
-    const modifiedHTML = parseDocument(text); 
+    const modifiedHTML = await parseDocument(text); 
      
      // send the serialized document to the client
    res.status(200).send(modifiedHTML);

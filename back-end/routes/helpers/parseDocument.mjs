@@ -1,3 +1,6 @@
+import * as cheerio from "cheerio";
+import Parsoid from "parsoid-jsapi";
+
 // takes wikitext and returns a parsed document
 export async function parseDocument(wikitext){
   var document = wikitext;
